@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      const fruits = ["apple", "banana", "grapes", "mango", "orange"];
+
+      let x = fruits.filter((value) => {
+        return value.includes("ap");
+      });
+      console.log(x);
+
+      // let Find = fruits.filter(function (value) {
+      //     return value.includes('ap')
+      // })
+
+      // console.log(Find);
+
+      // let Find = fruits.filter(function (value) {
+
+      //     if(value.includes('apple')){
+
+      //         return fruits;
+      //     }
+      // })
+
+      // console.log(Find);
+
+      // let method = fruits.filter(function (value) {
+      //     return value.includes();
+      // })
+
+      // console.log(method);
+
+      // function filterItems(Return) {
+      //     let x = fruits.filter((value) => { return value.includes(Return) });
+      //     return x;
+      // }
+
+      // console.log(filterItems('an'));
+
+      // arrow function
+      // let filterItems= (arrayName,searchStr)=>{
+      //     let res=arrayName.filter((e)=> {return e.includes(searchStr)});
+      //     return res;
+      //  }
+
+      //  console.table(filterItems(fruits,'an'));
+      //  console.table(filterItems(fruits,'ap'));
+
+      let newFruits = fruits.filter((ele) => {
+        return ele.includes("r");
+      });
+      console.log(newFruits);
+
+      function filterItems(ele) {
+        let x = fruits.filter((v) => {
+          return v.includes(ele);
+        });
+
+        return x;
+      }
+
+      console.log(filterItems("ge"));
+
+      let myFunction = (arrayName, String) => {
+        let result = arrayName.filter((value) => {
+          return value.includes(String);
+        });
+
+        console.log(result);
+      };
+
+      myFunction(fruits, "gr");
+    </script>
+  </body>
+</html>

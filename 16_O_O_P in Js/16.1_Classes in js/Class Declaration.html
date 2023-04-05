@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classe Declaration</title>
+    <style>
+        * {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+
+        //Ex_1-----
+
+        class Employee {                           //Class Created..
+            constructor(id, name) {              //Constructor creater..
+                this.id = id;
+                this.name = name;
+            }
+
+            details() {                                //Create Object..
+                document.writeln(this.id + ' ' + this.name)
+            }
+
+        }
+        var Object_1 = new Employee(3282, 'Shubham');
+        var Object_2 = new Employee(8793, 'Virag');
+
+        Object_1.details();
+        document.write(`<hr>`);
+        Object_2.details();
+
+
+
+
+
+        document.write(`<hr>`);
+
+        //-------------------------------------------------------------------------
+
+
+
+        //Ex_2..
+
+
+        class Player {
+
+            constructor(Name, Grade) {
+                this.Name = Name;
+                this.Grade = Grade;
+            }
+
+            details() {
+                document.write(this.Name + " " + this.Grade)
+            }
+
+        }
+
+        var Object_3 = new Player('Virat Kohli', 'A++');
+        var Object_4 = new Player('Kannur Lokesh Rahul', 'A+');
+
+
+
+        Object_3.details();
+        document.write(`<hr>`);
+        Object_4.details();
+
+
+
+        document.write(`<hr>`);
+
+        //-------------------------------------------------------------------------
+
+
+        //Ex_3..
+
+
+        class Movie {
+            constructor(Name) {
+                this.Name = Name;
+
+            }
+
+            details() {
+                document.write(this.Name);
+            }
+
+        }
+
+        const Object_5 = new Movie('Raksha Bandhan');
+        const Object_6 = new Movie('Laal Singh Chaddha');
+
+
+
+        Object_5.details();
+        document.write(`<hr>`);
+        Object_6.details();
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debouncing And Throttling</title>
+  </head>
+  <body>
+    <input type="text" />
+    <button>Click</button>
+
+    <script>
+      // Debouncing..
+      let count = 0;
+      const getData = () => {
+        console.log("Fetched", count++);
+      };
+
+      const Debouncing = (fun, delay) => {
+        let timer;
+
+        function Timeout() {
+          clearTimeout(timer);
+
+          timer = setTimeout(() => {
+            let content = this;
+            let args = arguments;
+
+            getData.apply(content, args);
+          }, delay);
+        }
+
+        return Timeout;
+      };
+
+      document
+        .querySelector("input")
+        .addEventListener("keyup", Debouncing(getData, 500));
+    </script>
+
+    <script>
+      // Throttling..
+
+      const Throttle = (fun, timer) => {
+        return function () {
+          document.querySelector("button").disabled = true;
+
+          setTimeout(() => {
+            fun();
+          }, timer);
+        };
+      };
+
+      document.querySelector("button").addEventListener(
+        "click",
+        Throttle(() => {
+          document.querySelector("button").disabled = false;
+          console.log("Called", count++);
+        }, 1000)
+      );
+    </script>
+  </body>
+</html>

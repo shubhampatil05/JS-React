@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bitwise Operators</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>Bitwise Operators</h3>
+    <hr />
+    <script>
+      //AND in binary..
+
+      // 0 & 0  => 0
+      // 0 & 1  => 0
+      // 1 & 0  => 0
+      // 1 & 1  => 1
+
+      // OR in binary..
+
+      // 0 | 0 => 0
+      // 0 | 1 => 1
+      // 1 | 0 => 1
+      // 1 | 1 => 1
+
+      //NOT in binary..
+      // ~ 0 => 1
+      // ~ 1 => 0
+
+      // XOR in binary..
+
+      // 0 | 0 => 0
+      // 0 | 1 => 1
+      // 1 | 0 => 1
+      // 1 | 1 => 0
+
+      let x = 10;
+      let y = 15;
+
+      document.write(`<h4>AND in binary</h4>`);
+
+      document.write(x & y);
+
+      document.write(`<hr>`);
+
+      document.write(`<h4>OR in binary</h4>`);
+
+      document.write(x | y);
+
+      document.write(`<hr>`);
+
+      document.write(`<h4>NOT in binary</h4>`);
+
+      document.write(~x);
+
+      document.write(`<hr>`);
+
+      document.write(`<h4>XOR in binary</h4>`);
+
+      document.write(x ^ y);
+
+      document.write(`<hr>`);
+
+      document.write(`<h4>Left Shift in binary</h4>`);
+
+      document.write(x << y); //x*(2^15) = 10*(2^15)
+
+      document.write(`<hr>`);
+
+      document.write(`<h4>Right Shift in binary</h4>`);
+
+      document.write(x >> y); //x/(2^15)  = 10/(2^15)
+
+      document.write(`<hr>`);
+    </script>
+  </body>
+</html>

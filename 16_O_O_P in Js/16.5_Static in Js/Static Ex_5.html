@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Static Method</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      //Static and non-static..
+
+      //Static method is called with Class and non-static method is called with object..
+
+      class One {
+        static display() {
+          return "Static method is called";
+        }
+
+        Show() {
+          return "Non-static method";
+        }
+      }
+      document.write(One.display() + "<br>");
+
+      var x = new One().Show();
+      document.write(x);
+    </script>
+  </body>
+</html>

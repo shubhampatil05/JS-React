@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Remaining</title>
+    <style>
+      * {
+        text-align: center;
+        margin: 0;
+      }
+      body {
+        background-image: url("https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1600");
+      }
+      .Main {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      #Remain {
+        margin-top: 25px;
+        margin-bottom: 15px;
+        font-size: 20px;
+      }
+
+      #Text {
+        border-radius: 20px;
+        box-shadow: 5px 3px 2px rgb(71, 88, 71);
+        font-weight: bold;
+        font-style: italic;
+        background-color: cornsilk;
+      }
+      #Text:focus {
+        border-color: coral;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body onkeyup="Fire()">
+    <div class="Main">
+      <textarea id="Text" rows="12" cols="50" maxlength="100"></textarea>
+
+      <h4 id="Remain"><span id="Res"></span></h4>
+      <h4 id="Message"></h4>
+    </div>
+
+    <script>
+      function Fire() {
+        let TextArea = document.getElementById("Text").value;
+
+        let RemainLetter = document.getElementById("Remain");
+
+        let Count = 100;
+
+        let Length = TextArea.length;
+
+        var Remain = Count - Length;
+
+        if (Remain >= 0) {
+          RemainLetter.innerText = "Remaining Letter" + " : " + Remain;
+        } else if (Remain < 0) {
+          document.getElementById("Text").disabled = true;
+        }
+      }
+    </script>
+  </body>
+</html>

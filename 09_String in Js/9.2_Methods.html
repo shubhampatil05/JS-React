@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Methods</title>
+  </head>
+  <body>
+    <script>
+      // String Methods..
+
+      // 1.charAt()
+      // It provides the char value present at the specified index.
+
+      let str_1 = "Apple,Grapes,Orange";
+      console.log(str_1.charAt(4));
+
+      // 2.charCodeAt()
+      // It provides the Unicode value of a character present at the specified index.
+
+      console.log(str_1.charCodeAt(7));
+
+      // 3.concat()
+      // It provides a combination of two or more strings.
+
+      let str_2 = "Banana,Mango,Kiwi";
+
+      let str_3 = str_1.concat(",", str_2);
+      console.log(str_3);
+
+      // 4.indexOf()
+      // It provides the position of a char value present in the given string.
+
+      console.log(str_3.indexOf("Banana"));
+
+      // 5.lastIndexOf()
+      // It provides the position of a char value present in the given string by searching a character from the last position.
+
+      let str_4 = "A,B,C,D,E,F,A,D,E,F";
+
+      console.log(str_4.lastIndexOf("A"));
+
+      // 6.search()
+      // It searches a specified regular expression in a given string and returns its position if a match occurs.
+
+      console.log(str_4.search("F"));
+
+      // 7.match()
+      // It searches a specified regular expression in a given string and returns that regular expression if a match occurs.
+
+      console.log(str_3.match("Orange"));
+
+      // 8.replace()
+      // It replaces a given string with the specified replacement.
+
+      let str_6 = "Mouse,Keyboard,Charger";
+
+      console.log(str_6);
+
+      let str_7 = str_6.replace("Charger", "Hard Disk");
+
+      console.log(str_7);
+
+      // 9.substr(start,length)
+      // It is used to extract the part of the given string on the basis of the specified starting position and length.
+
+      let str_8 = "ThisIsARandomText";
+
+      console.log(str_8.substr(5, 9));
+
+      // 10.substring(start,end)
+      // It is used to fetch the part of the given string on the basis of the specified index.
+
+      console.log(str_8.substring(5, 9));
+
+      // 11.slice()
+      // It is used to fetch the part of the given string. It allows us to assign positive as well negative index.
+
+      console.log(str_8.slice(5, 9));
+
+      console.log(str_8.slice(-9, -3));
+
+      // 12.tolowerCase()
+      // It converts the given string into lowercase letter.
+
+      console.log(str_1.toLowerCase());
+
+      // 13.toLocalLowerCase()
+      // The toLocaleLowerCase() method returns the value of the string converted to lower case according to any locale-specific case mappings.
+
+      console.log(str_1.toLocaleLowerCase());
+
+      // 14.toUpperCase()
+      // It converts the given string into uppercase letter.
+
+      console.log(str_1.toUpperCase());
+
+      // 15.toLocaleUppercase()
+      // The toLocaleUpperCase() method does not change the original string. The toLocaleUpperCase() returns the same result as toUpperCase() , except for locales that conflict with the regular Unicode case mappings.
+
+      console.log(str_1.toLocaleUpperCase());
+
+      // 16.toString()
+      // It provides a string representing the particular object
+
+      let array = [1, 2, 3, 4, 5];
+      console.log(array);
+      console.log(array.toString());
+
+      // 17.valueOf()
+      // It provides the primitive value of string object.
+
+      console.log(str_8.valueOf());
+
+      // 18.split();
+
+      let str_9 = "String Converted Into Array";
+
+      let toArray = str_9.split("");
+
+      console.log(toArray);
+
+      // 19.length()
+      // It returns the length of specified string.
+
+      console.log(str_1.length);
+
+      // 20.startsWith()
+      //
+      // The startsWith() method returns true if a string ends with a specified string.
+
+      let Check = "Random";
+
+      console.log(Check.startsWith("R"));
+
+      // 21.endsWith()
+      // The endsWith() method returns true if a string ends with a specified string.
+
+      console.log(Check.endsWith("g"));
+
+      // 22.trim()
+      // It trims the white space from the left and right side of the string.
+
+      let WhiteSpace = "     Space Around This Text     ";
+
+      console.log(WhiteSpace.length);
+
+      let NoSpace = WhiteSpace.trim();
+
+      console.log(NoSpace.length);
+    </script>
+  </body>
+</html>

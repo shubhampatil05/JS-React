@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM CSS</title>
+  </head>
+
+  <body>
+    <p id="Para">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium
+      eaque ea optio! Saepe culpa repudiandae non esse magnam ea laborum.
+    </p>
+
+    <script>
+      document.body.style.background = "black";
+      document.body.style.color = "white";
+      document.body.style.textAlign = "center";
+
+      // The HTML DOM allows JavaScript to change the style of HTML elements.
+
+      // Changing HTML Style..
+
+      document.body.style.background = "black";
+      document.body.style.color = "white";
+      document.body.style.textAlign = "center";
+
+      document.getElementById("Para").style.color = "orange";
+      document.getElementById("Para").style.fontSize = "17px";
+
+      // Using Events..
+
+      function Change() {
+        document.body.style.background = "greenyellow";
+        document.getElementById("Para").innerHTML =
+          "Background get changed coz you hit on the button";
+        document.getElementById("Para").style.color = "black";
+      }
+    </script>
+
+    <input type="button" value="Hit" onclick="Change()" />
+  </body>
+</html>

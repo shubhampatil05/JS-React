@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <p id="one">Lorem ipsum dolor sit amet consectetur <b>adipisicing</b> elit. Labore, laudantium.</p>
+
+    <input type="text" id="Input"><br><br>
+    <button id="text">Set Text</button>
+    <button id="HTML">Set HTML</button>
+    <button id="Value">Set Value</button>
+    <hr>
+
+
+    <script>
+
+        $(function () {
+
+
+
+            $('#text').click(function () {
+
+                $('#one').text('Hey!!')
+            })
+
+            $('#HTML').click(function () {
+
+                $('#one').html('Welcome');
+            })
+            $('#Value').click(function () {
+
+                $('#Input').val('Shubham Patil')
+            })
+
+        })
+
+        //--------------------------------------------
+
+
+        //A Callback Function for text(), html(), and val()
+
+        $(function () {
+
+            $('#btn1').click(function () {
+
+
+                $('#para1').text(function (i, orgText) {
+
+
+                    return 'Old Text :' + orgText + 'New Text : Hello World'
+
+                })
+
+            })
+
+        })
+
+
+
+
+    </script>
+
+    <p id="Para1">Lorem ipsum dolor sit amet.</p>
+    <button id="btn1">Click</button>
+</body>
+
+</html>

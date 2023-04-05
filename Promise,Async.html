@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CallBacks,Promises,Async Await</title>
+  </head>
+  <body>
+    <script>
+      const Data = [
+        { name: "shubham", age: 25, profession: "developer" },
+        { name: "ankur", age: 27, profession: "developer" },
+        { name: "virag", age: 29, profession: "developer" },
+      ];
+
+      // Using Callback Function
+
+      // const getData = (a)=>{
+
+      //   setTimeout(()=>{
+
+      //    a.map((item)=>{
+
+      //   console.log(item.name)
+
+      //   })
+
+      //   },1000)
+
+      // }
+
+      // const update = (fn,callBack)=>{
+
+      //   setTimeout(()=>{
+
+      //     Data.push(fn)
+      //     console.log("Data Pushed")
+      //     callBack(Data)
+
+      //   },2000)
+
+      // }
+
+      // update({name:"krishna",age:28,profession:"developer"},getData)
+
+      //--------------------------------------------------------
+
+      // Using Promises
+
+      // function getData(a){
+
+      //     setTimeout(()=>{
+
+      //       a.map((item)=>{
+
+      //         console.log(item.name)
+
+      //       })
+
+      //     },1000)
+
+      // }
+
+      // function updateData(add){
+
+      //   return new Promise((res,rej)=>{
+
+      //     setTimeout(()=>{
+
+      //       Data.push(add)
+      //       res()
+      //     },2000)
+
+      //   })
+
+      // }
+      // updateData({name:"krishna",age:28,profession:"developer"}).then(()=>getData(Data))
+
+      //--------------------------------------------------------
+
+      // Async Await
+
+      //   const getData = async (a) => {
+      //     await a.map((item) => {
+      //       console.log(item.name);
+      //     });
+      //   };
+
+      //   function updateData(add, callBack) {
+      //     setTimeout(() => {
+      //       Data.push(add);
+      //       console.log("Pushed");
+      //       getData(Data);
+      //     }, 2000);
+      //   }
+
+      //   updateData({ name: "krishna", age: 28, profession: "developer" });
+    </script>
+  </body>
+</html>

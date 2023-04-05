@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementById</title>
+    <style>
+        * {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function ShowName() {
+            var Name = document.getElementById('Name_1').value;
+            alert('Your Name : ' + Name);
+        };
+
+
+        function ShowEmail() {
+            var Email = document.getElementById('Email_1').value;
+            alert('Your Email : ' + Email);
+        };
+
+        function ShowNumber() {
+            var Number = document.getElementById('Number_1').value;
+            alert('Your Number : ' + Number);
+
+        };
+
+    </script>
+
+    <form>
+
+        Name : <input type="text" placeholder=" Your Name" id="Name_1">
+        <hr>
+
+        <button type="button" value="MyName" onclick="ShowName()">View Name</button>
+
+        <br>
+        <hr>
+        <br>
+
+
+
+
+
+        Email : <input type="text" placeholder="Email" id="Email_1">
+        <hr>
+
+        <button type="button" Value="MyEmail" onclick="ShowEmail()">View Email</button>
+        <br>
+        <hr>
+        <br>
+
+
+
+
+
+        Tel Number : <input type="number" placeholder="Number" id="Number_1">
+        <hr>
+        <button type="button" value="MyNumber" onclick="ShowNumber()">View Num</button>
+
+
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <p id="result"></p>
+  <p id="show"></p>
+  <p id="know"></p>
+
+  <body>
+    <script>
+      // function display(demo){
+
+      // document.getElementById('result').innerHTML=demo;
+
+      // };
+      // let promise =new Promise(function(Resolve,Reject){
+
+      //     let x=10;
+
+      // if(x==10){
+      //     Resolve('Correct');
+      // }else{
+      //     Reject('Error');
+      // }
+
+      // })
+      // promise.then(
+      //     function(value){display(value) ;},
+      //     function(Error){display(Error) ;}
+      // )
+
+      // document.write(`<hr>`);
+
+      // function display(one){
+      //     document.getElementById('show').innerHTML=one;
+      // };
+
+      // var promise=new Promise(function(Resolve,Reject){
+
+      // let z='Shubham';
+
+      // if(z.length=6){
+      //     Resolve('True');
+      // }else{
+      //     Reject('Error')
+      // }
+
+      // })
+
+      // promise.then(
+
+      // function(value){display(value);},
+      // function(Error){display(Error);}
+      // )
+
+      function display(demo) {
+        document.getElementById("know").innerHTML = demo;
+      }
+
+      var promise = new Promise(function (Resolve, Reject) {
+        var name = 10;
+
+        if (name == 10) {
+          Resolve("True");
+        } else {
+          Reject("Error");
+        }
+      });
+      promise.then(
+        function (value) {
+          display(value);
+        },
+        function (Error) {
+          display(Error);
+        }
+      );
+
+      //Example..
+
+      function display(demo) {
+        //Producing Code..
+
+        document.getElementById("result").innerHTML = demo;
+      }
+
+      //-------------------------------------------------------
+
+      new Promise((Resolve, Reject) => {
+        let value = 100;
+
+        if (value == 100) {
+          Resolve("True");
+        } else {
+          Reject("Error");
+        }
+      }).then(
+        // Consuming Code..
+        (value) => {
+          display(value);
+        }
+      ),
+        (error) => {
+          display(error);
+        };
+
+      //.then is for Resolve Part..
+      //.catch is for Rejected Part..
+    </script>
+  </body>
+</html>

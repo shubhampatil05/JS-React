@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Assignment</title>
+  </head>
+
+  <body>
+    <script>
+      const characters = [
+        {
+          name: "Tarak Mehta",
+          height: "172",
+          mass: "77",
+          eyeColor: "brown",
+          gender: "male",
+        },
+        {
+          name: "Jetha Lal",
+          height: "145",
+          mass: "136",
+          eyeColor: "black",
+          gender: "male",
+        },
+        {
+          name: "Babita ji",
+          height: "150",
+          mass: "49",
+          eyeColor: "grey",
+          gender: "female",
+        },
+
+        {
+          name: "Krishna Iyer",
+          height: "168",
+          mass: "84",
+          eyeColor: "black",
+          gender: "male",
+        },
+      ];
+
+      // Q1)..
+      // Get an array of all names..
+
+      let GetName = characters.map((value) => {
+        return value.name;
+      });
+
+      console.log(GetName);
+
+      // Q2)..
+      // Get an array of Objects with name and height properties
+
+      let GetArrayObj = characters.map((value) => {
+        return {
+          name: value.name,
+          height: value.height,
+        };
+      });
+
+      console.dir(GetArrayObj);
+
+      // Q3)..
+      //Get the total height of characters..
+
+      let totalHeight = characters.reduce((Pre, Next) => {
+        return Pre + parseInt(Next.height);
+      }, 0);
+
+      console.log(totalHeight);
+
+      // var sum = 0;
+
+      // for (i = 0; i < characters.length; i++) {
+
+      //     var getHeight = characters[i].height;
+      //     var toNum = parseInt(getHeight);
+
+      //     sum += toNum;
+
+      // }
+
+      // console.log(`Total Height Of Characters ${sum}`);
+
+      // Q4)..
+      // Get characters with mass greather  than 100..
+
+      var getCharacter = characters.filter(function (value) {
+        return value.mass > 100;
+      });
+      console.dir(getCharacter);
+
+      // // Q5)..
+      // // Get all male characters..
+
+      let getMale = characters.filter((value) => {
+        if (value.gender == "male") {
+          return characters;
+        }
+      });
+
+      console.dir(getMale);
+
+      // // Q6)..
+      // //Sort the gender..
+
+      let SortGender = characters.sort((x, y) => {
+        let One = x.gender.toUpperCase();
+        let Two = y.gender.toUpperCase();
+
+        if (One > Two) {
+          return 1;
+        }
+        if (One < Two) {
+          return -1;
+        }
+        return 0;
+      });
+      console.dir(SortGender);
+
+      // Q7)
+      // Does every characters has mass more then 40..
+
+      let HasMoreThan40 = characters.every((value) => {
+        return value.mass > 40;
+      });
+
+      console.log(HasMoreThan40);
+
+      // Q8)..
+      // Does every character has blue eye..
+
+      let HasBlueEyes = characters.every((value) => {
+        return value.eyeColor == "blue";
+      });
+
+      console.log(HasBlueEyes);
+
+      let CheckMale = characters.some((value) => {
+        return value.gender == "male";
+      });
+      console.dir(CheckMale);
+
+      // Q10..
+      // Is there at least one character taller than 200..
+
+      var Check = characters.find(function (get) {
+        if (get.height > 200) {
+          console.log("Yes,There Is A Character taller than 200");
+        } else {
+          console.log("No,There Is No Character taller than 200");
+        }
+      });
+    </script>
+  </body>
+</html>

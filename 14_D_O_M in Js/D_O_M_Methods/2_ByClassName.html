@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementByClassName</title>
+    <style>
+        * {
+            text-align: center;
+        }
+    </style>
+</head>
+
+
+
+<body>
+
+    <div class="one">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, reiciendis?
+    </div>
+    <div class="one">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, reiciendis?
+    </div>
+    <div class="one">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, reiciendis?
+    </div>
+
+    <script>
+
+        var x = document.getElementsByClassName('one');
+
+
+        //first way..
+
+
+        // for (value of x) {
+        //     alert(value.innerText);
+        // };
+
+
+        //2nd way..
+
+        alert(x[0].innerText);
+        alert(x[1].innerText);
+        alert(x[2].innerText);
+
+    </script>
+
+
+</body>
+
+</html>

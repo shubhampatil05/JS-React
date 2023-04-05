@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON.stringify()</title>
+  </head>
+
+  <body>
+    <script>
+      // JSON.stringify()..
+
+      //syntax
+      // JSON.stringify(obj,replacer,space)..
+
+      // Object
+
+      let obj = { Name: "Shubham", Age: 24 };
+      let str1 = JSON.stringify(obj);
+      console.log(str1);
+      // console.log(obj)
+
+      //Array..
+
+      // it is also possible to stringify array's..
+
+      let arr = ["Array", "Object", "Function"];
+
+      let str2 = JSON.stringify(arr);
+      console.log(str2);
+
+      // stringify dates..
+
+      let obj4 = { TodayDate: new Date() };
+
+      let str4 = JSON.stringify(obj4);
+
+      console.log(str4);
+
+      // stringify functions..
+
+      let fun = {
+        Age: function () {
+          return 27;
+        },
+      };
+
+      let str5 = JSON.stringify(fun);
+      console.log(str5);
+
+      // JSON.stringify will remove any function from object.
+
+      // convert functions into strings to keep then in JSON Object..
+
+      let obj5 = {
+        Name: "Virag",
+        Marks: function () {
+          return 87;
+        },
+      };
+
+      obj5.Marks = obj5.Marks.toString();
+
+      let toStr = JSON.stringify(obj5);
+
+      console.log(toStr);
+
+      // obj6 = obj5.Marks().toString();
+      // let toStr = JSON.stringify(obj6);
+
+      // console.log(toStr);
+
+      //-------------------------------------------
+
+      // return any important value as UppperCase()..
+
+      let x = { Name: "xyz", city: "London" };
+
+      let strvalue = JSON.stringify(x, function (key, value) {
+        if (key == "city") {
+          return value.toUpperCase();
+        } else {
+          return value;
+        }
+      });
+      console.log(strvalue);
+
+      // insert a 10 space charecter for each white space..
+
+      let y = { Name: "abc", age: 27, city: "Delhi" };
+
+      let ForSpace = JSON.stringify(y, null, 10);
+      console.log(ForSpace);
+    </script>
+  </body>
+</html>

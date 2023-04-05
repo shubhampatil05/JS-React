@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Method</title>
+  </head>
+
+  <body>
+    <script>
+      //Object.assign()..
+
+      // We can assign values to object..
+
+      console.log(`1) Object.assign()`);
+
+      var object1 = {
+        a: 1,
+        b: 2,
+        c: 3,
+      };
+      var object2 = Object.assign({ d: 4, f: 5 }, object1);
+      console.log(object2);
+
+      // We can convert array into object
+
+      let Arry = ["One", "Two", "Three"];
+
+      let toObj = Object.assign({}, Arry);
+
+      console.log(toObj);
+
+      //------------------------------------------------------------------------
+    </script>
+
+    <script>
+      //Object.create()..
+
+      // Used to create new Object
+
+      console.log(`2) Object.create()`);
+
+      function Fruit() {
+        this.Fruit = "Apple";
+      }
+
+      function Res() {
+        Fruit.call(this.Fruit);
+      }
+
+      Res.prototype = Object.create(Fruit.prototype);
+
+      console.log(new Res());
+
+      //----------------------------------------------------------------------------
+    </script>
+
+    <script>
+      //Object.freeze()..
+
+      // It freezes the object and prevent from new peoperties being added and prevent from delete existing properties and cannot change existing properties
+
+      console.log(`3) Object.freeze()`);
+
+      var person = {
+        name: "Shubham",
+        Age: 24,
+      };
+
+      // console.log(Object.freeze(person)); we can use this also..
+      person1 = Object.freeze(person);
+      console.log(person1);
+      person.Age = 25;
+
+      console.log(person.Age);
+
+      //----------------------------------------------------------------------------
+    </script>
+
+    <script>
+      //Object.is()..
+
+      // It compares the properties of an Object return result in true or false..
+
+      console.log(`4) Object.is()`);
+
+      const object3 = {
+        Age: 24,
+        Name: "Zendaya",
+      };
+
+      const object4 = {
+        Age: 25,
+      };
+      console.log(Object.is(object3.Age, object4.Age));
+
+      //----------------------------------------------------------------------------
+    </script>
+
+    <script>
+      // it check the object is extisible or not that means check if we can add new properties or not ..
+
+      //Object.isExtensible()..
+      console.log(`5) Object.isExtensible()`);
+
+      var object5 = {};
+
+      console.log(Object.isExtensible(object5));
+
+      //----------------------------------------------------------------------------
+    </script>
+
+    <script>
+      //Object.isFrozen()..
+
+      // It check the object is freezed or not
+
+      console.log(`6) Object.isFrozen()`);
+      var object6 = {
+        age: 20,
+      };
+      console.log(Object.isFrozen(object6));
+
+      //----------------------------------------------------------------------------
+    </script>
+
+    <script>
+      //Object.seal()..
+
+      // It seal the object that means prevents from delete proprties and new Properties being added, but not prevents the changes of existing properties
+
+      console.log(`7) Object.seal()`);
+
+      var object7 = {
+        Name: "Shubham",
+      };
+      var object8 = Object.seal(object7);
+      object7.lName = "Patil";
+      console.log(object8);
+
+      //----------------------------------------------------------------------------
+    </script>
+
+    <script>
+      //Object.isSealed()..
+
+      // It Check the Object is sealed or not
+
+      console.log(`8) Object.isSealed()`);
+
+      var object9 = {
+        Name: "Jenny",
+      };
+
+      //----------------------------------------------------------------------------
+    </script>
+
+    <script>
+      console.log(Object.isSealed(object9));
+
+      //Object.values()..
+
+      // It returns a values in the form of array
+
+      console.log(`9) Object.values()`);
+
+      var object10 = {
+        a: 10,
+        b: 20,
+        c: 30,
+      };
+      console.log(Object.values(object10));
+
+      //----------------------------------------------------------------------------
+    </script>
+
+    <script>
+      // It returns a keys in the form of array
+
+      console.log(`10) Object.keys()`);
+
+      var object10 = {
+        a: 10,
+        b: 20,
+        c: 30,
+      };
+      console.log(Object.keys(object10));
+
+      //----------------------------------------------------------------------------
+    </script>
+
+    <script>
+      Object.entries;
+
+      // to convert Object into array
+      console.log(`11) Object.entries()`);
+
+      let Obj = { Name: "Jenny", Age: 27, City: "London" };
+
+      let ToArry = Object.entries(Obj);
+
+      console.dir(ToArry);
+    </script>
+  </body>
+</html>

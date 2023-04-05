@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>throw</title>
+    <style>
+        * {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    Enter number between 1-10
+    <input type="text" id="one">
+    <button type="button" onclick="OnClick()">Text</button>
+    <h4 id="two"></h4>
+
+    <script>
+
+        function OnClick() {
+            var message = document.getElementById('two');
+            message.innerHTML = '';
+
+            var x = document.getElementById('one').value;
+
+            try {
+
+                if (x == '') throw ' is Empty ';
+                if (isNaN(x)) throw ' is not a number '
+                if (x < 1) throw ' Number should be greater than 1t '
+                if (x > 10) throw ' Number should be less than 10 '
+            } catch (e) {
+                message.innerHTML = " Input " + e;
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

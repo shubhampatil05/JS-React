@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototype</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      function Student(Name, ClassName, Specialization) {
+        this.Name = Name;
+        this.ClassName = ClassName;
+        this.Specialization = Specialization;
+      }
+
+      Student.prototype.City = "Pune";
+
+      var student_1 = new Student("Shubham Patil", "Brainworks", "Developer");
+      var student_2 = new Student("Virag Jain", "Brainworks", "Developer");
+
+      document.write(
+        student_1.Name +
+          " " +
+          student_1.ClassName +
+          " " +
+          student_1.Specialization +
+          " " +
+          student_1.City
+      );
+
+      document.write(`<hr>`);
+
+      document.write(
+        student_2.Name +
+          " " +
+          student_2.ClassName +
+          " " +
+          student_2.Specialization +
+          " " +
+          student_1.City
+      );
+    </script>
+  </body>
+</html>

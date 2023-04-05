@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Event</title>
+
+    <style>
+        * {
+            text-align: center;
+            background: black;
+            color: white;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        input {
+            padding: 3px 5px 3px 5px;
+        }
+
+        input {
+
+            border-radius: 7px;
+        }
+
+        input[type='button'] {
+
+            border-radius: 6px;
+        }
+
+        input[type='text']:focus {
+
+            border: 1px solid green;
+            background: white;
+            width: 250px;
+            border-radius: 10px;
+            color: black;
+        }
+
+        input[type='password']:focus {
+
+            border: 1px solid red;
+            background: white;
+            width: 250px;
+            border-radius: 10px;
+            color: black;
+
+        }
+
+        input[type='submit'] {
+
+            border-radius: 6px;
+            background-color: rgb(64, 104, 104);
+
+        }
+
+        input[type='button'] {
+
+            border-radius: 6px;
+            background-color: rgb(64, 104, 104);
+
+        }
+
+        h4 {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h3>Log In Page</h3>
+
+
+    <form name="form_1" onsubmit="FormSubmit()">
+
+        <h4>UserName</h4>
+        <input type="text" placeholder="Enter Your Email" id="inputName">
+        <h4>Password</h4>
+        <input type="password" placeholder="Enter Your Password" id="inputPassword">
+        <br><br>
+
+        <input type="submit" value="LogIn">
+        <input type="button" value="SignUp" onclick="Create()">
+
+    </form>
+
+    <script>
+
+        function FormSubmit() {
+
+
+            let inputName = document.getElementById('inputName').value;
+            let inputPassword = document.getElementById('inputPassword').value;
+
+
+            if (inputName.length > 10 && inputPassword.length >= 4) {
+
+                // alert('You Are Logged In Succesfully')
+                window.location.assign("https://www.learnvern.com/")
+
+            } else {
+
+                alert('Incorrect Email or Password')
+
+            }
+        }
+
+        function Create() {
+
+            window.location = 'SignUp.html'
+
+        }
+
+    </script>
+
+</body>
+
+</html>

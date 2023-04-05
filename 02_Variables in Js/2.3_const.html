@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js</title>
+    <style>
+      * {
+        text-align: center;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>const Variable</h3>
+
+    <script>
+      // A variable declared with const..cannot be re-declared or re-assigned..
+
+      const x = 1099;
+
+      document.write(x);
+
+      document.write(`<hr>`);
+
+      //const works inside and outside block{}..
+
+      //A variable declared in block{}..can be re-declared and re-assigned outsite the block{}..
+
+      {
+        const y = 150;
+      }
+      const y = 250;
+
+      document.write(y);
+    </script>
+  </body>
+</html>

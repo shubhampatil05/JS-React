@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bind function</title>
+    <style>
+        * {
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+
+
+        //bind() function..
+
+        //Example 1..
+
+
+        var person_1 = {
+            Name: 'Shubham patil',
+
+            GetName: function () {
+                return this.Name;
+            }
+
+        };
+
+        var person_2 = {
+            Name: 'shankar padawal',
+
+
+            Getname: function () {
+                return this.Name;
+            }
+        };
+
+        var One_1 = person_1.GetName.bind(person_1);
+
+        document.write(One_1());
+
+        document.write(`<hr>`);
+
+        //------------------------------------------------------------------------
+
+
+        //Example 2..
+
+
+        var person_3 = {
+            Name: "Eoin Morgan",
+            GetName: function () {
+                return this.Name;
+            }
+        };
+
+
+        var person_4 = {
+
+            Name: 'Tony Stark',
+            GetName: function () {
+                return this.Name;
+            }
+        };
+
+        var One_2 = person_3.GetName.bind(person_3);
+
+
+        document.write(One_2());
+
+
+        document.write(`<hr>`);
+
+
+        //------------------------------------------------------------------------
+
+
+        //Example 3..
+
+
+        var Phone1 = {
+            price: '20000 rupees',
+            GetPrice: function () {
+                return this.price;
+            }
+
+        };
+        var Phone2 = {
+            price: '30000 rupees',
+            GetPrice: function () {
+                return this.price;
+            }
+
+        };
+
+
+        var One_3 = Phone1.GetPrice.bind(Phone2);
+        document.write(One_3());
+
+
+        document.write(`<hr>`);
+        //------------------------------------------------------------------------
+
+
+        //Example 4..
+
+
+        var player_1 = {
+            Name: 'Jason Roy',
+
+            GetName: function () {
+                return this.Name;
+            }
+        };
+
+        var player_2 = {
+            Name: 'Alex Hales',
+
+            GetName: function () {
+                return this.Name;
+            }
+        };
+
+
+        One_4 = player_1.GetName.bind(player_1);
+
+        document.write(One_4());
+
+    </script>
+</body>
+
+</html>

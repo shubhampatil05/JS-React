@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+  </head>
+
+  <body>
+    <h4 id="result"></h4>
+
+    <!-- <input type="text" id="demo">
+    <button type="button" onclick="Display()">Click</button> -->
+
+    <p id="para"></p>
+
+    <script>
+      // // Ex_1..
+
+      function display(demo) {
+        //Producing Code..
+
+        document.getElementById("result").innerHTML = demo;
+      }
+
+      new Promise((Resolve, Reject) => {
+        let value = 100;
+
+        if (value == 100) {
+          Resolve("True");
+        } else {
+          Reject("Error");
+        }
+      }).then(
+        // Consuming Code..
+        (value) => {
+          display(value);
+        }
+      ),
+        (error) => {
+          display(error);
+        };
+
+      // Ex_2..
+
+      new Promise((Resolve, Reject) => {
+        let Name = "Shubham";
+        if (Name.length == 7) {
+          Resolve("True");
+        } else {
+          Reject("Error");
+        }
+      })
+        .then((value) => {
+          console.log(value);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+      //.then is for Resolve Part..
+      //.catch is for Rejected Part..
+
+      // Promise using Timeout..
+
+      new Promise((Resolve, Reject) => {
+        setTimeout(() => {
+          let x = "Using timeout function inside promise";
+
+          Resolve(x);
+        }, 2000);
+      }).then((check) => {
+        console.log(check);
+      });
+
+      // Promise Chaining..
+
+      new Promise((Resolve, Reject) => {
+        setTimeout(() => {
+          Resolve(5);
+        }, 500);
+      })
+        .then((add) => {
+          console.log(add);
+          return add + add;
+        })
+        .then((add) => {
+          console.log(add);
+          return add + add;
+        })
+        .then((add) => {
+          console.log(add);
+          return add + add;
+        })
+        .then((add) => {
+          console.log(add);
+          return add + add;
+        })
+        .then((add) => {
+          console.log(add);
+          return add + add;
+        })
+        .then((add) => {
+          console.log(add);
+          return add + add;
+        })
+        .then((add) => {
+          console.log(add);
+          return add + add;
+        })
+        .then((add) => {
+          console.log(add);
+          return add + add;
+        })
+        .then((add) => {
+          console.log(add);
+        });
+
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("3");
+        }, 700);
+      })
+        .then((multiply) => {
+          console.log(multiply);
+          return multiply * 5;
+        })
+        .then((multiply) => {
+          console.log(multiply);
+          return multiply * 10;
+        })
+        .then((multiply) => {
+          console.log(multiply);
+          return multiply * 10;
+        })
+        .then((multiply) => {
+          console.log(multiply);
+        });
+
+      // Error Handling in promise..
+
+      function getUserById(id) {
+        if (typeof id != "number") {
+          throw "Invalid id Number";
+        }
+
+        return new Promise((resolve, reject) => {
+          resolve({
+            id: id,
+            user: "Admin",
+          });
+        });
+      }
+      getUserById(23)
+        .then((value) => {
+          console.log(value.user);
+        })
+        .catch((error) => {
+          console.log("error");
+        });
+
+      // Error Handling in promise..
+
+      function Display(value) {
+        if (isNaN(value)) {
+          throw "Error,Enter Valid Number..";
+        }
+
+        return new Promise((Resolve, Reject) => {
+          Resolve({
+            UserId: 3282,
+          });
+        });
+      }
+      try {
+        Display(123).then((confirm) => {
+          console.log(confirm.UserId);
+        });
+      } catch (error) {
+        console.log(" Caught By try/catch " + error);
+      }
+      //-----------------------------------------------------------------------
+
+      function Confirm(Password) {
+        if (Password === 2282) {
+          return new Promise((resolve, reject) => {
+            resolve([
+              {
+                Info: "You Are Ready To Log In",
+              },
+            ]);
+          });
+        } else {
+          throw "Invalid Password";
+        }
+      }
+
+      Confirm(2282)
+        .then(
+          (value) =>
+            (document.getElementById("two").innerHTML = JSON.stringify(value))
+        )
+        .catch((error) => {
+          document.getElementById("two").innerHTML = error;
+        });
+
+      // Error Inside Promise..
+
+      // Ex_1..
+
+      let userAuthirised = false;
+
+      function ErrorInPromise() {
+        if (!userAuthirised) {
+          throw "User Is Not Authorised";
+        }
+        return new Promise((res, rej) => {
+          res({
+            Authentication: "User Is Authorised",
+          });
+        });
+      }
+      try {
+        ErrorInPromise().then((value) => {
+          console.log(value.Authentication);
+        });
+      } catch (error) {
+        console.log(`Caught By Try/Catch ${error}`);
+      }
+
+      // Ex_2..
+
+      const userDefined = true;
+
+      function FindError() {
+        if (!userDefined) {
+          throw "User Is Not Defined";
+        }
+
+        return new Promise((res, rej) => {
+          res({
+            Authentication: "User Is Defined",
+          });
+        });
+      }
+
+      try {
+        FindError()
+          .then((user) => {
+            console.log(user.Authentication);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      } catch (error) {
+        console.log(`Caught By try/catch ${error}`);
+      }
+
+      // Promise API..
+
+      //1)..Promise all..
+
+      Promise.all([
+        // It return all the promises..
+
+        new Promise((resolve) =>
+          setTimeout(resolve("First Setteled Promise"), 3000)
+        ),
+        new Promise((resolve) =>
+          setTimeout(resolve("Second Setteled Promise"), 2000)
+        ),
+        new Promise((reject) =>
+          setTimeout(reject(new Error("Its an Error")), 1000)
+        ),
+      ]).then(console.log);
+
+      //2)..Promise race..
+
+      Promise.race([
+        // It return first prommise..
+
+        new Promise((reject) =>
+          setTimeout(reject(new Error("Its an Error")), 1000)
+        ),
+        new Promise((resolve) =>
+          setTimeout(resolve("First Setteled Promise"), 2000)
+        ),
+        new Promise((resolve) =>
+          setTimeout(resolve("Second Setteled Promise"), 3000)
+        ),
+      ]).then(console.log);
+
+      //3)Promise.any..
+
+      Promise.any([
+        // it returns first setteled  promise..
+
+        new Promise((resolve, reject) =>
+          setTimeout(reject(new Error("Its an Error")), 1000)
+        ),
+        new Promise((resolve, reject) =>
+          setTimeout(resolve("First Setteled Promise"), 2000)
+        ),
+        new Promise((resolve, reject) =>
+          setTimeout(resolve("Second Setteled Promise"), 3000)
+        ),
+      ]).then(console.log);
+
+      async function display() {
+        return "Async function";
+      }
+
+      display().then((value) => {
+        console.log(value);
+      });
+
+      async function Wait() {
+        let promise = new Promise((a, b) => {
+          setTimeout(() => {
+            a("Await function");
+          }, 3000);
+        });
+        console.log(await promise);
+      }
+      Wait();
+
+      // await..
+
+      // async function wait() {
+
+      //     let promise = new Promise((Resolve, Reject) => {
+
+      //         setTimeout(() => {
+
+      //             Resolve('Welcome')
+
+      //         }, 3000)
+      //     })
+
+      //     console.log(await promise);
+      // }
+
+      // wait();
+
+      try {
+        let a = [1, 2, 3, 4, 5];
+
+        console.log(a);
+        console.log(b);
+      } catch (error) {
+        console.log("Error" + " " + error.message);
+      }
+
+      // function Display() {
+
+      //     let Output_1 = document.getElementById('para');
+      //     Output_1.innerHTML = '';
+
+      //     let InputValue = document.getElementById('demo').value;
+
+      //     try {
+
+      //         if (InputValue == '') throw 'Is Empty';
+      //         if (isNaN(InputValue)) throw 'Is Not A Number';
+      //         if (InputValue > 10) throw 'Value Should Be Less Than 10';
+      //         if (InputValue < 0) throw 'Value Should Be Greater Than 0';
+
+      //     } catch (error) {
+
+      //         Output_1.innerHTML = 'Input' + ' ' + error;
+
+      //     }
+
+      // }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        * {
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <script>
+        //All the different visitors' actions that a web page can respond to are called events.
+
+
+
+        //1.click
+        //The function is executed when the user clicks on the HTML element.
+
+        $(function () {
+
+            $('#one').click(function () {
+
+
+                $(this).css('background-color', 'yellow')
+
+            })
+
+
+        })
+
+        //----------------------------------------
+
+
+        //2.dblkclick
+        //The function is executed when the user dblclicks on the HTML element.
+
+        $(function () {
+
+            $('#two').click(function () {
+
+
+                $(this).css('font-size', '20px');
+                $(this).css('background-color', 'blue');
+
+            })
+
+
+        })
+
+        //----------------------------------------
+
+
+        //3.MauseEnter
+        //The function is executed when the mouse pointer on the HTML element.
+
+        $(function () {
+
+            $('#three').mouseenter(function () {
+
+                alert('You entered mouse on the third para')
+
+            })
+
+
+        })
+
+        //----------------------------------------
+
+
+        //4.MauseLeave
+        //The function is executed when the mouse pointer leaves the HTML element.
+
+        $(function () {
+
+            $('#four').mouseleave(function () {
+
+                alert('You leave mouse on the fourth para')
+
+            })
+
+
+        })
+
+        //----------------------------------------
+
+
+        //5.MouseDown
+        //The function is executed, when the left, middle or right mouse button is pressed down, while the mouse is over the HTML element:
+
+
+        $(function () {
+
+            $('#five').mousedown(function () {
+
+                alert('You clicked  on the fifth para')
+
+            })
+
+
+        })
+
+        //----------------------------------------
+
+
+        //6.MouseUp
+        //The function is executed, when the left, middle or right mouse button is released, while the mouse is over the HTML element:
+
+
+        $(function () {
+
+            $('#six').mouseup(function () {
+
+                alert('You released  on the six para')
+
+            })
+
+
+        })
+
+        //----------------------------------------
+
+        //6.MouseUp
+        //The first function is executed when the mouse enters the HTML element, and the second function is executed when the mouse leaves the HTML element
+
+        $(document).ready(function () {
+            $("#seven").hover(function () {
+                alert("You entered para_7!");
+            },
+                function () {
+                    alert("You now leave para_7");
+                });
+        });
+
+
+        //----------------------------------------
+
+
+        $(document).ready(function () {
+
+
+            $("input").focus(function () {
+
+                $(this).css('background-color', 'lightgreen')
+
+            });
+
+            $("input").blur(function () {
+
+                $(this).css('background-color', 'lightblue')
+
+            })
+
+        })
+
+        //----------------------------------------
+
+
+        $(function () {
+
+            $("#eight").on({
+
+                mousedown: function () {
+
+                    $(this).css("background-color", 'yellow');
+
+                },
+
+                dblclick: function () {
+
+                    $(this).css("font-size", '20px');
+
+                },
+
+                mouseup: function () {
+
+                    $(this).css("display", "none");
+
+                },
+
+
+
+            })
+
+
+
+        })
+
+
+
+    </script>
+
+
+    <!--<p id="one">Click to see event</p>
+    <p id="two">DblClick to see event</p>
+    <p id="three">MouseEnter to see event</p>
+    <p id="four">MouseLeave to see event</p>
+    <p id="five">MouseDown to see event</p>
+    <p id="six">MouseUp to see event</p>
+     <p id="seven">Hover to see event</p> -->
+    <p id="eight">Multiple Events Using On()</p>
+
+    <!-- 
+    Name : <input type="text">
+    Email : <input type="text"> -->
+
+</body>
+
+</html>

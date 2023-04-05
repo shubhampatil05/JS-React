@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Higher Order function</title>
+  </head>
+
+  <body>
+    <script>
+      // /Basically, a function which takes another function as an argument or returns a function is known as a higher order function.
+
+      function questions(Name) {
+        if (Name == "Steve") {
+          return function (qn) {
+            console.log(`Explain ${qn}`);
+          };
+        }
+        if (Name == "David") {
+          return function (qn) {
+            console.log(`Explain ${qn}`);
+          };
+        }
+        if (Name == "Cameron") {
+          return function (qn) {
+            console.log(`Explain ${qn}`);
+          };
+        }
+      }
+
+      questions("Steve")("HTML");
+      questions("David")("CSS");
+      questions("Cameron")("javaScript");
+    </script>
+
+    <script>
+      //Filter Odd Number..
+      let Arry = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+      function FilterOddNumber() {
+        let FilterArray = [];
+
+        for (i = 0; i < Arry.length; i++) {
+          if (Arry[i] % 2 != 0) {
+            FilterArray.push(Arry[i]);
+          }
+        }
+        return FilterArray;
+      }
+
+      console.log(FilterOddNumber(Arry));
+
+      //----------------------------------------------
+
+      //Filter Even Number..
+
+      let arry = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+      function FilterEvenNumber() {
+        let FilterArray = [];
+
+        for (i = 0; i < arry.length; i++) {
+          if (Arry[i] % 2 == 0) {
+            FilterArray.push(Arry[i]);
+          }
+        }
+        return FilterArray;
+      }
+
+      console.log(FilterEvenNumber(arry));
+    </script>
+
+    <script>
+      //Higher Order Function
+
+      function Mul(One) {
+        return function (Two) {
+          return One * Two;
+        };
+      }
+
+      let MultiplyBy2 = Mul(2);
+
+      let Arr = [1, 2, 3, 4, 5];
+
+      console.log(Arr.map(MultiplyBy2));
+    </script>
+
+    //---------------------------------------------------------------------------
+
+    <script>
+      let radius = [5, 10, 15, 20, 25];
+
+      function FindArea(radius) {
+        return Math.PI * radius * radius;
+      }
+      function FindCircumfarance(radius) {
+        return 2 * Math.PI * radius;
+      }
+      function FindDiameter(radius) {
+        return 2 * radius;
+      }
+
+      function Calculate(arr, fun) {
+        let Result = [];
+
+        for (i = 0; i < arr.length; i++) {
+          Result.push(fun(arr[i]));
+        }
+        return Result;
+      }
+      console.log(Calculate(radius, FindArea));
+      console.log(Calculate(radius, FindCircumfarance));
+      console.log(Calculate(radius, FindDiameter));
+
+      console.log(radius.map(FindArea)); // Gives  output as calculaten function..
+
+      // to make our calculate function exactly like map()..
+
+      Array.prototype.calculate = function (fun) {
+        let res = [];
+        for (i = 0; i < this.length; i++) {
+          res.push(fun(this[i]));
+        }
+        return res;
+      };
+      console.log(radius.calculate(FindArea));
+    </script>
+  </body>
+</html>

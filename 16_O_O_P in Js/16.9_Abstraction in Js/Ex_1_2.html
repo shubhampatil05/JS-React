@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstraction</title>
+    <style>
+        * {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+
+
+        //An a bstraction is a way of hiding the implementation details and showing only the functionality to the users.In other words, it ignores the irrelevant details and shows only the required one.
+
+        // Points to remember.
+        // We cannot create an instance of Abstract Class.
+        // It reduces the duplication of code.
+
+
+        function Vehical() {
+
+            // this.VehicalName = VehicalName;
+
+            // throw new Error('You cannot create instance of an Abstract Class');
+
+        };
+        Vehical.prototype.display = function () {
+
+            return this.VehicalName;
+        }
+
+
+        function Bike(VehicalName) {
+            this.VehicalName = VehicalName;
+        }
+
+
+        Bike.prototype = Object.create(Vehical.prototype);
+
+        var bike = new Bike('Honda');
+
+        document.write(bike.display());
+
+
+
+        //To check it is a child of or not..
+
+        // document.write(bike instanceof Vehical);
+        // document.write(`<br>`);
+        // document.write(bike instanceof Bike);
+
+
+
+
+    </script>
+</body>
+
+</html>

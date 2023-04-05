@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      function OuterLayer() {
+        var a = 50;
+        var b = 60;
+        var c = a + b;
+
+        function InnerLayer() {
+          return c;
+        }
+        return InnerLayer();
+      }
+      document.write(OuterLayer());
+
+      document.write(`<hr>`);
+
+      //-----------------------------------------------------------------------------
+
+      function outerfunction() {
+        let a = 10;
+        let b = 6;
+        return function innerfunction() {
+          return a - b;
+        };
+      }
+      let result = outerfunction();
+      console.log(result());
+
+      function One() {
+        let OriginalPrice = 1099;
+        let DiscountedPrice = 699;
+        return function Two() {
+          return OriginalPrice - DiscountedPrice;
+        };
+      }
+      let Discount = One();
+      document.write(" You got discount of " + Discount() + " Rupees ");
+
+      document.write(`<hr>`);
+
+      //-----------------------------------------------------------------------------
+
+      function Add(x) {
+        return function (y) {
+          return x + y;
+        };
+      }
+
+      var FirstValue = Add(500);
+      var SecondValue = Add(700);
+
+      document.write(FirstValue(500) + "<br>");
+      document.write(SecondValue(500));
+
+      document.write(`<hr>`);
+
+      //-----------------------------------------------------------------------------
+
+      //Self-invoking Functions..
+
+      //Exmaple_1..
+
+      (function () {
+        document.write("Hello,This function is self invoked");
+      })();
+
+      document.write(`<br><br>`);
+
+      //Example_2..
+
+      (function () {
+        document.write("This is the second example of self invoked fuction");
+      })();
+
+      document.write(`<hr>`);
+
+      //-----------------------------------------------------------------------------
+
+      // Anonymous Functions..
+
+      //Example_1
+
+      const AnonymousFunction = function () {
+        document.write("This is Anonymous Function");
+      };
+
+      AnonymousFunction();
+
+      document.write("<br><br>");
+
+      var Multi = function (a, b) {
+        document.write(a * b);
+      };
+
+      Multi(15, 10);
+
+      document.write(`<hr>`);
+
+      //-----------------------------------------------------------------------------
+
+      //Clousers..
+
+      //Example_1..
+
+      let Value = 5;
+      function ClouserFunction() {
+        Value = Value + 5;
+      }
+
+      ClouserFunction();
+      ClouserFunction();
+      ClouserFunction();
+
+      document.write("The total value is" + " " + Value);
+
+      document.write(`<br><br>`);
+
+      //Example_2..
+
+      function ExternelFunction() {
+        var x = 150;
+        var y = 25;
+
+        function InternelFunction() {
+          return x / y;
+        }
+        return InternelFunction();
+      }
+      document.write("The Value of x+y is equal" + " " + ExternelFunction());
+
+      document.write(`<hr>`);
+
+      //-----------------------------------------------------------------------------
+
+      //Currying In JavaScript..
+
+      //Example_1..
+
+      function MiltipliCation(Value_1, Value_2, Value_3) {
+        return Value_1 * Value_2 * Value_3;
+      }
+
+      document.write(
+        "The multiplication of Value_1,Value_2 &  is " +
+          " : " +
+          MiltipliCation(10, 15, 20)
+      );
+
+      document.write(`<br><br>`);
+
+      //Example_2..
+
+      const sum = function (x) {
+        return function (y) {
+          return function (z) {
+            return x + y + z;
+          };
+        };
+      };
+
+      let one = sum(20);
+      let two = one(30);
+      let three = two(50);
+
+      document.write(three);
+
+      document.write(`<hr>`);
+
+      //-----------------------------------------------------------------------------
+
+      class PublicCounter {
+        constructor(start = 0) {
+          let _count = start;
+          let _init = start;
+          this.increase = (x = 1) => (_count += x);
+          this.decrease = (x = 1) => (_count -= x);
+          this.reset = (x = _init) => (_count = x);
+          this.getCount = () => _count;
+        }
+        get current() {
+          return this.getCount();
+        }
+      }
+    </script>
+  </body>
+</html>

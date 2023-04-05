@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Methods</title>
+  </head>
+  <body>
+    <script>
+      // Array Methods..
+
+      // 1.concat()
+      // It returns a new array object that contains two or more merged arrays.
+
+      let arr_1 = [1, 2, 3, 4, 5];
+      let arr_2 = [6, 7, 8, 9, 10];
+      let add = arr_1.concat(arr_2);
+
+      console.log(add);
+
+      // 2.copyWithin()
+      // It copies the part of the given array with its own elements and returns the modified array.
+
+      let text = ["One", "Two", "Three", "Four"];
+      let CopyWithin = text.copyWithin(0, 1);
+      console.log(CopyWithin);
+
+      // 3.entries()
+      // It creates a key value pair..
+
+      let fruits = ["Apple", "Grapes", "Banana"];
+
+      let Ent = fruits.entries();
+
+      for (value of Ent) {
+        console.log(value);
+      }
+
+      // 4.every()
+      // It determines whether all the elements of an array are satisfying the provided function conditions.
+
+      let Num = [10, 20, 30, 40, 50];
+
+      let Check = Num.every(function (value) {
+        return value > 20;
+      });
+
+      console.log(Check);
+
+      // If it satisfy the conditon it returns true else false.
+
+      // 5.flat()
+      // Multidimmentional array converted into single array
+
+      let MultipleArray = [1, 2, 3, [4, 5], [6, 7], 8, 9, 10];
+
+      let FlattedArray = MultipleArray.flat();
+
+      console.log(FlattedArray);
+
+      // 6.flatMap()
+      // It maps all array elements via mapping function, then flattens the result into a new array.
+
+      let EvenNumbers = [2, 4, 6, 8, 10];
+
+      let FlatMapArray = EvenNumbers.flatMap((value) => {
+        return value * 5;
+      });
+
+      console.log(FlatMapArray);
+
+      // 7.fill()
+      // It fills elements into an array with static values.
+
+      let Language = ["HTML", "CSS", "JavaScript"];
+
+      console.log(fruits.fill("JavaScript", 0));
+
+      // 8.from()
+      // It creates a new array carrying the exact copy of another array element.
+
+      var str = "Hello";
+
+      let FromArray = Array.from(str);
+      console.log(FromArray);
+
+      //9.filter()
+      // It returns the new array containing the elements that pass the provided function conditions.
+
+      let Numbers = [10, 25, 45, 70, 100];
+
+      let = FilterNumbers = Numbers.filter((value) => {
+        return value > 30;
+      });
+
+      console.log(FilterNumbers);
+
+      // 10.find()
+      // It returns the value of the first element in the given array that satisfies the specified condition.
+
+      let FindNumber = Numbers.find((value) => {
+        return value >= 25;
+      });
+
+      console.log(FindNumber);
+
+      // The Output will be the first value that is greater than or equal to 25
+
+      // 11.findIndex()
+      // It returns the index value of the first element in the given array that satisfies the specified condition.
+
+      let FindIndexNumber = Numbers.findIndex((value) => {
+        return value >= 25;
+      });
+
+      console.log(FindIndexNumber);
+
+      // 12.forEach()
+      // It invokes the provided function once for each element of an array.
+
+      let x_1 = [10, 20, 30, 40, 50];
+
+      x_1.forEach((element, index, array) => {
+        console.log(`${index} - ${element} - ${array}`);
+      });
+
+      // 13.includes()
+      // It checks whether the given array contains the specified element.
+
+      let Lng = ["HTML", "CSS", "JavaScript", "React Js", "Node Js"];
+
+      let HasLng = Lng.includes("React Js");
+
+      console.log(HasLng);
+
+      // If the specied element exist it will return as  true else false.
+
+      // 14.indexOf()
+      // It searches the specified element in the given array and returns the index of the first match.
+
+      let GetIndex = Lng.indexOf("Node Js");
+
+      console.log(GetIndex);
+
+      // 15.lastIndesOf()
+      // It searches the specified element in the given array and returns the index of the last match.
+
+      let Lang = [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React Js",
+        "Node Js",
+        "JavaScript",
+      ];
+
+      let GetLastIndex = Lang.lastIndexOf("JavaScript");
+
+      console.log(GetLastIndex);
+
+      // 16.isArray()
+      //	It tests if the passed value is an array.
+
+      let ChechArray = ["One", "Two", "Three"];
+
+      console.log(Array.isArray(ChechArray));
+
+      // 17.join()
+      //	It joins the elements of an array as a string.
+
+      let Name = ["Shubham", "Patil"];
+
+      console.log(Name.join(" "));
+
+      // 18.keys()
+      //	It creates an iterator object that contains only the keys of the array, then loops through these keys.
+
+      let Sub = ["Math", "Science", "Biology"];
+
+      for (value of Sub.keys()) {
+        console.log(value);
+      }
+
+      // 19.map()
+      // It calls the specified function for every array element and returns the new array.
+
+      let Marks = [75, 80, 85, 90, 95];
+
+      let MapMarks = Marks.map((value) => {
+        return value / 5;
+      });
+
+      console.log(MapMarks);
+
+      //20.of()
+      // It creates a new array from a variable number of arguments, holding any type of argument.
+      // We can pass any data type
+
+      console.log(Array.of(10, 20, 30, "Thease are Numbers"));
+
+      // 21.pop()
+      // It removes and returns the last element of an array.
+
+      let Cars = ["Nexon", "Swift", "Harrier", "Ford"];
+
+      let RemoveLastElement = Cars.pop();
+
+      console.log(Cars);
+      console.log(RemoveLastElement); //removed element..
+
+      // 22.push()
+      // It add new item to the end of the array
+
+      Cars.push("Audi");
+
+      console.log(Cars);
+
+      // 23.shift()
+      // It removes and returns the first element of an array.
+
+      let SoftDrinks = ["Coca Cola", "ThumsUp", "Fizz", "RedBull"];
+
+      let RemoveFirstElement = SoftDrinks.shift();
+
+      console.log(SoftDrinks);
+      console.log(RemoveFirstElement);
+
+      // 24.unshift()
+      // It adds one or more elements in the beginning of the given array.
+
+      SoftDrinks.unshift("Pepsi", "Sprite");
+
+      console.log(SoftDrinks);
+
+      // 25.reverse()
+      // It reverse the element of the given array
+
+      // Ex_1
+      let Letters = ["A", "B", "C", "D", "E"];
+
+      let RevLetters = Letters.reverse();
+
+      console.log(RevLetters);
+
+      // 26.reduce(function,initial)
+      //It executes a provided function for each value from left to right and reduces the array to a single value.
+
+      let array = [55, 65, 75, 85, 95];
+
+      let ReduceArray = array.reduce((Pre, Next) => {
+        return Pre + Next;
+      }, 0);
+
+      console.log(ReduceArray);
+
+      // 27.reduceRight()
+      // It executes a provided function for each value from right to left and reduces the array to a single value.
+
+      let ReduceRightArray = array.reduce((Pre, Next) => {
+        return Pre + Next;
+      }, 0);
+
+      console.log(ReduceRightArray);
+
+      // 28.some()
+      //It determines if any element of the array passes the test of the implemented function.
+
+      let Values = [1, 7, 13, 19, 25];
+
+      let TestValues = Values.some((test) => {
+        return test > 17;
+      });
+
+      console.log(TestValues);
+
+      // 29.slice()
+      //It returns a new array containing the copy of the part of the given array.
+
+      let Watches = ["Titan", "Sonata", "Fastrack"];
+
+      let SliceArray = Watches.slice(0, 1);
+
+      console.log(SliceArray);
+
+      // 30.sort()
+      // 	It returns the element of the given array in a sorted order.
+
+      let Nums = [1, 2, 3, 4, 5, 10, 15, 20, 25];
+
+      // let SortNums = Nums.sort();
+
+      // console.log(SortNums);
+
+      // Sort In Increasing Order..
+
+      let SortNums = Nums.sort((x, y) => {
+        return x + y;
+      });
+
+      console.log(SortNums);
+
+      // Sort in Decreasimg Order
+
+      // let SortNums = Nums.sort((x, y) => { return  y - x })
+
+      // console.log(SortNums);
+
+      // 31.splice(start,delete,element)
+      // It add/remove elements to/from the given array.
+
+      // Example_1..
+
+      let Week = ["Monday", "Tuesday", "Friday", "Saturday", "Sunday"];
+
+      Week.splice(2, 0, "Wednesday", "Thursday");
+
+      console.log(Week);
+
+      // Example_2..
+
+      let MyNum = [1, 2, 3, 4, 5, 5, 7, 8, 9, 10];
+
+      MyNum.splice(5, 1, 6);
+
+      console.log(MyNum);
+
+      // 32.toString()
+      // It converts the elements of a specified array into string form, without affecting the original array.
+
+      let aray = [];
+      console.log(typeof aray);
+
+      let toStr = aray.toString();
+
+      console.log(typeof toStr);
+
+      // 33.values()
+      // It creates a new iterator object carrying values for each index in the array.
+
+      let x_2 = ["M", "T", "W", "T", "F", "S", "S"];
+
+      for (value of x_2.values()) {
+        console.log(value);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map</title>
+  </head>
+
+  <body>
+    <script>
+      // it comes with key value pair..
+
+      let m = new Map();
+
+      //     key     value
+
+      m.set("Name", "Shubham");
+      m.set("Age", 24);
+
+      //set - to add properties..
+
+      console.log(m.get("Age"));
+
+      // get - to get specified properties..
+
+      // delete - to delete properties..
+      // size - to check size..
+      // clear - to clear properties..
+      // values - to get values..
+
+      // get key and values using for of loop..
+
+      for ([key, value] of m) {
+        console.log(key, value);
+      }
+
+      // using forEach..
+
+      m.forEach((key, value) => {
+        console.log(key, value);
+      });
+
+      // converting in array using Array.from() method..
+
+      let convert = Array.from(m.keys);
+
+      console.log(convert);
+    </script>
+
+    <!-- <script>
+      let m = new Map();
+
+      m.set("Name", "Shubham");
+      m.set("Age", 27);
+      console.log(m.delete("Name"));
+      console.log(m.size);
+    </script> -->
+  </body>
+</html>

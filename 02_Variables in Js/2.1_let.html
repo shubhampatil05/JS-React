@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js</title>
+    <style>
+      * {
+        text-align: center;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>let variable</h3>
+
+    <script>
+      // In let we can cannot re-declare variable,but we can re-assign values as shown in below eaxmple..
+
+      //if we redeclare with let then errors occurs..
+
+      //let..
+
+      let fname = "Jenny";
+      let lname = "Morgan";
+      let age = 24;
+      let country = "Norway";
+
+      //reassign values..
+
+      lname = "Wood";
+      age = 27;
+
+      document.write(fname + " " + lname + " " + age + " " + country);
+
+      document.write("<hr>");
+
+      let x = 100;
+      let y = 150;
+
+      //reassign value..
+      x = 200;
+
+      let z = x + y;
+
+      document.write(z);
+
+      document.write(`<hr>`);
+
+      // if we declare let variable in blockscope{},then it works only inside that scope..
+
+      {
+        let Name = "Shubham patil";
+
+        document.write(Name);
+      }
+    </script>
+  </body>
+</html>

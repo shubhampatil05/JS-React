@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animate</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        button {
+            margin: 10px;
+        }
+
+        .one {
+
+            width: 100px;
+            height: 100px;
+            background-color: darkkhaki;
+            position: absolute;
+
+        }
+    </style>
+</head>
+
+<body>
+    <button>Click</button>
+
+    <div class="one" style="text-align:center ;">Hey!!</div>
+
+    <script>
+
+
+        //The jQuery animate() method is used to create custom animations.
+
+        // Syntax:
+
+        // $(selector).animate({params},speed,callback);
+
+
+
+        //Manipulate multiple properties
+
+        $(function () {
+
+            $('button').click(function () {
+
+                $("div").animate({
+                    left: '250px',
+                    opacity: '0.5',
+                    height: '150px',
+                    width: '150px'
+                });
+            });
+        });
+
+
+
+
+        //Using Relative Values
+        // to define relative values (the value is then relative to the element's current value). This is done by putting += or -= in front of the value:
+
+
+
+        // $(document).ready(function () {
+        //     $("button").click(function () {
+        //         $("div").animate({
+        //             left: '250px',
+        //             opacity: '0.5',
+        //             height: '+=150px',
+        //             width: '+=150px'
+        //         });
+        //     });
+        // });
+
+
+        //Using pre-defined values
+        //You can even specify a property's animation value as "show", "hide", or "toggle":
+
+
+        // $(document).ready(function () {
+        //     $("button").click(function () {
+        //         $("div").animate({
+
+        //             height: 'toggle'
+
+        //         });
+        //     });
+        // });
+
+
+
+
+        // Uses Queue Functionality
+
+
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("div").animate({ height: "300px" }, ('slow'))
+                $("div").animate({ width: "300px" }, ('slow'))
+                $("div").animate({ height: "100px" }, ('slow'))
+                $("div").animate({ width: "100px" }, ('slow'))
+                $("div").animate({ fontSize: "30px" }, ('slow'))
+            });
+        });
+
+
+
+
+
+    </script>
+</body>
+
+</html>

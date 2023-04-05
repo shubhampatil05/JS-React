@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Event Lister</title>
+
+    <style>
+        #Div {
+
+            background: cyan;
+            padding: 100px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="Div">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur tempore quia assumenda dolores
+        delectus nesciunt voluptatem dolore quisquam dicta temporibus?
+
+        <br><br>
+        <button type="button" onclick="removeHandler()" id="btn">Remove</button>
+
+    </div>
+    <p id="Output"></p>
+    <script>
+
+        document.getElementById('Div').addEventListener('mousemove', Myfunction)
+
+
+
+        function Myfunction() {
+
+            document.getElementById('Output').innerHTML = Math.random();
+
+
+
+        }
+
+            function removeHandler() {
+
+
+                document.getElementById('Div').removeEventListener('mousemove', Myfunction)
+
+
+            }
+
+
+        
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

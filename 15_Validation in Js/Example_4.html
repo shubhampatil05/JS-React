@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <style>
+      * {
+        text-align: center;
+      }
+
+      .one {
+        position: relative;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      function ValidateNumber() {
+        var Number = document.MyForm.number.value;
+        if (isNaN(Number)) {
+          document.getElementById("Msg").value =
+            "Entered telephone number is not correct";
+
+          document.getElementById("Note").innerHTML =
+            "Hit On Clear Button To Clear Input Field";
+
+          return false;
+        } else {
+          return true;
+        }
+      }
+
+      function Clear() {
+        document.MyForm.number.value = "";
+
+        document.getElementById("Note").innerHTML = "";
+      }
+    </script>
+
+    <h3>Form Validation</h3>
+    <h5>Validate the telephone numbers,It should only have numbers</h5>
+
+    <form
+      action=""
+      name="MyForm"
+      method="get"
+      onsubmit="return ValidateNumber()"
+    >
+      Number:<br /><br />
+      <input
+        type="text"
+        name="number"
+        autocomplete="off"
+        id="Msg"
+        style="width: 300px"
+      />
+      <br /><br />
+      <input type="submit" value="Submit" />
+      <button onclick="Clear()">Clear</button>
+    </form>
+
+    <h5 id="Note"></h5>
+  </body>
+</html>

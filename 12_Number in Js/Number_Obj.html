@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Object</title>
+  </head>
+
+  <body>
+    <script>
+      // The JavaScript number object enables you to represent a numeric value. It may be integer or floating-point.
+
+      // By the help of Number() constructor, you can create number object.
+
+      // syntax
+
+      // var n = new Number(value);
+
+      // If value can't be converted to number, it returns NaN(Not a Number) that can be checked by isNaN() method.
+
+      //How to define Numbers..
+      var x = 2;
+      var y = 2.65;
+      var z = 24e2;
+      var a = new Number(12);
+
+      document.write(`<h4>Number constant</h4>`);
+      document.write(`<h5>MIN_VALUE</h5>`);
+
+      document.write("The minimum number in java script " + Number.MIN_VALUE);
+
+      document.write(`<h5>MAX_VALUE</h5>`);
+
+      document.write("The maximum number in java script " + Number.MAX_VALUE);
+
+      document.write(`<h5>POSITIVE_INFINITY</h5>`);
+
+      document.write(
+        "The POSITIVE_INFINITY in java script " + Number.POSITIVE_INFINITY
+      );
+
+      document.write(`<h5>NEGATIVE_INFINITY</h5>`);
+
+      document.write(
+        "The NEGATIVE_INFINITY in java script " + Number.NEGATIVE_INFINITY
+      );
+
+      document.write(`<h5>NaN</h5>`);
+
+      document.write(" A is a number : " + Number.isNaN("A"));
+
+      document.write(`<br>`);
+
+      document.write(" Hello is a number : " + isNaN("Hello")); //Number.isNaN Use kela tr False dakhvel,fkt isNaN use kela tr output true bhetel..
+
+      document.write(`<br>`);
+
+      document.writeln("Using, Number.isNaN :" + Number.isNaN("Check"));
+
+      document.write(`<br>`);
+
+      document.writeln(" Using, isNaN :" + isNaN("Check"));
+
+      // // Js Constants..
+
+      // // 1.MIN_VALUE
+      // //	Returns the largest minimum value.
+
+      // console.log(Number.MIN_VALUE);
+
+      // // 2.MAX_VALUE
+      // //	Returns the largest maximam value.
+
+      // console.log(Number.MAX_VALUE);
+
+      // // 3.NEGETIVE_INFINITY
+      // // It returns the negetive infinity
+
+      // console.log(Number.NEGATIVE_INFINITY);
+
+      // // 4.PIOSITIVE_INFINITY
+      // // It returns the positive infinity
+
+      // console.log(Number.POSITIVE_INFINITY);
+
+      // // 5.NaN
+      // // Represent Not a Number Value
+
+      // console.log(Number.isNaN(5))
+      // console.log(isNaN(5))
+    </script>
+  </body>
+</html>

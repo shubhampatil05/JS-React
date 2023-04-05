@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>promise.race</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      //It's setteled only first promise..
+
+      Promise.race([
+        new Promise((reject) =>
+          setTimeout(reject(new Error("its an Error")), 3000)
+        ),
+
+        new Promise((resolve) =>
+          setTimeout(resolve("First Setteled Promise"), 3000)
+        ),
+        new Promise((resolve) =>
+          setTimeout(resolve("Second Setteled Promise"), 3000)
+        ),
+      ]).then(console.log);
+    </script>
+  </body>
+</html>

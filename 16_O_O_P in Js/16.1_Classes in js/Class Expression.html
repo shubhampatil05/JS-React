@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Expression</title>
+    <style>
+        * {
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script>
+
+        // Another way to define a class by using class expression
+
+        // Here it is not necessory to assign the name of the class
+
+
+        let Player = class {
+
+            constructor(Id, Name) {
+
+                this.Id = Id;
+                this.Name = Name;
+
+            }
+
+        }
+
+        let Player_1 = new Player(3282, 'Jenny');
+        let Player_2 = new Player(3468, 'Jonny');
+
+
+        document.write(Player_1.Id + '  ' + Player_1.Name);
+        document.write('<br><br>');
+        document.write(Player_2.Id + '  ' + Player_2.Name);
+        document.write('<hr>');
+
+
+
+
+
+
+        // Re-declaring Class..
+
+
+
+        let Plyr = class {
+
+            constructor(Id, Name) {
+
+                this.Id = Id;
+                this.Name = Name;
+
+            }
+            details() {
+
+                document.write(this.Id + ' ' + this.Name);
+            }
+
+        }
+
+        let Plyr_1 = new Plyr('007', 'Virag');
+        let Plyr_2 = new Plyr('008', 'Shankar');
+
+
+        Plyr_1.details();
+        document.write('<br><br>');
+        Plyr_2.details();
+
+
+
+        document.write('<hr>')
+
+
+
+        // Umnamed Class Expression
+
+        var Emp = class Employee {
+            constructor(id, name) {
+                this.id = id;
+                this.name = name;
+            }
+        };
+        document.writeln(Emp.name);
+        /*document.writeln(Employee.name);
+                        Error occurs on console:
+                        "ReferenceError: Employee is not defined
+                        */
+
+
+    </script>
+</body>
+
+</html>

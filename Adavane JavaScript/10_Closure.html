@@ -1,0 +1,15 @@
+<script>
+  // the closure is the combination of function and lexical enviroment..
+
+  // The closure in action inner function can have access to the outer function as well as global variable and parameters..
+
+  let b = 10;
+  function Outer(a) {
+    function inner() {
+      let sum = a + b;
+      console.log(sum);
+    }
+    inner();
+  }
+  Outer(13);
+</script>

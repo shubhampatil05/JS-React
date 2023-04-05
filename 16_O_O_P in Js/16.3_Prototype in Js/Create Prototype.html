@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototype</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      // JavaScript is a prototype-based language that facilitates the objects to acquire properties and features from one another. Here, each object contains a prototype object.
+
+      // In JavaScript, whenever a function is created the prototype property is added to that function automatically. This property is a prototype object that holds a constructor property.
+
+      //Example_1..
+      function Employee(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+      }
+
+      Employee.prototype.fullName = function () {
+        return this.firstName + " " + this.lastName;
+      };
+
+      var Emp_1 = new Employee("shubham", "patil");
+      var Emp_2 = new Employee("virag", "jain");
+
+      document.write(Emp_1.fullName() + `<br>`);
+      document.write(Emp_2.fullName());
+
+      //------------------------------------------------------------------------------
+
+      document.write(`<hr>`);
+
+      // Example_2
+
+      function NoteBook(Name, Price) {
+        this.Name = Name;
+        this.Price = Price;
+      }
+
+      NoteBook.prototype.Details = function () {
+        return this.Name + " " + this.Price;
+      };
+
+      var Notebook_1 = new NoteBook("Classmate", 200);
+      var Notebook_2 = new NoteBook("Naveneet", 100);
+
+      document.write(Notebook_1.Details() + `<br>`);
+      document.write(Notebook_2.Details());
+
+      //------------------------------------------------------------------------------
+    </script>
+  </body>
+</html>

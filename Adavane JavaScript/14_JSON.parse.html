@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON.parse</title>
+  </head>
+
+  <body>
+    <script>
+      // to convert text into object..
+
+      const info = '{"Name":"Jenny","Age":"27"}';
+
+      let obj = JSON.parse(info);
+      console.log(obj.Name + " " + obj.Age);
+      console.log(obj);
+
+      // Array as JSON..
+
+      let text = '["Form","Submit","Verify"]';
+
+      let convert = JSON.parse(text);
+      console.log(convert[1]);
+
+      // converting string into date..
+
+      const information1 = '{"Name":"Shubham","DOB":"1997-12-05"}';
+
+      const obj1 = JSON.parse(information1);
+      getdate1 = new Date(obj1.DOB);
+
+      console.log(obj1.Name + " " + getdate1);
+
+      // converting string into date using reviver function..
+
+      const information2 = '{"Name":"Shubham","DOB":"1997-12-05"}';
+
+      const getdate2 = JSON.parse(information2, function (key, value) {
+        if (key == "DOB") {
+          return new Date(value);
+        } else {
+          return value;
+        }
+      });
+
+      console.log(getdate2);
+
+      let student = '{"Name":"virag","marks":"function(){return 87}"}';
+      let obj2 = JSON.parse(student);
+      let getMarks = eval("(" + obj2.marks + ")");
+      console.log(getMarks());
+    </script>
+  </body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getter And Setter</title>
+
+    <style>
+        * {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+
+
+
+        // The JavaScript Encapsulation is a process of binding the data (i.e. variables) with the functions acting on that data. It allows us to control the data and validate it. To achieve an encapsulation in JavaScript: -
+
+        // Use var keyword to make data members private.
+        // Use setter methods to set the data and getter methods to get that data.
+        // The encapsulation allows us to handle an object using the following properties:
+
+        // Read/Write - Here, we use setter methods to write the data and getter methods read that data.
+
+        // Read Only - In this case, we use getter methods only.
+
+
+
+
+
+        class Student {
+            constructor() {
+                var Name;
+                var Marks;
+            }
+
+            getName() {
+                return this.Name;
+            }
+            setName(Name) {
+                this.Name = Name;
+            }
+
+            getMarks() {
+                return this.Marks;
+            }
+            setMarks(Marks) {
+                this.Marks = Marks;
+            }
+
+        }
+
+        var x = new Student();
+        x.setName('Shubham');
+        x.setMarks(87);
+        document.write(x.getName() + ' ' + x.getMarks());
+
+
+        document.write(`<hr>`);
+
+        //------------------------------------------------------------------------
+
+
+        class Person {
+            constructor() {
+                var Name;
+                var Salary;
+            }
+            ;
+            getName() {
+                return this.Name;
+            }
+            setName(Name) {
+                this.Name = Name;
+            }
+
+            getSalary() {
+                return this.Marks;
+            }
+            setSalary(Marks) {
+                this.Marks = Marks;
+            }
+        }
+
+
+        var y = new Person();
+        y.setName('Virag');
+        y.setSalary(25000);
+
+        
+
+        document.write(y.getName() + " " + y.getSalary());
+
+
+        document.write(`<hr>`)
+
+        //------------------------------------------------------------------------------
+
+
+        //Prototype Based object..   ithe Object.definedProperty cha use kelay..,
+        //Object based aahe not class based..
+
+
+
+        function Student_1(name, marks) {
+            var name;
+            var marks;
+
+
+            Object.defineProperty(this, 'name', {
+                get: function () {
+                    return name;
+                },
+                set: function (name) {
+                    this.name = name;
+                }
+
+            });
+
+
+            Object.defineProperty(this, 'marks', {
+                get: function () {
+                    return marks;
+                },
+                set: function (marks) {
+                    this.marks = marks;
+                }
+            });
+        }
+
+        let student = new Student_1("shubham", 77);
+
+        document.write(student.name + ' ' + student.marks);
+
+
+
+
+
+    </script>
+</body>
+
+</html

@@ -1,0 +1,356 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="one"></p>
+    <p id="two"></p>
+    <p id="three"></p>
+
+    <input type="text" placeholder="Background Color" />
+    <button onclick="Change()">Click</button>
+
+    <!-- <script>
+      function Display(demo) {
+        document.getElementById("one").innerHTML = demo;
+      }
+
+      new Promise((resolve, reject) => {
+        let x = 100;
+
+        if (x >= 100) {
+          resolve(true);
+        } else {
+          reject(false);
+        }
+      })
+        .then((value) => {
+          Display(value);
+        })
+        .catch((error) => {
+          Display(error);
+        });
+
+      new Promise((res, rej) => {
+        setTimeout(() => {
+          res(10);
+        }, 1000);
+      })
+
+        .then((value) => {
+          console.log(value);
+          return value * 5;
+        })
+        .then((value) => {
+          console.log(value);
+          return value * 10;
+        })
+        .then((value) => {
+          console.log(value);
+          return value * 15;
+        })
+        .then((value) => {
+          console.log(value);
+          return value * 20;
+        })
+        .then((value) => {
+          console.log(value);
+          return value * 25;
+        })
+        .then((value) => {
+          console.log(value);
+        });
+
+      new Promise((res) => {
+        setTimeout(() => {
+          res("SetTimeout using promise");
+        }, 2000);
+      }).then(console.log);
+
+      // function Dis(id) {
+      //   if (typeof id !== "number") {
+      //     throw "Invalid Id Number";
+      //   }
+
+      //   return new Promise((res, rej) => {
+      //     res({
+      //       Output: "Clean",
+      //     });
+      //   });
+      // }
+
+      // Dis(121)
+      //   .then((value) => {
+      //     console.log(value.Output);
+      //   })
+      //   .catch((error) => {
+      //     console.log(error);
+      //   });
+
+      function getId(id) {
+        if (typeof id != "number") {
+          throw "Invalid Id Number";
+        }
+
+        return new Promise((res, rej) => {
+          res([
+            {
+              Name: "Jenny",
+              Age: 27,
+              Country: "Portugal",
+            },
+
+            {
+              Name: "Jonas",
+              Age: 32,
+              Country: "Ukraine",
+            },
+            {
+              Name: "Jordan",
+              Age: 37,
+              Country: "England",
+            },
+          ]);
+        });
+      }
+
+      getId(123)
+        .then((value) => {
+          console.log(value);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+      function Confirm(Password) {
+        if (Password === 2282) {
+          return new Promise((resolve, reject) => {
+            resolve({
+              Info: "You Are Ready To Log In",
+              Link: "https://www.w3schools.com/",
+            });
+          });
+        } else {
+          throw "Invalid Password";
+        }
+      }
+
+      Confirm(2282)
+        .then((value) =>
+          console.log((document.getElementById("two").innerHTML = value.Info))
+        )
+        .catch((error) => {
+          document.getElementById("two").innerHTML = error;
+        });
+
+      let userAuthirised = false;
+
+      function Error() {
+        if (userAuthirised == false) {
+          throw "User Is Not Authorised";
+        }
+
+        return new Promise((res, rej) => {
+          res({
+            Authentication: "User Is Authorised",
+          });
+        });
+      }
+
+      try {
+        Error().then((value) => {
+          console.log(value.Authentication);
+        });
+      } catch (e) {
+        console.log(e);
+      }
+
+      async function Wait() {
+        let P = new Promise((res, rej) => {
+          setTimeout(() => {
+            res("Wait For The Moment");
+          }, 3000);
+        });
+
+        console.log(await P);
+      }
+      Wait();
+
+      var a = 1;
+      var b = 0;
+
+      while (a <= 3) {
+        a++;
+        b += a * 2;
+
+        console.log(b);
+      }
+    </script> -->
+
+    <!-- <script>
+      let obj = {
+        Name: "Jenny",
+        Age: 27,
+
+        Hobby: {
+          First: "Playing with boy's Feeling",
+          Second: "Eating Banana",
+        },
+      };
+
+      let { Name: a, Age: b, Hobby: c } = obj;
+
+      console.log(c);
+
+      let Arry = ["One", "Two", "Three"];
+
+      let rslt = ([x, y, z] = Arry);
+
+      console.log(x);
+
+      let WS = new WeakSet();
+      WS.add({ key: "Value" });
+      console.log(WS);
+    </script> -->
+
+
+    <script>
+      let M = new Map();
+
+      M.set("Name", "Jenny");
+
+      console.log(M.get("Name"));
+
+      let WM = new WeakMap();
+
+      let Person = { Name: "Jonas" };
+      WM.set(Person, "Name");
+
+      console.log(WM.get(Person));
+
+      function* gen() {
+        let i = 0;
+        while (true) {
+          yield i++;
+        }
+      }
+
+      let result = gen();
+
+      console.log(result.next());
+      console.log(result.next());
+      console.log(result.next());
+      console.log(result.next());
+      console.log(result.next());
+      console.log(result.next());
+    </script>
+
+    <script>
+      let array = ["Sports", "Fruits", 27, true];
+
+      Nextindex = 0;
+
+      function iterate(value) {
+        return {
+          Next: function () {
+            if (Nextindex < value.length) {
+              return {
+                value: value[Nextindex++],
+                done: false,
+              };
+            } else {
+              return {
+                done: true,
+              };
+            }
+          },
+        };
+      }
+
+      let Output = iterate(array);
+
+      console.log(Output.Next());
+      console.log(Output.Next());
+      console.log(Output.Next());
+      console.log(Output.Next());
+      console.log(Output.Next());
+
+      // let Color = prompt("Costumise Your Color");
+      // let Text = prompt("Costumise Your Text");
+
+      // document.bgColor = Color;
+      // document.body.style.color = Text;
+    </script>
+
+    <script>
+      function Change() {
+        let V = document.querySelector("input").value;
+        document.bgColor = V;
+        document.querySelector("input").value = "";
+      }
+    </script>
+
+    <script>
+      function key_Value_Pair(Obj) {
+        var Arry = [];
+
+        for (key in Obj) {
+          Arry.push(key + " : " + Obj[key]);
+        }
+        console.log(Arry);
+      }
+
+      key_Value_Pair({ red: "#FF000", green: "00FF00", white: "FFFFF" });
+    </script>
+
+    <script>
+      function Info() {
+        this.Name = "Jenny";
+        this.Age = 27;
+      }
+
+      function Ot() {
+        Info.call(this);
+      }
+      Ot.prototype = Object.create(Info.prototype);
+
+      console.log(new Ot());
+
+      //------------------------------------------------
+
+      let MyInfo = {
+        Name: "Shubham",
+        Age: 25,
+      };
+
+      Object.seal(MyInfo);
+
+      MyInfo.NewAge = 26;
+
+      console.log(MyInfo);
+    </script> 
+
+  
+
+<input type=" tetx" onkeypress="handleDebouncing">
+
+  </body>
+
+
+<script>
+
+
+
+
+</script>
+
+</html> 

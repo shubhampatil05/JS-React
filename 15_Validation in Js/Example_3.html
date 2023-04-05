@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      function ValidatePassword() {
+        var Password = document.MyForm.Password.value;
+        var ConfirmPassword = document.MyForm.ConfirmPassword.value;
+
+        if (Password.length < 4) {
+          alert("Password Must Contain Four Digits");
+          return false;
+        } else if (Password != ConfirmPassword) {
+          alert("Password Does Not Match");
+          return false;
+        } else if (Password == ConfirmPassword) {
+          return true;
+        }
+      }
+    </script>
+
+    <h3>Form Validation</h3>
+    <h5>Re-type the password and password should match</h5>
+
+    <form
+      action="Submit.html"
+      name="MyForm"
+      method="get"
+      onsubmit="return ValidatePassword()"
+    >
+      Password:<input type="password" name="Password" /><br /><br />
+      Confirm Password:<input type="password" name="ConfirmPassword" />
+      <br /><br />
+      <br /><br /><br />
+
+      <input type="submit" value="Submit" />
+
+      <hr />
+    </form>
+  </body>
+</html>

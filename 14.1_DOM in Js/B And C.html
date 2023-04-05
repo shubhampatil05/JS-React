@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <title>addEventListener()</title>
+    <style>
+      #Div1,
+      #Div2 {
+        background-color: chocolate;
+        padding: 50px;
+        margin: 5px;
+      }
+
+      #subDiv1,
+      #subDiv2 {
+        background-color: white;
+        font-size: 20px;
+        padding: 20px;
+        color: black;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="Div1">
+      <h3>Bubbling</h3>
+      <div id="subDiv1">Click Me</div>
+    </div>
+    <div id="Div2">
+      <h3>Capturing</h3>
+      <div id="subDiv2">Click Me</div>
+    </div>
+    <script>
+      // Event Bubbling or Event Capturing?
+      // addEventListener(event, function, useCapture);
+
+      //There are two ways of event propagation in the HTML DOM, bubbling and capturing.
+
+      //The default value is false, which will use the bubbling propagation, when the value is set to true, the event uses the capturing propagation.
+
+      document.getElementById("Div1").addEventListener("click", function () {
+        alert("You clicked On Orange Div");
+      });
+
+      document.getElementById("subDiv1").addEventListener("click", function () {
+        alert("You clicked On White Div");
+      });
+      //------------------------------------------------
+      document.getElementById("Div2").addEventListener(
+        "click",
+        function () {
+          alert("You clicked On Orange Div");
+        },
+        true
+      );
+
+      document.getElementById("subDiv2").addEventListener(
+        "click",
+        function () {
+          alert("You clicked On White Div");
+        },
+        true
+      );
+    </script>
+  </body>
+</html>

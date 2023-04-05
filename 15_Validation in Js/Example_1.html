@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      function ValidateForm() {
+        var CheckName = document.MyForm.name.value;
+        var CheckPassword = document.MyForm.password.value;
+
+        if (CheckName == null || CheckName == "") {
+          alert("Name Can't Be Empty");
+          return false;
+        } else if (CheckPassword.length < 6) {
+          alert("Password Must Contain At Least Six Charectars");
+          return false;
+        } else {
+          return true;
+        }
+      }
+    </script>
+
+    <h3>Form Validation</h3>
+
+    <h5>
+      Validate the Name and Password.<br />Name can't be empty & Password must
+      be contain 6 digits
+    </h5>
+
+    <form name="MyForm" method="post" onsubmit="return ValidateForm()">
+      Name:<input type="text" name="name" autocomplete="off" /> Password:<input
+        type="password"
+        name="password"
+      />
+      <br /><br /><br /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

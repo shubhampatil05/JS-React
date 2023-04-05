@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <style>
+        *{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        
+//Object Assignment..
+
+
+var person_1 = {
+    fname: 'jenny',
+    lname: 'morgan',
+    age: 27,
+    city: 'london'
+};
+
+//Modifi property value..
+
+person_1.age = 29;
+
+for (value in person_1) {
+    console.log(person_1[value]);
+};
+
+
+//delete property..
+
+
+delete person_1.city;
+console.log(person_1.city)
+
+
+//add array in object..
+
+var person_2 = {
+
+    fname: 'KL',
+    lname: 'Rahul',
+    Age: 29,
+    proffession: 'cricket',
+    Teams: ['India', 'Luckmow Super Giants'],
+
+    //Add object inside object..
+
+
+    Place: {
+        BirthPlace: 'Mangluru',
+        State: 'Karnataka'
+    },
+
+
+
+    //Add function inside object..
+
+
+    myFunction: function () {
+
+        return this.fname + ' ' + this.lname;
+    }
+
+
+
+};
+
+console.log(person_2.myFunction());
+
+
+//Copy of object..
+
+var copiedperson_2 = { person_2 };
+
+
+console.log(copiedperson_2);
+
+
+
+//pass by value..
+
+let a = 10;
+let b = a;
+
+
+console.log(' The value of a is ' + a);
+console.log(' The value of b is ' + b);
+
+
+b = 15;
+
+console.log(a);  //the value of a still remain 10..
+console.log(b);
+
+
+
+//pass by refrence..
+
+let obj_1 = {
+    username: 'shubham123',
+    password: '1234567'
+}
+
+let obj_2 = obj_1;
+
+console.log(obj_1);
+console.log(obj_2);    //the values of obj_1 and obj_2 are same..
+
+
+obj_2.password = 7654321;
+
+console.log(obj_1);          //the password of obj_1 will also be change..
+console.log(obj_2);
+
+
+
+
+
+//Associate array..
+
+
+let Emp = {
+
+
+    'Name': 'xyz',
+    'ID': 3282,
+    'Company': 'TCS',
+    'Location': 'Pune'
+
+};
+
+
+for (value in Emp) {
+
+    console.log(value + ' = ' + Emp[value]);
+
+};
+
+
+//Converting object into array..
+
+
+
+let convert = Object.values(person_1);
+console.log(convert);
+    </script>
+</body>
+</html>

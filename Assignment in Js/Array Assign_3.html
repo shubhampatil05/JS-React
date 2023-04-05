@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Assignment</title>
+  </head>
+
+  <body>
+    <script>
+      var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+      result = arr.reduce(function (x, y) {
+        return x - y;
+      });
+
+      console.log(result);
+
+      Array.prototype.SumOfArray = function () {
+        let Sum = 0;
+        for (x = 0; x < this.length; x++) {
+          Sum = Sum + this[x];
+        }
+        return Sum;
+      };
+
+      console.log(arr.SumOfArray());
+
+      Array.prototype.MulOfArray = function () {
+        let Mul = 1;
+        for (i = 0; i < arr.length; i++) {
+          Mul = Mul * this[i];
+        }
+        return Mul;
+      };
+      console.log(arr.MulOfArray());
+
+      const fruits = ["apple", "banana", "grapes", "mango", "orange"];
+
+      // Convert to Uppercase..
+
+      Array.prototype.myUppercase = function () {
+        const toUpperCase = fruits.every((convert) => {
+          console.log(convert.toUpperCase());
+          return true;
+        });
+
+        return toUpperCase;
+      };
+
+      fruits.myUppercase();
+
+      // Find include element..
+
+      // Dynamic method_1..
+
+      let filterItems_1 = (Return) => {
+        let result = fruits.filter((value) => {
+          return value.includes(Return);
+        });
+        return result;
+      };
+
+      console.log(filterItems_1("an"));
+
+      // Dynamic method_2..
+
+      let filterItems_2 = (arrayName, searchString) => {
+        let result = arrayName.filter((value) => {
+          return value.includes(searchString);
+        });
+
+        return result;
+      };
+
+      console.log(filterItems_2(fruits, "or"));
+    </script>
+  </body>
+</html>

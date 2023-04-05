@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scope_Chain</title>
+  </head>
+
+  <body>
+    <script>
+      "use strict";
+
+      //Lexical Scoping..
+
+      var a = 10;
+
+      function parent() {
+        var b = 20;
+
+        return function inner() {
+          var c = 30;
+
+          return a + b + c;
+          // console.log(a + b + c);
+        };
+      }
+      let x = parent();
+      console.log(x());
+
+      // In strict mode
+
+      function display(a, b) {
+        add = a + b;
+
+        console.log(add);
+      }
+
+      display(10, 23);
+    </script>
+  </body>
+</html>

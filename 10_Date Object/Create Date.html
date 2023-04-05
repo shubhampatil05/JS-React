@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // The JavaScript date object can be used to get year, month and day. You can display a timer on the webpage by the help of JavaScript date object.
+
+      // You can use different Date constructors to create date object. It provides methods to get and set day, month, year, hour, minute and seconds.
+
+      // Constructors..
+      // You can use 4 variant of Date constructor to create date object.
+
+      //Date ()..
+
+      var date_1 = new Date();
+      console.log(date_1);
+      //------------------------------------------------------------------------
+
+      //Date(year,month,day,hours,minutes,seconds,milliseconds)..
+      //months count from zero (0=jan,1=feb,2=mar,etc)..
+
+      var date_2 = new Date(2022, 07, 15, 10, 32, 40, 50);
+      console.log(date_2);
+      //------------------------------------------------------------------------
+
+      //Date(toString)..
+
+      var date_3 = new Date("Aug 15,2022,10:36:40");
+      console.log(date_3);
+      //------------------------------------------------------------------------
+
+      //Date(milliseconds)..
+
+      var date_4 = new Date(1000);
+      console.log(date_4);
+    </script>
+  </body>
+</html>

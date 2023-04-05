@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div id="Main"><h1 id="one">First</h1></div> -->
+    <!-- <script>
+      // let CreateEle = document.createElement("h1");
+      // let CreateText = document.createTextNode("Second");
+      // CreateEle.appendChild(CreateText);
+
+      // let Div = document.getElementById("Main");
+      // let head = document.getElementById(one);
+
+      // Div.insertBefore(CreateEle, one);
+
+      // let pEle = document.getElementById("Main");
+      // let cEle = document.getElementById("one");
+
+      // pEle.removeChild(cEle);
+
+      let CE = document.createElement("p");
+      let CT = document.createTextNode("This is a new para");
+
+      CE.appendChild(CT);
+
+      SE = document.getElementById("Main");
+      cEle = document.getElementById("one");
+
+      SE.replaceChild(CE, cEle);
+    </script> -->
+
+    <!-- <script>
+      function sum(...arg) {
+        console.log(arg[0] + arg[1] + arg[2]);
+      }
+
+      sum(1, 2, 3);
+    </script> -->
+
+    <!-- <script>
+      class Name {
+        static display() {
+          return "Jenny";
+        }
+
+        static display() {
+          return "Jonas";
+        }
+      }
+
+      console.log(Name.display());
+    </script> -->
+    <script>
+      class Student {
+        constructor() {
+          var Name;
+          var Marks;
+        }
+
+        getName() {
+          return this.Name;
+        }
+        setName(Name) {
+          this.Name = Name;
+        }
+        getMarks() {
+          return this.Marks;
+        }
+        setMarks(Marks) {
+          this.Marks = Marks;
+        }
+      }
+
+      let res = new Student();
+
+      res.setName("Shubham");
+      res.setMarks(87);
+
+      console.log(res.getName());
+      console.log(res.getMarks());
+    </script>
+  </body>
+</html>

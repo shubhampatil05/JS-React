@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function Assignment</title>
+  </head>
+
+  <body>
+    <script>
+      // Function  Assignment..
+
+      // // 1.Write a JavaScript function that reverse a number.
+      // // Example x = 32243;
+
+      // let x = function (Number) {
+      //     let Reverse = Number.toString().split('').reverse().join('');
+
+      //     console.log(Reverse);
+      // }
+      // x(32243);
+
+      // Using Logic..
+
+      let Num = 32243;
+      let toStr = ""; // Empty String To Get String Value .
+
+      let StoredNum = "";
+
+      let newNum = Num + toStr; // Num Convert into Stirng
+
+      for (i = newNum.length - 1; i >= 0; i--) {
+        StoredNum += newNum[i];
+      }
+
+      let toNumber = parseInt(StoredNum);
+
+      console.log(toNumber);
+
+      //---------------------------------------------------------------------
+
+      // 2. Write a JavaScript function that checks whether a passed string is palindrome or not?
+
+      let Word = "rotator";
+
+      var RevWord = function () {
+        var MyRevWord = Word.toString().split("").reverse().join("");
+
+        let MyStrWord = Word;
+
+        if (MyRevWord === MyStrWord) {
+          console.log("It is a palindrome");
+        } else {
+          console.log("Not a palindrome");
+        }
+      };
+
+      RevWord();
+
+      //By Using Logic..
+
+      // var str = 'level';
+      // var Store = '';
+
+      // for (var i = str.length - 1; i >= 0; i--) {
+
+      //     Store = Store + str[i];
+
+      // }
+
+      // if (Store === str) {
+
+      //     console.log('It Is An Palindrome')
+      // } else {
+
+      //     console.log('It Is Not A Palindrome')
+      // }
+
+      //---------------------------------------------------------------------
+
+      // 3.Write a JavaScript function that returns a passed string with letters in alphabetical order.
+      // Example string : 'webmaster'
+
+      // var Letter = 'webmaster'
+
+      // let Arrenge = function () {
+      //     let MyLetter = Letter.toString().split('').sort().join('');
+
+      //     console.log(MyLetter)
+      // }
+
+      // Arrenge();
+
+      //---------------------------------------------------------------------
+
+      // 4.Write a JavaScript function that accepts a string as a parameter and find the longest word within the string.
+      // Example string : 'Web Development Tutorial'
+
+      let str = "Web Development Tutorial";
+
+      let mystr = str.split(" ");
+      let mysortstr = mystr.sort(function (A, B) {
+        return B.length - A.length;
+      });
+
+      console.log(mysortstr[0]);
+
+      //---------------------------------------------------------------------
+
+      // 5.Write a JavaScript function to  get the number of occurrences of each letter in specified string
+
+      // let AnyString = prompt('Enter Any String Value');
+
+      // let AnyString = "Programming";
+      // let CheckLetter = prompt("Check Accurances Of Your Letter");
+      // let AnyStringLnth = AnyString.length;
+
+      // let CountLetter = 0;
+
+      // for (i = 0; i < AnyStringLnth; i++) {
+      //   if (AnyString[i] == CheckLetter) {
+      //     CountLetter++;
+      //   }
+      // }
+
+      // document.write(`${AnyString} - ${CheckLetter} - ${CountLetter}`);
+
+      //--------------------------------------------------------
+      function char_Count(str, letter) {
+        let Count = 0;
+
+        for (i = 0; i < str.length; i++) {
+          if (str.charAt(i) == letter) {
+            Count += 1;
+          }
+        }
+        return letter + " : " + Count;
+      }
+
+      console.log(char_Count("Programming", "r"));
+
+      //---------------------------------------------------------------------
+
+      // let NegIntValue = function (Number) {
+
+      //     let RevNegIntValue = Number.toString().split('').reverse().join('');
+
+      //     if (RevNegIntValue.endsWith('-')) {
+
+      //         RevNegIntValue = '-' + RevNegIntValue;
+      //     }
+
+      //     return parseInt(RevNegIntValue);
+
+      // };
+
+      // console.log(NegIntValue(-98765));
+
+      // Using Logic..
+
+      let NegIntValue = -98765;
+      let toString = "";
+
+      let StrNegIntValue = NegIntValue + toString;
+
+      for (i = StrNegIntValue.length - 1; i >= 0; i--) {
+        toString += StrNegIntValue[i];
+      }
+
+      // console.log(toString);
+
+      if (toString.endsWith("-")) {
+        toString = "-" + toString;
+
+        let result = parseInt(toString);
+        console.log(result);
+      }
+
+      //---------------------------------------------------------------------
+
+      // Write a code for this output..
+      // Sum(1)(2) = 3;
+      // Sum(1,2) = 3;
+
+      function Sum(A, B) {
+        if (B == undefined) {
+          return function (C) {
+            console.log(A + C);
+          };
+        } else {
+          console.log(A + B);
+        }
+      }
+
+      Sum(1, 2);
+      Sum(1)(2);
+    </script>
+  </body>
+</html>

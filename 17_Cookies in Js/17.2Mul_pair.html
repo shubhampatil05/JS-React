@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Name:<input type="text" id="one">
+    Email:<input type="text" id="two">
+    CompanyName:<input type="text" id="three">
+
+
+
+    <input type="button" value="SetCookie" onclick="setCookie()">
+    <input type="button" value="GetCookie" onclick="getCookie()">
+
+
+    <script>
+
+        function setCookie() {
+            var Object1 = {};
+            Object1.name = document.getElementById('one').value;
+            Object1.email = document.getElementById('two').value;
+            Object1.companyName = document.getElementById('three').value;
+
+            var jasonString = JSON.stringify(Object1);
+
+            document.cookie = jasonString;
+        }
+        function getCookie() {
+            if (document.cookie.length != 0) {
+                var Object2 = JSON.parse(document.cookie)
+                alert(" Name= " + Object2.name + ',' + "Email = " + ' ' + Object2.email + ',' + "CompanyName = " + ' ' + Object2.companyName);
+            } else {
+                alert('cookie not set');
+            }
+        }
+
+
+
+
+        // function setCookie() {
+
+        //     let x = {};
+        //     x.name = document.getElementById('one').value;
+        //     x.email = document.getElementById('two').value;
+        //     x.companyName = document.getElementById('three').value;
+
+
+        //     let ToStr = JSON.stringify(x);
+
+        //     document.cookie = ToStr;
+
+
+        // }
+
+
+        // function getCookie() {
+
+        //     if (document.cookie.length != 0) {
+
+        //         y = JSON.parse(document.cookie);
+
+        //         alert(y.name + y.email + y.companyName);
+
+        //     } else {
+
+        //         alert('Cookie not set')
+
+        //     }
+
+        // }
+        
+    </script>
+</body>
+
+</html>

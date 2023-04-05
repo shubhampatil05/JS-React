@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revision</title>
+  </head>
+  <body>
+    <!-- <script>
+      // finding missing number in array
+
+      let arr = [3, 1, 5, 7, 9, 15, 3];
+
+      const findMissingNum = (num) => {
+        let missing = [];
+
+        let minNum = Math.min(...num);
+        let maxNum = Math.max(...num);
+
+        for (i = minNum; i < maxNum; i++) {
+          if (num.indexOf(i) < 0) {
+            missing.push(i);
+          }
+        }
+        return missing;
+      };
+
+      console.log(findMissingNum(arr));
+    </script> -->
+
+    <!-- <script>
+
+
+      // make a first letter capital in every word in string
+      let str = "ina meena dika";
+
+      let arr = str.split(" ");
+
+      for (i = 0; i < arr.length; i++) {
+        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+      }
+
+      console.log(arr.join(" "));
+    </script> -->
+
+    <script>
+      // let value = 10;
+
+      // let n1 = 0,
+      //   n2 = 1,
+      //   n3;
+
+      // for (i = 0; i < value; i++) {
+      //   console.log(n1);
+      //   n3 = n1 + n2;
+      //   n1 = n2;
+      //   n2 = n3;
+      // }
+
+      // let a = 100;
+      // let b = 200;
+
+      // [a, b] = [b, a];
+      // console.log(a);
+      // console.log(b);
+    </script>
+
+    <!-- <script>
+      const fun = function () {
+        let a;
+
+        let setA = function (value) {
+          a = value;
+        };
+        let getA = function () {
+          return a;
+        };
+        return {
+          setA: setA,
+          getA: getA,
+        };
+      };
+      let object = fun();
+
+      console.dir(object.setA(20));
+      console.log(object.getA(20));
+    <!-- </script> -->
+
+    <script>
+      // const add = (a, b) => {
+      //   return new Promise((res, rej) => {
+      //     res(a + b);
+      //   });
+      // };
+
+      // add(1, 2).then((sum1) => {
+      //   console.log(sum1);
+      //   add(sum1, 5).then((sum2) => {
+      //     console.log(sum2);
+
+      //     add(sum2, 5).then((sum3) => {
+      //       console.log(sum3);
+
+      //       add(sum3, 5).then((sum4) => {
+      //         console.log(sum4);
+      //       });
+      //     });
+      //   });
+      // });
+    </script>
+
+    <script>
+      let obj = { red: "#FF000", green: "00FF00", white: "FFFFF" };
+
+      // console.log(Object.entries(obj));
+
+      // let arr = [];
+
+      // for (value in obj) {
+      //   arr.push([value, obj[value]]);
+      // }
+      // console.log(arr);
+    </script>
+
+    <script>
+      // let str = "count the accurance";
+
+      // const result = {};
+
+      // for (i = 0; i < str.length; i++) {
+      //   let count = 0;
+      //   for (j = 0; j < str.length; j++) {
+      //     if (str[i] == str[j]) {
+      //       count++;
+      //     }
+      //   }
+
+      //   result[str[i]] = count;
+      // }
+
+      // console.log(result);
+    </script>
+
+    <script>
+      let arr = [10, 20, 10, 20, 30, 20, 20];
+
+      let str = arr.toString().split(",");
+      console.log(str);
+
+      let acc = {};
+
+      for (i = 0; i < str.length; i++) {
+        let count = 0;
+
+        for (j = 0; j < str.length; j++) {
+          if (str[i] == str[j]) {
+            count++;
+          }
+        }
+
+        acc[str[i]] = count;
+      }
+
+      console.log(acc);
+
+      let newArr = [];
+
+      for (value in acc) {
+        newArr.push([value, acc[value]]);
+      }
+
+      newArr.sort((a, b) => {
+        return b[1] - a[1];
+      });
+
+      console.log(newArr[0]);
+    </script>
+  </body>
+</html>

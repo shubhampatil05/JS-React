@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>await</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p id="result"></p>
+    <script>
+      // await do not work without async..
+
+      // await only valid in async functions..
+
+      async function Display() {
+        return await new Promise((Resolve) => {
+          Resolve("Async Function Is Invoked");
+        });
+      }
+      Display().then((value) => {
+        console.log(value);
+      });
+      console.log("Welcome");
+
+      //-----------------------------------------------
+
+      async function myFunction() {
+        let promise = new Promise(function (resolve, reject) {
+          setTimeout(function () {
+            resolve("welcome to my page");
+          }, 2000);
+        });
+
+        document.getElementById("result").innerHTML = await promise;
+      }
+
+      myFunction(); //Calling function for o/p..
+
+      //-----------------------------------------------
+
+      //Another way to excecute await..
+
+      async function display() {
+        let promise = Promise.resolve("Hello");
+
+        console.log(await promise);
+      }
+      display();
+
+      console.log("Lets see what execute first");
+    </script>
+  </body>
+</html>

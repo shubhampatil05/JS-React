@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Location</title>
+
+    <style>
+        * {
+
+            text-align: center;
+            background: black;
+            color: white;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+
+
+        // Window Location href
+        // The window.location.href property returns the URL of the current page.
+
+        document.write(`<h3>Window Location Href</h3>`)
+
+        document.write(window.location.href);
+        document.write(`<hr>`);
+
+
+        // Window Location Hostname
+        // The window.location.hostname property returns the name of the internet host (of the current page).
+
+        document.write(`<h3>Window Location HostName</h3>`)
+
+        document.write(window.location.hostname);
+        document.write(`<hr>`);
+
+
+        //Window Location Pathname
+        // The window.location.pathname property returns the pathname of the current page.
+
+        document.write(`<h3>Window Location PathName</h3>`)
+
+        document.write(window.location.pathname);
+        document.write(`<hr>`);
+
+
+        //Window Location Protocol
+        // The window.location.protocol property returns the web protocol of the page.
+
+        document.write(`<h3>Window Location Protocol</h3>`)
+
+        document.write(window.location.protocol);
+        document.write(`<hr>`);
+
+
+        // Window Location Port
+        // The window.location.port property returns the number of the internet host port (of the current page).
+
+        document.write(`<h3>Window Location Port</h3>`)
+
+        document.write(window.location.port);
+        document.write(`<hr>`);
+
+
+        //Window Location Assign
+        // The window.location.assign() method loads a new document.
+
+        document.write(`<h3>Window Location Assign</h3>`)
+
+        function Show() {
+
+
+            window.location.assign("https://www.w3schools.com")
+
+        }
+
+
+    </script>
+    <button onclick="Show()">Click</button>
+
+    <hr>
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filp</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        * {
+            text-align: center;
+        }
+
+        #one {
+            background-color: lightblue;
+            ;
+            padding: 10px;
+            ;
+
+        }
+
+        #two {
+            background-color: lightcoral;
+            padding: 40px;
+            /* display: none; */
+            /*enable for slideDown method*/
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="one">Click to Slide Down Panel</div>
+    <div id="two">Hey!!</div>
+
+    <script>
+
+
+        //1.SlideDown
+        //The jQuery slideDown() method is used to slide down an element.
+
+        // $(function () {
+
+        //     $('#one').click(function () {
+
+        //         $('#two').slideDown();
+
+        //     })
+
+        // })
+
+
+
+        //2.SlideUp
+        //The jQuery slideUp() method is used to slide up an element.
+
+        // $(function () {
+        //     $("#one").click(function () {
+        //         $("#two").slideUp("slow");
+        //     });
+        // });
+
+
+        //3.slideToggle
+        //The jQuery slideToggle() method toggles between the slideDown() and slideUp() methods.
+        // If the elements have been slid down, slideToggle() will slide them up.
+        // If the elements have been slid up, slideToggle() will slide them down.
+
+
+
+        // $(function () {
+        $(function () {
+
+
+            $('#one').click(function () {
+
+                $('#two').slideToggle();
+
+            })
+
+        })
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

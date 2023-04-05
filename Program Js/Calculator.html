@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Program</title>
+    <style>
+        * {
+            text-align: center;
+        }
+
+        body{
+            background-color:darkslategray;
+        }
+
+        input[type='text'] {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 15px;
+            background-color: lightslategray;
+            font-size: 20px;
+            font-weight: bold;
+            font-style: italic;
+
+        }
+
+        input[type='text']:focus {
+            border: 2px solid rgb(228, 231, 51);
+        }
+
+        input[type='button'] {
+            padding: 3px;
+            background-color: black;
+            color: white;
+            font-style: italic;
+            border-radius: 8px;
+        }
+
+        h4 {
+            font-style: italic;
+            letter-spacing: 3px;
+
+        }
+
+        h4::first-letter {
+            font-size: 30px;
+            color: darkcyan;
+            padding-bottom: 5px;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <form name="myForm">
+
+        <input type="text" placeholder="Enter Value" name="fValue">
+        <input type="text" placeholder="Enter Value" name="sValue">
+        <hr>
+        <input type="button" value="Add" onclick="Add()">
+        <input type="button" value="Substract" onclick="Substract()">
+        <input type="button" value="Multiply" onclick="Multiply()">
+        <input type="button" value="Devide" onclick="Devide()">
+
+
+
+    </form>
+
+    <h4 id="Output_1"></h4>
+    <h4 id="Output_2"></h4>
+    <h4 id="Output_3"></h4>
+    <h4 id="Output_4"></h4>
+
+
+    <script>
+
+        function Add() {
+
+
+            value_1 = parseInt(myForm.fValue.value);
+            value_2 = parseInt(myForm.sValue.value);
+
+            result = value_1 + value_2;
+
+
+
+
+            document.getElementById('Output_1').innerHTML = `The Addition Of Two Numbers Is : ${result}`
+
+
+        };
+
+        function Substract() {
+
+
+            value_1 = parseInt(myForm.fValue.value);
+            value_2 = parseInt(myForm.sValue.value);
+
+            result = value_1 - value_2;
+
+
+            document.getElementById('Output_2').innerHTML = `The Substraction Of Two Numbers Is : ${result}`
+
+
+        };
+        function Multiply() {
+
+
+            value_1 = parseInt(myForm.fValue.value);
+            value_2 = parseInt(myForm.sValue.value);
+
+            result = value_1 * value_2;
+
+
+            document.getElementById('Output_3').innerHTML = `The Multiplication Of Two Numbers Is : ${result}`
+
+
+        };
+        function Devide() {
+
+
+            value_1 = parseInt(myForm.fValue.value);
+            value_2 = parseInt(myForm.sValue.value);
+
+            result = value_1 / value_2;
+
+
+
+            document.getElementById('Output_4').innerHTML = `The Devidation Of Two Numbers Is : ${result}`
+
+
+        };
+
+    </script>
+
+
+</body>
+
+</html>

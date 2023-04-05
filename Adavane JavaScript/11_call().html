@@ -1,0 +1,57 @@
+<script>
+  // Call Method..
+
+  // Example_1..
+
+  function Method() {
+    console.log(
+      `${this.Name} i appriciate your ${this.Work} and ${this.Behaviour}`
+    );
+  }
+
+  const Person_1 = {
+    Name: "Eoin",
+    Work: "Social Service",
+    Behaviour: "You are a good person",
+  };
+
+  Method.call(Person_1);
+
+  const Person_2 = {
+    Name: "Vaibhav",
+    Work: "Teaching",
+    Behaviour: "You are a good person",
+  };
+
+  Method.call(Person_2);
+
+  const Person_3 = {
+    Name: "Ranvijay",
+    Work: "Acting",
+    Behaviour: "You are a good person",
+  };
+
+  Method.call(Person_3);
+
+  // Example_2..
+
+  function Achivement(follow) {
+    console.log(
+      `${this.Name} You make very good ${this.Content} and Congratulations for your ${follow} subscribers`
+    );
+  }
+
+  const Youtuber_1 = {
+    Name: "Aashish Chanchlani Vines",
+    Content: "Comedy Video's",
+  };
+
+  Achivement.call(Youtuber_1, 28.7);
+
+  const Youtuber_2 = {
+    Name: "BB Ki Vines",
+    Content: "Comedy Video's & Series",
+  };
+
+  Achivement.call(Youtuber_2, "25.5M");
+</script>

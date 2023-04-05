@@ -1,0 +1,21 @@
+<script>
+  function Achivement(follow) {
+    console.log(
+      `${this.Name} You make very good ${this.Content} and Congratulations for your ${follow} Subscribers`
+    );
+  }
+
+  const Youtuber_1 = {
+    Name: "Aashish Chanchlani Vines",
+    Content: "Comedy Video's",
+  };
+
+  const Youtuber_2 = {
+    Name: "BB Ki Vines",
+    Content: "Comedy Video's & Series",
+  };
+
+  let bind_1 = Achivement.bind(Youtuber_2, "29M"); // binding method..
+
+  bind_1();
+</script>

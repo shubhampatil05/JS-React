@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        * {
+            text-align: center;
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function SubmitMyForm() {
+            var CheckName = document.MyForm.name.value;
+            var CheckEmail = document.MyForm.email.value;
+            var CheckNumber = document.MyForm.number.value;
+            var CheckIntrest = document.MyForm.intrest.value;
+            var CheckPassword = document.MyForm.password.value;
+
+
+            if (CheckName == null || CheckName == "") {
+                alert('Please Enter Valid Name');
+                return false;
+            } else if (CheckEmail == null || CheckEmail == "") {
+                alert('Email Must Be Entered')
+                return false;
+            } else if (CheckNumber.length < 10) {
+                alert('Enter Valid Number');
+                return false;
+            } else if (CheckIntrest == null || CheckIntrest == "") {
+                alert('You Have To Enter At least One Intrest')
+                return false;
+            } else if (CheckPassword == '') {
+                alert('Enter Your Password');
+                return false;
+            } else if (CheckPassword.length < 4) {
+                alert('Password Must Be Contain At Least 4 Charectars');
+                return false;
+            }
+        }
+    </script>
+
+
+    <h3>Form Validation</h3>
+    <h5>Validate the Name,Email,Number,Intrest,Password <br> Name can't be empty,<br>Email should be entered,<br>Number
+        should be valid,<br>Have to enter At least 1 intrest,<br>Password must be contain 6 digits</h5>
+
+    <form action="submit.html" name="MyForm" method="get" onsubmit="return SubmitMyForm()">
+
+        Name:<input type="text" name="name">
+        Email:<input type="email" name="email">
+        Number:<input type="number" name="number">
+        Intrest:<input type="text" name="intrest">
+        Password:<input type="password" name="password">
+        <br><br><br><br><br>
+        <input type="submit" value="submit">
+    </form>
+
+
+    </form>
+</body>
+
+</html>

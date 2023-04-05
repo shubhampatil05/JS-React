@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Symbol</title>
+  </head>
+
+  <body>
+    <!-- <script>
+      let x = Symbol();
+      let y = Symbol();
+
+      console.log(x == y); // false..coz every symbol is unique..
+
+      // Sharing by symbol..
+
+      let a = Symbol.for();
+      let b = Symbol.for();
+
+      console.log(a == b); // true..coz of symbol sharing..
+
+      //-------------------------
+
+      let Details = {
+        person: "Student",
+        person: "Employee",
+        Work: "IT Company",
+      };
+
+      // first person will skip coz of same name browser consider second person..
+
+      console.log(Details);
+
+      //-------------
+
+      let p = Symbol("person");
+      let q = Symbol("person");
+      let Info = {
+        [p]: "Student",
+        [q]: "Employee",
+        Work: "IT Company",
+      };
+      console.log(Info);
+
+      // Now both person appears coz of symbol..every symbol is unique..
+
+      console.log(Object.keys(Info));
+
+      //if we try to get keys of Object.. symbol is not a part of keys..
+    </script> -->
+
+    <script>
+      //   let x = Symbol();
+      //   let y = Symbol();
+      //   console.log(x == y);
+
+      //   let x = Symbol().for;
+      //   let y = Symbol().for;
+      //   console.log(x == y);
+    </script>
+
+    <!-- <script>
+      const Details = {
+        Name: "jenny",
+        Name: "jonas",
+        Work: "Painter",
+      };
+      console.log(Details);
+
+      let n1 = Symbol("Name");
+      let n2 = Symbol("Name");
+
+      let info = {
+        [n1]: "Jenny",
+        [n2]: "Jonas",
+        Work: "Painter",
+      };
+
+      console.log(info);
+    </script> -->
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attribute Manupulation</title>
+  </head>
+
+  <body>
+    <a name="list">The list:</a>
+    <ul>
+      <li><a href="http://google.com">http://google.com</a></li>
+      <li><a href="/tutorial">/tutorial.html</a></li>
+      <li><a href="local/path">local/path</a></li>
+      <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+      <li><a href="http://nodejs.org">http://nodejs.org</a></li>
+      <li><a href="http://internal.com/test">http://internal.com/test</a></li>
+    </ul>
+
+    <!-- 
+        Change all external links color to green
+        Exeception :- 
+                    1. Its href must have :// in it
+                    2. It should not start with http://internal.com 
+     -->
+
+    <script>
+      // let Element = document.querySelectorAll('a');
+
+      // for (value of Element) {
+      //   let links = value.getAttribute('href');
+      //   if (!links) {
+
+      //     continue;
+
+      //   };
+
+      //   if (!links.includes('://')) {
+
+      //     continue;
+
+      //   };
+
+      //   if (links.startsWith('http://internal.com')) {
+
+      //     continue;
+      //   }
+
+      //   value.style.color = 'green';
+
+      // }
+
+      // let Element = document.querySelectorAll('a');
+
+      // for (i = 0; i < Element.length; i++) {
+
+      //   let getLinks = Element[i];
+
+      //   let links = getLinks.getAttribute('href');
+
+      //   if (!links) {
+
+      //     continue;
+      //   }
+      //   if (!links.includes('://')) {
+
+      //     continue;
+      //   }
+      //   if (links.startsWith('http://internal.com/test')) {
+
+      //     continue;
+
+      //   }
+
+      //   getLinks.style.color = 'green';
+
+      //   console.log(links);
+
+      // }
+
+      let Element = document.querySelectorAll("a");
+
+      for (i = 1; i < Element.length; i++) {
+        let links = Element[i].getAttribute("href");
+
+        if (links.includes("://") && !links.startsWith("http://internal.com")) {
+          Element[i].style.color = "green";
+        }
+      }
+    </script>
+  </body>
+</html>

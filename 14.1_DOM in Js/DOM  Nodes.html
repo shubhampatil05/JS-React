@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM nodes</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="Div1">
+      <p id="one">This is a First Para</p>
+      <p id="two">This is a Second Para</p>
+    </div>
+    <hr />
+
+    <div id="Div2">
+      <p id="three">First</p>
+      <p id="fourth">Third</p>
+    </div>
+    <hr />
+    <div id="Div3">
+      <p id="p1">Para1</p>
+      <p id="p2">Para2</p>
+      <p id="p3">Para3</p>
+    </div>
+
+    <button onclick="RemoveElement()">RemoveElement</button>
+    <hr />
+    <div id="Div4">
+      <p id="Id1">Existing Para</p>
+    </div>
+    <script>
+      // Creating New Element
+      //To add a new element to the HTML DOM, you must create the element (element node) first, and then append it to an existing element.
+
+      let CreatePara = document.createElement("p"); // ==> Create element
+      let CreateText = document.createTextNode("This is a Newly Created Para"); // ==> Create Text For New Element
+
+      CreatePara.appendChild(CreateText); // ==> append Text To The New Element
+
+      let Element = document.getElementById("Div1"); // ==> Find Existing Element
+
+      Element.appendChild(CreatePara); // ==> Append New Element To The Existing Element
+
+      // Creating New Element - insertBefore()
+
+      let CreateElmt = document.createElement("p");
+      let CreateTxt = document.createTextNode("Second : Newly Added");
+
+      CreateElmt.appendChild(CreateTxt);
+
+      let Elmt = document.getElementById("Div2");
+      let Child = document.getElementById("fourth");
+
+      Elmt.insertBefore(CreateElmt, Child);
+
+      // Remove Existing Element
+      //To remove an HTML element, use the remove() method:
+
+      document.getElementById("p3").remove();
+
+      // Remove Existing Element By Creating Event
+
+      function RemoveElement() {
+        document.getElementById("p2").remove();
+      }
+
+      // Removing A Child Node
+      //For browsers that does not support the remove() method, you have to find the parent node to remove an element:
+
+      let ParentElememt = document.getElementById("Div3");
+      let ChildElement = document.getElementById("p1");
+
+      ParentElememt.removeChild(ChildElement);
+
+      // Replacing Element
+      // To replace an element to the HTML DOM, use the replaceChild() method:
+
+      let CE = document.createElement("p");
+      let CT = document.createTextNode("This Is A Replacing Element");
+
+      CE.appendChild(CT);
+
+      let E = document.getElementById("Div4");
+      let removeElement = document.getElementById("Id1");
+
+      E.replaceChild(CE, removeElement);
+    </script>
+  </body>
+</html>

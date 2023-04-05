@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algoritham</title>
+
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // find a sum of values starts with next of current element
+
+      // let arr = [1, 2, 3, 4, 5];
+
+      // let res = [];
+
+      // for (i = 0; i < arr.length; i++) {
+      //   let count = 0;
+
+      //   for (j = i + 1; j < arr.length; j++) {
+      //     count += arr[j];
+
+      //     if (j == arr.length - 1) {
+      //       res.push(count);
+      //     }
+      //   }
+      // }
+
+      // console.log(res);
+    </script>
+
+    <script>
+      // find missing odd number..
+
+      // first method
+
+      // let arr = [5, 7, 9, 11, 15, 17];
+
+      // let res = [];
+
+      // let minVal = Math.min(...arr);
+      // let maxVal = Math.max(...arr);
+
+      // for (i = minVal; i <= maxVal; i++) {
+      //   if (arr.indexOf(i) < 0 && i % 2 != 0) {
+      //     res.push(i);
+      //   }
+      // }
+      // console.log(res);
+
+      //-----------------------------------------------------------
+
+      // second method
+
+      // let arr = [5, 7, 9, 11, 15, 17];
+
+      // let res = [];
+
+      // let minVal = Math.min(...arr);
+      // let maxVal = Math.max(...arr);
+
+      // for (i = minVal; i <= maxVal; i = i+ 2) {
+      //   if (arr.indexOf(i) < 0) {
+      //     res.push(i);
+      //   }
+      // }
+      // console.log(res);
+    </script>
+
+    <script>
+      //find a numbers in the given array..the multiplication of two numbers are equal to 10
+
+      // let array = [1, 2, 5, 7, 8, 10, 14];
+
+      // let num = 10;
+      // let res = [];
+
+      // for (let i = 0; i < array.length; i++) {
+      //   for (let j = 0; j < array.length; j++) {
+      //     if (array[i] * array[j] == num) {
+      //       res.push([array[i], array[j]]);
+      //     }
+      //   }
+      // }
+
+      // console.dir(res);
+    </script>
+
+    <script>
+      // insert a element in a given array at specified position
+
+      // let arr = [1, 2, 3, 5, 6];
+
+      // let p = 3;
+      // let v = 4;
+
+      // for (i = arr.length - 1; i >= 0; i--) {
+      //   if (i >= p) {
+      //     arr[i + 1] = arr[i];
+      //   }
+      // }
+
+      // arr[p] = v;
+
+      // console.log(arr);
+
+      //--------------------------------------------------------------
+
+      // let q = arr[p]
+      //  arr[p] = [q,v]
+      // console.log(arr.flat())
+
+      //-----------------------------------------
+
+      // using splice
+
+      // arr.splice(p, 0, v);
+
+      // console.log(arr);
+    </script>
+
+    <script>
+      // remove a number from given array at specified position
+
+      // let arr = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+
+      // let p = 4;
+
+      // for (i = 0; i < arr.length - 1; i++) {
+      //   if (i >= p) {
+      //     arr[i] = arr[i + 1];
+      //   }
+      // }
+
+      // arr.length = arr.length - 1;
+
+      // console.log(arr);
+
+      //-------------------------------------------
+
+      // using splice
+
+      // arr.splice(p, 1);
+      // console.log(arr);
+    </script>
+
+    <script>
+      // merge two array
+
+      // let a = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+      // let b = [7, 6, 5, 4, 8, 9];
+      // let res = [];
+
+      // let count = 0;
+      // let index = b[count];
+
+      // for (i = 0; i < a.length; i++) {
+      //   if (index != b.length && b[count] != undefined) {
+      //     res.push(a[i], b[count]);
+      //     count++;
+      //   } else {
+      //     res.push(a[i]);
+      //   }
+      // }
+      // console.log(res);
+
+      //--------------------------------------------------------
+
+      // second logic
+
+      // let a = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+      // let b = [7, 6, 5, 4, 8, 9];
+      // let res = [];
+
+      // for (i = 0; i < a.length; i++) {
+      //   if (a[i] && b[i]) {
+      //     res[i] = [a[i], b[i]];
+      //   } else {
+      //     res[i] = a[i];
+      //   }
+      // }
+      // console.log(res.flat());
+
+      //-------------------------------------------
+
+      // third logic
+
+      // let a = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+      // let b = [7, 6, 5, 4, 8, 9];
+      // let res = [];
+
+      // for (i = 0; i < a.length; i++) {
+      //   if (a[i] && b[i]) {
+      //     res.push(a[i]);
+      //     res.push(b[i]);
+      //   } else {
+      //     res.push(a[i]);
+      //   }
+      // }
+      // console.log(res);
+    </script>
+
+    <script>
+      // concat two arrays without inbuilt method
+
+      // let a = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+      // let b = [7, 6, 5, 4, 8, 9];
+      // let res = [];
+
+      // for (i = 0; i < a.length; i++) {
+      //   res[i] = a[i];
+      // }
+
+      // for (i = 0; i < b.length; i++) {
+      //   res[a.length + i] = b[i];
+      // }
+
+      // console.log(res);
+    </script>
+
+    <script>
+      // find a sum of four consicutive number in array
+
+      // let a = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+      // // op = [100,140,180,220]
+
+      // let res = [];
+
+      // for (i = 0; i < a.length; i++) {
+      //   if (a[i + 3]) {
+      //     res[i] = a[i] + a[i + 1] + a[i + 2] + a[i + 3];
+      //   }
+      // }
+
+      // console.log(res);
+    </script>
+
+    <script>
+      // Q:- Find the sum of all elements/numbers of a given array?
+
+      // using loop
+      // let arr = [1, 2, 5, 10, 20];
+
+      // let res = 0;
+
+      // for (i = 0; i < arr.length; i++) {
+      //   res += arr[i];
+      // }
+
+      // console.log(res);
+
+      //--------------------------------------------------------
+
+      // let arr = [1, 2, 5, 10, 20];
+
+      // // using reduce
+
+      // let res = arr.reduce((acc, curr) => {
+      //   return acc + curr;
+      // });
+      // console.log(res);
+    </script>
+    <script>
+      // Find the frequency of elements in array
+
+      //first method
+      // let arr = ["hello", "world", "java", "hello", "world"];
+
+      // let count = {};
+
+      // arr.forEach((item) => {
+      //   if (count[item]) {
+      //     count[item]++;
+      //   } else {
+      //     count[item] = 1;
+      //   }
+      // });
+
+      // console.log(count);
+
+      //-----------------------------------------
+
+      //second method
+
+      // let arr = ["hello", "world", "java", "hello", "world"];
+
+      // let res = {};
+
+      // for (i = 0; i < arr.length; i++) {
+      //   let count = 0;
+
+      //   for (j = 0; j < arr.length; j++) {
+      //     if (arr[i] == arr[j]) {
+      //       count++;
+      //     }
+      //   }
+
+      //   res[arr[i]] = count;
+      // }
+
+      // console.log(res);
+    </script>
+
+    <script>
+      // find a frequency most occuring element
+
+      // first way..
+      // using single for loop
+
+      // using single for loop
+
+      // let arr = ["hello", "world", "java", "hello", "world", "hello"];
+
+      // let res = {};
+
+      // for (i = 0; i < arr.length; i++) {
+      //   if (res[arr[i]]) {
+      //     res[arr[i]]++;
+
+      //   } else {
+      //     res[arr[i]] = 1;
+      //   }
+      // }
+      // console.log(res);
+
+      // let newArr = [];
+
+      // for (val in res) {
+      //   newArr.push([val, res[val]]);
+      // }
+      // newArr.sort((a, b) => {
+      //   return b[1] - a[1];
+      // });
+
+      // console.log(newArr[0]);
+
+      //------------------------------------------------------------
+
+      // using nested for loops
+
+      // let arr = ["hello", "world", "java", "hello", "world", "hello"];
+
+      // let res = {};
+
+      // for (i = 0; i < arr.length; i++) {
+      //   let count = 0;
+
+      //   for (j = 0; j < arr.length; j++) {
+      //     if (arr[i] == arr[j]) {
+      //       count++;
+      //     }
+      //   }
+
+      //   res[arr[i]] = count;
+      // }
+
+      // let op = [];
+
+      // for (val in res) {
+      //   op.push([val, res[val]]);
+      // }
+      // op.sort((a, b) => {
+      //   return b[1] - a[i];
+      // });
+
+      // console.log(op[0]);
+
+      //------------------------------------------------------------
+
+      //second way..
+      // using forEach loop
+
+      // let arr = ["hello", "world", "java", "hello", "world", "hello"];
+
+      // let res = {};
+
+      // arr.forEach((item) => {
+      //   if (res[item]) {
+      //     res[item]++;
+      //   } else {
+      //     res[item] = 1;
+      //   }
+      // });
+
+      // let op = [];
+
+      // for (val in res) {
+      //   op.push([val, res[val]]);
+      // }
+
+      // op.sort((a, b) => {
+      //   return b[1] - a[1];
+      // });
+
+      // console.log(op[0]);
+
+      //-------------------------------------------------------
+
+      // for string
+
+      // let str = "dmnkdiodjddkjdnudmhudnbjkdnjkndudnui";
+
+      // let arr = str.split("");
+
+      // let res = {};
+
+      // arr.forEach((item) => {
+      //   if (res[item]) {
+      //     if (!res.hasOwnProperty(" ")) {
+      //       // to remove empty space
+      //       res[item]++;
+      //     }
+      //   } else {
+      //     res[item] = 1;
+      //   }
+      // });
+      // console.table(res);
+
+      // let op = [];
+
+      // for (val in res) {
+      //   op.push([val, res[val]]);
+      // }
+
+      // op.sort((a, b) => {
+      //   return b[1] - a[1];
+      // });
+
+      // console.log(op[0]);
+    </script>
+
+    <script>
+      // 2. Group items on the basis of age of given array of object
+
+      // using forEach
+
+      // let arr = [
+      //   { name: "Shubham", age: 26 },
+      //   { name: "Virag", age: 28 },
+      //   { name: "Ankur", age: 28 },
+      //   { name: "Omprakash", age: 36 },
+      //   { name: "Shankar", age: 28 },
+      // ];
+
+      // let check = {};
+
+      // arr.forEach((item) => {
+      //   if (check[item.age]) {
+      //     check[item.age].push(item);
+      //   } else {
+      //     check[item.age] = [item];
+      //   }
+      // });
+      // console.table(check);
+
+      //------------------------------------------------------
+
+      // using loop
+
+      // 2. Group items on the basis of age of given array of object
+
+      // let arr = [
+      //   { name: "Shubham", age: 26 },
+      //   { name: "Virag", age: 28 },
+      //   { name: "Ankur", age: 28 },
+      //   { name: "Omprakash", age: 36 },
+      //   { name: "shankar", age: 28 },
+      // ];
+
+      // let res = {};
+
+      // for (i = 0; i < arr.length; i++) {
+      //   if (res[arr[i].age]) {
+      //     res[arr[i].age].push(arr[i]);
+      //   } else {
+      //     res[arr[i].age] = [arr[i]];
+      //   }
+      // }
+      // console.table(res);
+
+      //---------------------------------------------------
+
+      // Using for Of loop
+
+      // let arr = [
+      //   { name: "Shubham", age: 26 },
+      //   { name: "Virag", age: 28 },
+      //   { name: "Ankur", age: 28 },
+      //   { name: "Omprakash", age: 36 },
+      //   { name: "Shankar", age: 28 },
+      // ];
+
+      // res = {};
+
+      // for (item of arr) {
+      //   if (res[item.age]) {
+      //     res[item.age].push(item);
+      //   } else {
+      //     res[item.age] = [item];
+      //   }
+      // }
+
+      // console.log(res);
+
+      //----------------------------------------------------------
+
+      // By using Reduce
+
+      // const data = [
+      //   { Name: "Virag", Age: 28, City: "Dhule" },
+      //   { Name: "Ankur", Age: 27, City: "Nagpur" },
+      //   { Name: "Shubham", Age: 25, City: "Nanded" },
+      //   { Name: "Krishna", Age: 28, City: "Beed" },
+      //   { Name: "Omprakash", Age: 36, City: "Nanded" },
+      // ];
+
+      // const rslt = data.reduce((acc, curr) => {
+      //   if (acc[curr.Age]) {
+      //     acc[curr.Age].push(curr);
+      //   } else {
+      //     acc[curr.Age] = [curr];
+      //   }
+      //   return acc;
+      // }, {});
+
+      // console.log(rslt);
+    </script>
+
+    <script>
+      // debugger;
+      // let a = 3;
+      // debugger;
+      // let b = a++;
+      // debugger;
+      // let c = ++a;
+      // debugger;
+
+      // console.log(a, b, c); //5,3,5
+    </script>
+
+    <script>
+      // reverse the string
+
+      // let str = "apple";
+
+      // //using method
+
+      // console.log(str.split("").reverse().join(""));
+
+      //------------------------------------------------------
+
+      // // using loop
+
+      // let res = "";
+
+      // for (i = str.length - 1; i >= 0; i--) {
+      //   res += str[i];
+      // }
+      // console.log(res);
+    </script>
+
+    <script>
+      //  create an array of sum at every index put sum of all elements except that one
+
+      // let arr = [2, 7, 11, 4, -2];
+
+      // // op = [20,15,11,18,24]
+
+      // // using loop
+
+      // res = [];
+
+      // for (i = 0; i < arr.length; i++) {
+      //   let count = 0;
+
+      //   for (j = 0; j < arr.length; j++) {
+      //     count += arr[j];
+      //   }
+      //   res[i] = count - arr[i];
+      // }
+      // console.log(res);
+
+      //------------------------------------------------------
+
+      // using method
+
+      // let arr = [2, 7, 11, 4, -2];
+
+      // // op = [20, 15, 11, 18, 24];
+
+      // let op = arr.reduce((acc, curr) => {
+      //   return acc + curr;
+      // });
+
+      // let res = arr.map((item, index) => op - item);
+
+      // console.log(res);
+    </script>
+    <script>
+      // for (i = 0; i < 10; i++) {
+      //   (function (index) {
+      //     setTimeout(() => {
+      //       console.log(index);
+      //     }, 1000);
+      //   })(i);
+      // }
+    </script>
+
+    <script>
+      // find the third alternative number in array and find the sum of alternative number with last alternative number
+
+      // let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      // let res = [];
+      // let op = [];
+
+      // for (i = 2; i < arr.length; i += 3) {
+      //   res.push(arr[i]);
+      // }
+
+      // for (j = 0; j < res.length - 1; j++) {
+      //   op.push(res[j] * Math.max(...res));
+      // }
+
+      // console.log(op);
+    </script>
+
+    <script>
+      // Find the pairs of array element for which sum is equal to given target value
+
+      // let array = [1, 2, 3, 4, 6, 7, 8, 9, 0];
+
+      // let arr = array.sort((a, b) => a - b);
+
+      // let sum = 9;
+
+      // let res = [];
+
+      // for (i = 0; i < arr.length; i++) {
+      //   for (j = i + 1; j < arr.length; j++) {
+      //     if (arr[i] + arr[j] == sum) {
+      //       res[i] = [arr[i], arr[j]];
+      //     }
+      //   }
+      // }
+      // console.log(res);
+    </script>
+
+    <script>
+      // find the  missing number in array
+
+      // let arr = [1, 4, 5, 6, 8, 9, 10];
+
+      // let maxNum = Math.max(...arr);
+      // let minNum = Math.min(...arr);
+      // let res = [];
+
+      // for (i = minNum; i < maxNum; i++) {
+      //   if (arr.indexOf(i) < 0) {
+      //     res.push(i);
+      //   }
+      // }
+
+      // console.log(res);
+    </script>
+
+    <script>
+      // remove the duplicate number in array
+
+      // let arr = [1, 2, 3, 4, 7, 8, 9, 9, 9, 8, 7, 6, 55, 55];
+
+      // let res = [];
+      // let index = 0;
+
+      // for (i = 0; i < arr.length; i++) {
+      //   if (res.indexOf(arr[i]) < 0) {
+      //     res[index] = arr[i];
+      //     index++;
+      //   }
+      // }
+      // console.log(res);
+    </script>
+
+    <script>
+      // get the duplicates  in array
+      // let arr = [1, 2, 3, 4, 7, 8, 9, 9, 9, 8, 7, 6, 55];
+
+      // let res = [];
+      // let index = 0;
+
+      // for (i = 0; i < arr.length; i++) {
+      //   for (j = i + 1; j < arr.length; j++) {
+      //     if (arr[i] == arr[j]) {
+      //       res[index] = arr[i];
+      //       index++;
+      //     }
+      //   }
+      // }
+      // console.log(res);
+    </script>
+
+    <script>
+      // find unique number in array
+
+      // let arr = [1, 22, 2, 2, 2, 2, 2, 3, 3, 4, 5, 6, 6, 7, 8, 8, 9];
+
+      // let res = [];
+      // let index = 0;
+
+      // for (i = 0; i < arr.length; i++) {
+      //   if (arr.indexOf(arr[i]) == arr.lastIndexOf(arr[i])) {
+      //     res[index] = arr[i];
+      //     index++;
+      //   }
+      // }
+
+      // console.log(res);
+    </script>
+
+    <script>
+      // find unique elements which appears once in an array
+
+      // let array = [
+      //   1, 4, 5, 6, 7, 2, 2, 2, 3, 10, 4, 4, 5, 5, 6, 6, 7, 8, 9, 9, 10, 15,
+      // ];
+
+      // let arr = array.sort((a, b) => a - b);
+
+      // let res = [];
+      // let index = 0;
+
+      // for (i = 0; i < arr.length; i++) {
+      //   if (arr[i] !== arr[i + 1] && arr[i] !== arr[i - 1]) {
+      //     res[index] = arr[i];
+      //     index++;
+      //   }
+      // }
+
+      // console.log(res);
+    </script>
+
+    <script>
+      // check if all elements in array are equal or not
+
+      // using every method
+
+      // function myFunction(a) {
+      //   let res = a.every((val) => {
+      //     return val === a[0];
+      //   });
+      //   return res;
+      // }
+
+      // console.log(myFunction([true, true, true, true]));
+
+      //------------------------------------------------------
+
+      // using new Set and from method
+
+      // let arr = [true, true, true, true];
+
+      // let res = Array.from(new Set(arr));
+
+      // if (res.length == 1) {
+      //   console.log(true);
+      // } else {
+      //   console.log(false);
+      // }
+
+      //------------------------------------------------------
+
+      // only using new Set
+
+      // let arr = [true, true, true, true];
+
+      // console.log(new Set(arr).size === 1);
+    </script>
+    <script>
+      //Write a function that takes an array of objects as argument. Sort the array by property b in ascending order. Return the sorted array
+
+      // function myFunction(arr) {
+      //   let res = arr.sort((x, y) => {
+      //     return x.b - y.b;
+      //   });
+
+      //   return res;
+      // }
+
+      // console.dir(
+      //   myFunction([
+      //     { a: 1, b: 2 },
+      //     { a: 5, b: 4 },
+      //   ])
+      // );
+      // console.dir(
+      //   myFunction([
+      //     { a: 2, b: 10 },
+      //     { a: 5, b: 4 },
+      //   ])
+      // );
+      // console.dir(
+      //   myFunction([
+      //     { a: 1, b: 7 },
+      //     { a: 2, b: 1 },
+      //   ])
+      // );
+    </script>
+
+    <script>
+      // Write a function that takes two strings (a and b) as arguments. Create an object that has a property with key 'a' and a value of 'b'. Return the object.
+
+      // function myFunction(a, b) {
+      //   return { [a]: b };
+      // }
+
+      // console.log(myFunction("a", "b"));
+      // console.log(myFunction("z", "x"));
+      // console.log(myFunction("b", "w"));
+    </script>
+
+    <script>
+      //Write a function that takes two arrays (a and b) as arguments. Create an object that has properties with keys 'a' and corresponding values 'b'. Return the object.
+
+      // function myFunction(a, b) {
+      //   let res = {};
+      //   let count = 0;
+      //   a.forEach((item) => {
+      //     res[item] = b[count];
+      //     count++;
+      //   });
+
+      //   return res;
+      // }
+
+      // console.log(myFunction(["w", "x", "y", "z"], [10, 9, 5, 2]));
+      // console.log(myFunction([1, "b"], ["a", 2]));
+
+      //-------------------------------------------------
+
+      //Another Method
+
+      // function myFunction(a, b) {
+      //   return a.reduce((acc, cur, i) => ({ ...acc, [cur]: b[i] }), {});
+      // }
+    </script>
+
+    <script>
+      // Write a function that takes an object (a) as argument. Return the sum of all object values.
+
+      // function myFunction(a) {
+      //   let res = Object.values(a);
+
+      //   return res.reduce((acc, curr) => acc + curr);
+      // }
+
+      // console.log(myFunction({ a: 1, b: 2, c: 3 }));
+    </script>
+
+    <script>
+      // Write a function that takes two objects as arguments. Unfortunately, the property 'b' in the second object has the wrong key. It should be named 'd' instead. Merge both objects and correct the wrong property name. Return the resulting object. It should have the properties 'a', 'b', 'c', 'd', and 'e'
+
+      // function myFunction(x, y) {
+      //   let val = y["b"];
+      //   delete y.b;
+
+      //   Object.assign(y, { d: val });
+
+      //   let obj = { ...x, ...y };
+      //   return obj;
+      // }
+
+      // console.log(myFunction({ a: 1, b: 2 }, { c: 3, b: 4, e: 5 }));
+      // console.log(myFunction({ a: 5, b: 4 }, { c: 3, b: 1, e: 2 }));
+
+      //--------------------------------------------------
+
+      // Another Method
+
+      // function myFunction(x, y) {
+      //   const { b, ...rest } = y;
+      //   return { ...x, ...rest, d: b };
+      // }
+
+      // console.log(myFunction({ a: 1, b: 2 }, { c: 3, b: 4, e: 5 }));
+      // console.log(myFunction({ a: 5, b: 4 }, { c: 3, b: 1, e: 2 }));
+    </script>
+    <script>
+      //Write a function that takes an object (a) and a number (b) as arguments. Multiply all values of 'a' by 'b'. Return the resulting object.
+
+      // using reduce
+
+      // function myFunction(a, b) {
+      //   return Object.entries(a).reduce((acc, [key, val]) => {
+      //     return { ...acc, [key]: val * b };
+      //   }, {});
+      // }
+
+      // console.log(myFunction({ a: 1, b: 2, c: 3 }, 3));
+
+      //----------------------------------------------------
+
+      // using for in loop
+
+      // function myFunction(a, b) {
+      //   let obj = {};
+      //   for (val in a) {
+      //     obj[val] = a[val] * b;
+      //   }
+      //   return obj;
+      // }
+
+      // console.log(myFunction({ a: 1, b: 2, c: 3 }, 3));
+    </script>
+
+    <script>
+      // find the longest word in the given string/array
+
+      // function findLongest(arr) {
+      //   let count = "";
+
+      //   for (i = 0; i < arr.length; i++) {
+      //     if (arr[i].length > count.length) {
+      //       count = arr[i];
+      //     }
+      //   }
+
+      //   return count;
+      // }
+
+      // console.log(findLongest(["this", "is", "a", "random", "text"]));
+    </script>
+
+    <script>
+      // find a longets word in a given string without using inbuild methods
+      // function splitStr(str) {
+      //   let arr = [];
+      //   let tempStr = "";
+      //   let count = 0;
+      //   let res = "";
+      //   for (i = 0; i < str.length; i++) {
+      //     if (str[i] !== " ") {
+      //       tempStr += str[i];
+      //     } else {
+      //       arr[count] = tempStr;
+      //       tempStr = "";
+      //       count++;
+      //     }
+      //   }
+
+      //   for (j = arr.length - 1; j >= 0; j--) {
+      //     res = res + " " + arr[j];
+      //   }
+      //   return res;
+      // }
+      // console.log(splitStr("this is a random text "));
+    </script>
+
+    <script>
+      // function createBase(a) {
+      //   return function add(b) {
+      //     console.log(a + b);
+      //   };
+      // }
+
+      // createBase(6)(21);
+    </script>
+    <script>
+      // Reverse string using split..
+
+      // function revString(str) {
+      //   let arr = str.split(" ");
+      //   let result = "";
+
+      //   for (i = 0; i < arr.length; i++) {
+      //     result = arr[i] + " " + result;
+      //   }
+      //   return result;
+      // }
+
+      // console.log(revString("reverse the string"));
+    </script>
+
+    <script>
+      // Sort the given string or array without using inbuild methods..
+
+      // let arr = ["development", "web", "tutorial"];
+
+      // for (i = 0; i < arr.length; i++) {
+      //   for (j = i + 1; j < arr.length; j++) {
+      //     if (arr[i].length <= arr[j].length) {
+      //       let temp = arr[i];
+      //       arr[i] = arr[j];
+      //       arr[j] = temp;
+      //     }
+      //   }
+      // }
+
+      // console.log(arr);
+    </script>
+
+    <script>
+      // Find a factorial..
+
+      // Using recursive function
+
+      // function countDown(num) {
+      //   if (num === 0) {
+      //     return 1;
+      //   } else {
+      //     return (num *= countDown(num - 1));
+      //   }
+      // }
+
+      // console.log(countDown(5));
+
+      //----------------------------------------------------
+
+      // Using for loop
+
+      // let result = 1;
+
+      // for (i = 5; i > 0; i--) {
+      //   result = result * i;
+      // }
+
+      // console.log(result);
+    </script>
+    <script>
+      // Prototype chain example
+
+      // let mydate = new Date();
+
+      // do {
+      //   mydate = Object.getPrototypeOf(mydate);
+
+      //   console.log(mydate);
+      // } while (mydate);
+    </script>
+
+    <script>
+      // Push elements in array without using mehtod and for loop
+
+      // let arr = [1, 2, 3];
+
+      // let i = arr.length;
+
+      // function Push(a) {
+      //   arr[i] = a;
+      //   i++;
+      //   console.log(arr);
+      // }
+      // Push(4);
+      // Push(5);
+      // Push(6);
+    </script>
+    <script>
+      // check the element in the array is Armstrong number or not..
+
+      // Check Armstrong Number..
+
+      // function Armstrong(a) {
+      //   let arr = a.toString().split("");
+
+      //   let res = [];
+      //   let arry = [];
+      //   let add = 0;
+
+      //   for (i = 0; i < arr.length; i++) {
+      //     res[i] = arr[i] ** 3;
+      //   }
+      //   for (i = 0; i <= res.length; i++) {
+      //     if (!isNaN(res[i])) {
+      //       add += res[i];
+      //     } else {
+      //       arry.push(add);
+      //       add = 0;
+      //     }
+      //   }
+
+      //   for (i = 0; i < arry.length; i++) {
+      //     a[i] = a[i] == arry[i];
+      //   }
+
+      //   console.log(a);
+      // }
+
+      // Armstrong([370, 153, 656, 123, 432, 371]);
+    </script>
+
+    <script>
+      // Find the longest subString of non-repeating characters..
+
+      // let str = "pwwkew";
+
+      // let res = "";
+
+      // for (i = 0; i < str.length; i++) {
+      //   let newStr = "";
+
+      //   for (j = i; j < str.length; j++) {
+      //     if (newStr.includes(str[j])) {
+      //       break;
+      //     } else {
+      //       newStr += str[j];
+      //     }
+      //   }
+
+      //   if (newStr.length > res.length) {
+      //     res = newStr;
+      //   }
+      // }
+
+      // console.log(res);
+
+      //---------------------------------------------------
+
+      // Explaination
+
+      // let str = "pwwkew";
+
+      // let res = "";
+
+      // for (i = 0; i < str.length; i++) {
+      //   let newStr = "";
+
+      //   console.log("I" + " " + str[i]);
+
+      //   for (j = i; j < str.length; j++) {
+      //     console.log("J" + " " + str[j]);
+
+      //     if (newStr.includes(str[j])) {
+      //       console.log(str[j], "Condition Breaked");
+
+      //       break;
+      //     } else {
+      //       console.log("Else Condition");
+
+      //       newStr += str[j];
+
+      //       console.log("NewStr" + " " + newStr);
+      //     }
+      //   }
+
+      //   if (newStr.length > res.length) {
+      //     res = newStr;
+
+      //     console.log("Values Exchanged");
+      //     console.log("RES" + " " + res);
+      //   }
+      // }
+
+      // console.log(res);
+    </script>
+
+    <script>
+      // push all the zero's in the end of the array
+
+      // let arr = [8, 5, 0, 10, 0, 20];
+
+      // for (i = 0; i < arr.length; i++) {
+      //   for (j = i + 1; j < arr.length; j++) {
+      //     if (arr[i] === 0) {
+      //       let temp = arr[i];
+
+      //       arr[i] = arr[j];
+
+      //       arr[j] = temp;
+      //     }
+      //   }
+      // }
+
+      // console.log(arr);
+
+      //----------------------------------------------
+
+      // using Methods
+
+      // let arr = [8, 5, 0, 10, 0, 20];
+
+      // let count = 0;
+
+      // for (i = 0; i < arr.length; i++) {
+      //   if (arr[i] === 0) {
+      //     arr.splice(i, 1);
+      //     count++;
+      //   }
+      // }
+
+      // for (i = 0; i < count; i++) {
+      //   arr.push(0);
+      // }
+
+      // console.log(arr);
+    </script>
+
+    <script>
+      // find duplicates and occurance of duplicates
+
+      // let arr = [1, 1, 2, 3, 4, 5, 6, 1, 2, 6, 7, 5, 8, 9, 5, 1];
+
+      // let res = [];
+
+      // for (i = 0; i < arr.length; i++) {
+      //   if (arr.indexOf(arr[i]) !== arr.lastIndexOf(arr[i])) {
+      //     res.push(arr[i]);
+      //   }
+      // }
+
+      // // got duplicates..
+      // console.log(res);
+
+      // //----------------------------------
+
+      // // let's find occurance
+      // const obj = {};
+
+      // res.forEach((item) => {
+      //   if (item in obj) {
+      //     obj[item]++;
+      //   } else {
+      //     obj[item] = 1;
+      //   }
+      // });
+      // //done
+      // console.log(obj);
+
+      //-----------------------------------------------------
+
+      // Second way..
+
+      // let a = [1, 2, 3, 4, 5, 6, 1, 2, 6, 7, 5, 8, 9, 5, 1, 7, 7];
+
+      // let arr = a.sort();
+
+      // // console.log(arr)
+
+      // let res = [];
+
+      // for (i = 0; i < arr.length; i++) {
+      //   if (arr[i] === arr[i + 1] || arr[i] === arr[i - 1]) {
+      //     res.push(arr[i]);
+      //   }
+      // }
+      // console.log(res);
+
+      // //----------------------------------
+
+      // const obj = {};
+
+      // res.forEach((item) => {
+      //   if (item in obj) {
+      //     obj[item]++;
+      //   } else {
+      //     obj[item] = 1;
+      //   }
+      // });
+
+      // console.log(obj);
+
+      // //----------------------------------
+
+      // Third Way
+
+      // let arr = [1, 2, 3, 4, 5, 6, 1, 2, 6, 7, 5, 8, 9, 5, 1, 7, 7];
+
+      // let res = [];
+
+      // for (i = 0; i < arr.length; i++) {
+      //   for (j = i + 1; j < arr.length; j++) {
+      //     if (arr[i] === arr[j]) {
+      //       res.push(arr[i]);
+      //       break;
+      //     }
+      //   }
+      // }
+      // let unique = [];
+
+      // for (i = 0; i < res.length; i++) {
+      //   if (!unique.includes(res[i])) {
+      //     unique.push(res[i]);
+      //   }
+      // }
+
+      // console.log(res);
+      // console.log(unique);
+
+      // // got duplicates..
+
+      // let result = [...res, ...unique];
+
+      // console.log(result);
+
+      // //----------------------------------
+
+      // lets find occurance
+      // const obj = {};
+
+      // result.forEach((item) => {
+      //   if (item in obj) {
+      //     obj[item]++;
+      //   } else {
+      //     obj[item] = 1;
+      //   }
+      // });
+
+      // console.log(obj);
+    </script>
+
+    <script>
+      // Reverse a String Without Using Inbuilt Method..
+
+      // function revStr(str) {
+      //   let arr = [];
+      //   let newStr = "";
+      //   let rev = "";
+
+      //   for (i = 0; i <= str.length - 1; i++) {
+      //     if (str[i] === " ") {
+      //       arr.push(newStr);
+      //       newStr = "";
+      //     } else {
+      //       newStr += str[i];
+      //     }
+      //   }
+
+      //   arr.push(newStr);
+
+      //   for (i = 0; i < arr.length; i++) {
+      //     rev = arr[i] + rev;
+      //   }
+      //   return rev;
+      // }
+
+      // console.log(revStr("i love coding"));
+    </script>
+    <script>
+      //Find the Unique in array without using single method
+
+      // let arr = [1, 2, 3, 3, 4, 5, 6, 7, 6, 5, 4, 9, 6, 5, 4];
+
+      // for (i = 0; i < arr.length; i++) {
+      //   for (j = i + 1; j < arr.length; j++) {
+      //     if (arr[i] > arr[j]) {
+      //       let temp = arr[i];
+      //       arr[i] = arr[j];
+      //       arr[j] = temp;
+      //     }
+      //   }
+      // }
+
+      // let res = [];
+
+      // let count = 0;
+
+      // for (i = 0; i < arr.length; i++) {
+      //   if (arr[i] !== arr[i + 1] && arr[i] !== arr[i - 1]) {
+      //     res[count] = arr[i];
+      //     count++;
+      //   }
+      // }
+      // console.log(res);
+    </script>
+
+    <script>
+      // Eliminate the duplicate without using indexOf
+
+      // let arr = [
+      //   1, 2, 3, 4, 5, 6, 7, 6, 8, 5, 57, 5, 4, 9, 4, 4, 5, 5, 4, 3, 2,
+      // ];
+
+      // for (i = 0; i < arr.length; i++) {
+      //   for (j = i + 1; j < arr.length; j++) {
+      //     if (arr[i] == arr[j]) {
+      //       arr.splice(j, 1);
+      //       j--;
+      //     }
+      //   }
+      // }
+
+      // console.log(arr);
+
+      //---------------------------------------
+      // Eliminate the duplicate without using single method
+
+      // let arr = [1, 2, 3, 3, 4, 5, 6, 7, 6, 5, 4, 9, 6, 5, 4, 99, 99, 99];
+
+      // let res = [];
+      // let count = 0;
+      // for (i = 0; i < arr.length; i++) {
+      //   let found = false;
+
+      //   for (j = i + 1; j < arr.length; j++) {
+      //     if (arr[i] === arr[j]) {
+      //       found = true;
+      //     }
+      //   }
+
+      //   if (!found) {
+      //     res[count] = arr[i];
+      //     count++;
+      //   }
+      // }
+
+      // console.log(res);
+    </script>
+
+    <script>
+      // Find the Number value in given arary
+
+      // let input = ["89djd", "dk34ke", "yhk65"];
+
+      // let arr = input.toString().split("");
+      // let res = [];
+      // let result = [];
+      // let val = "";
+
+      // for (i = 0; i < arr.length; i++) {
+      //   res.push(Number(arr[i]));
+      // }
+
+      // for (i = 0; i < res.length; i++) {
+      //   if (!isNaN(res[i])) {
+      //     val += arr[i];
+      //   } else if (val !== "") {
+      //     result.push(Number(val));
+      //     val = "";
+      //   }
+      // }
+      // result.push(Number(val));
+
+      // console.log(result);
+
+      //---------------------------------------
+
+      // let string = ["89djd", "dk34ke", "y1hk5"];
+
+      // let arr = [];
+
+      // for (i = 0; i < string.length; i++) {
+      //   let str = string[i];
+      //   let result = "";
+
+      //   for (j = 0; j < str.length; j++) {
+      //     if (!isNaN(str[j])) {
+      //       result += str[j];
+      //     }
+      //   }
+      //   arr.push(Number(result));
+      // }
+      // console.log(arr);
+    </script>
+    <script>
+      // let arr = [1, 0, 2, 3, 0, 4, 5, 0];
+      // // [1,0,0,2,3,0,0,4]
+
+      // for (i = 0; i < arr.length; i++) {
+      //   if (arr[i] === 0) {
+      //     arr.splice(i, 0, 0);
+      //     arr.pop();
+      //     i++;
+      //   }
+      // }
+
+      // console.log(arr);
+    </script>
+
+    <script>
+      // Eliminate duplicates from array
+
+      // let arr = [1, 2, 3, 1, 1, 1, 1, 1, 99, 2, 3, 4, 5, 5, 6, 6, 7, 3, 7, 98];
+
+      // let res = {};
+
+      // for (i = 0; i < arr.length; i++) {
+      //   if (!res[arr[i]]) {
+      //     res[arr[i]] = arr[i];
+      //   }
+      // }
+      // console.log(Object.values(res));
+    </script>
+
+    <script>
+      // Star Pattern
+      // for (i = 1; i <= 5; i++) {
+      //   for (j = 1; j <= i; j++) {
+      //     document.write("*");
+      //   }
+      //   document.write("<br>");
+      // }
+
+      // //---------------------------------------
+      // for (i = 1; i <= 5; i++) {
+      //   for (j = 1; j <= i; j++) {
+      //     document.write(i);
+      //   }
+      //   document.write("<br>");
+      // }
+      //---------------------------------------
+
+      // for (i = 1; i <= 5; i++) {
+      //   let pattern = "";
+
+      //   for (j = 1; j <= i; j++) {
+      //     pattern += "*";
+      //   }
+
+      //   console.log(pattern);
+      // }
+    </script>
+
+    <script>
+      // Capital the first letter of string without using split
+
+      // let str = "capital the first letter of string";
+
+      // let arr = [];
+      // let newStr = "";
+
+      // for (i = 0; i < str.length; i++) {
+      //   if (str[i] !== " ") {
+      //     newStr += str[i];
+      //   } else {
+      //     arr.push(newStr.charAt(0).toUpperCase() + newStr.slice(1));
+
+      //     newStr = "";
+      //   }
+      // }
+
+      // arr.push(newStr.charAt(0).toUpperCase() + newStr.slice(1));
+
+      // let res = "";
+
+      // for (i = 0; i < arr.length; i++) {
+      //   res += arr[i];
+      // }
+      // console.log(res);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener</title>
+    <style>
+        * {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="one">Click Me</button>
+
+    <p id="para1"></p>
+    <p id="para2"></p>
+    <script>
+        document.getElementById('one').addEventListener('click', ChangeBackground);
+        document.getElementById('one').addEventListener('click', add1);
+        document.getElementById('one').addEventListener('click', add2);
+
+        function ChangeBackground() {
+            document.body.style.background = 'green';
+        }
+
+
+        //Add multiple events..
+        function add1() {
+            document.getElementById('para1').innerHTML = 'Update paragraph_1';
+        }
+        function add2() {
+            document.getElementById('para2').innerHTML = 'Update paragraph_2';
+        }
+
+
+    </script>
+</body>
+
+</html>

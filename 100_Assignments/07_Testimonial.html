@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimonial</title>
+    <script
+      src="https://kit.fontawesome.com/524c849674.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      #Main {
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("https://js-beginners.github.io/testimonial-project/img/questionBcg.jpeg")
+            center/cover no-repeat fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        box-sizing: border-box;
+      }
+
+      #Content {
+        width: 52%;
+        height: 300px;
+        border: 2px solid gray;
+        box-sizing: border-box;
+        margin-top: 100px;
+        text-align: center;
+        border-radius: 10px;
+        position: relative;
+      }
+      .Client {
+        color: rgb(217, 67, 67);
+        margin-bottom: 15px;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 20px;
+      }
+      .Testimonials {
+        color: white;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+      h2 {
+        margin-top: 80px;
+        color: white;
+        text-transform: uppercase;
+      }
+      span {
+        display: inline-block;
+        margin: 15px 0px 15px 0px;
+        font-size: 17px;
+        color: rgba(216, 89, 46, 0.793);
+      }
+      p {
+        color: white;
+        word-spacing: 3px;
+        margin-bottom: 20px;
+      }
+      #Quote {
+        display: inline-block;
+        font-size: 45px;
+        color: rgba(216, 89, 46, 0.793);
+      }
+      #Left {
+        display: inline-block;
+        position: absolute;
+        top: 130px;
+        left: -43px;
+        color: rgba(216, 89, 46, 0.793);
+        font-size: 25px;
+        border: 1px solid rgba(216, 89, 46, 0.793);
+        border-radius: 70%;
+        padding: 10px 5px 10px 5px;
+        background: transparent;
+      }
+      #Right {
+        display: inline-block;
+        position: absolute;
+        top: 130px;
+        right: -43px;
+        color: rgba(216, 89, 46, 0.793);
+        font-size: 25px;
+        border: 1px solid rgba(216, 89, 46, 0.793);
+        border-radius: 70%;
+        padding: 10px 5px 10px 5px;
+        background: transparent;
+      }
+      #Left:hover {
+        transition: 1.5s;
+        background-color: rgba(216, 89, 46, 0.793);
+        color: white;
+      }
+
+      #Right:hover {
+        transition: 1.5s;
+        background-color: rgba(216, 89, 46, 0.793);
+        color: white;
+      }
+      img {
+        position: absolute;
+        width: 155px;
+        height: 100px;
+        border-radius: 50%;
+        top: -18%;
+        left: 37%;
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="Main">
+      <h1 class="Client">Client</h1>
+      <h1 class="Testimonials">Testimonials</h1>
+      <div id="Content">
+        <h2 id="Client_Name">Client Name</h2>
+        <span>
+          <a>
+            <i class="fa-solid fa-star"></i>
+          </a>
+          <a>
+            <i class="fa-solid fa-star"></i>
+          </a>
+          <a>
+            <i class="fa-solid fa-star"></i>
+          </a>
+          <a id="Fourth">
+            <i class="fa-solid fa-star"></i>
+          </a>
+          <a> <i class="fa-solid fa-star-half-stroke" id="Fifth"></i></a>
+        </span>
+        <p id="Client_Info">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam sit
+          voluptatum illo? Quae fugiat aspernatur harum aperiam, quis eos
+          officia.
+        </p>
+        <i class="fas fa-quote-left" id="Quote"></i>
+
+        <button onclick="Previous()" id="Left">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button onclick="Next()" id="Right">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <img
+          src="https://js-beginners.github.io/testimonial-project/img/customer-0.jpg"
+          alt="Client_Img"
+          id="Client_Img"
+        />
+      </div>
+    </div>
+
+    <script>
+      let Arr = [
+        {
+          Name: "Jhon",
+          Information:
+            "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock",
+          Img: "https://images.pexels.com/photos/6842034/pexels-photo-6842034.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        },
+        {
+          Name: "Sandy",
+          Information:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis neque reprehenderit laborum, corporis explicabo assumenda. Porro impedit consectetur animi, reprehenderit recusandae sapiente at aliquam reiciendis modi ipsam rerum suscipit distinctio?",
+          Img: "https://js-beginners.github.io/testimonial-project/img/customer-1.jpg",
+        },
+        {
+          Name: "Amy",
+          Information:
+            "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable",
+          Img: "https://js-beginners.github.io/testimonial-project/img/customer-2.jpg",
+        },
+        {
+          Name: "Tyrell",
+          Information:
+            "If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text",
+          Img: "https://js-beginners.github.io/testimonial-project/img/customer-3.jpg",
+        },
+        {
+          Name: "Wanda",
+          Information:
+            "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+          Img: "https://js-beginners.github.io/testimonial-project/img/customer-4.jpg",
+        },
+      ];
+
+      let getName = document.getElementById("Client_Name");
+      let getImg = document.getElementById("Client_Img");
+      let getInfo = document.getElementById("Client_Info");
+      let Counter = 0;
+
+      // const Previous = () => {
+      //   Counter++;
+
+      //   // let Res = Arr.filter((Element) => {
+      //   //   return (Element.id = Counter);
+      //   // });
+
+      //   // console.log(Object(Res[Counter]).Name);
+      // };
+
+      // console.log(Arr.length)
+      const Previous = () => {
+        Counter = Counter - 1;
+        if (Counter < 0) {
+          Counter = Arr.length - 1;
+        }
+        console.log(Counter);
+        // console.log(Arr[Counter].Name);
+
+        getName.innerText = Arr[Counter].Name;
+        getImg.src = Arr[Counter].Img;
+        getInfo.innerText = Arr[Counter].Information;
+      };
+
+      const Next = () => {
+        Counter = Counter + 1;
+        if (Counter >= Arr.length) {
+          Counter = 0;
+
+          Counter = Counter + 1;
+        }
+        console.log(Counter);
+        // console.log(Arr[Counter].Name);
+
+        getName.innerText = Arr[Counter].Name;
+        getImg.src = Arr[Counter].Img;
+        getInfo.innerText = Arr[Counter].Information;
+      };
+    </script>
+
+    <!-- <script>
+      let Images = [
+        "https://js-beginners.github.io/testimonial-project/img/customer-1.jpg",
+        "https://js-beginners.github.io/testimonial-project/img/customer-2.jpg",
+        "https://js-beginners.github.io/testimonial-project/img/customer-3.jpg",
+        "https://js-beginners.github.io/testimonial-project/img/customer-4.jpg",
+      ];
+      let Names = ["Sandy", "Amy", "Tyrell", "Wanda"];
+
+      let Information = [
+        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock",
+        "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable",
+        "If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text",
+        "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+      ];
+
+      let Name = document.getElementById("Client_Name");
+      let Img = document.getElementById("Client_Img");
+      let Info = document.getElementById("Client_Info");
+      let Counter = 0;
+      const Previous = () => {
+        Counter = Counter - 1;
+        if (Counter < 1) {
+          Counter = 4;
+        }
+        if (Counter == 4) {
+          Name.innerText = Names[3];
+          Img.src = Images[3];
+          Info.innerText = Information[3];
+        } else if (Counter == 3) {
+          Name.innerText = Names[2];
+          Img.src = Images[2];
+          Info.innerText = Information[2];
+        } else if (Counter == 2) {
+          Name.innerText = Names[1];
+          Img.src = Images[1];
+          Info.innerText = Information[1];
+        } else if (Counter == 1) {
+          Name.innerText = Names[0];
+          Img.src = Images[0];
+          Info.innerText = Information[0];
+        }
+      };
+      const Next = () => {
+        Counter = Counter + 1;
+        if (Counter > 4) {
+          Counter = 0;
+          Counter = Counter + 1;
+        }
+        if (Counter == 1) {
+          Name.innerText = Names[0];
+          Img.src = Images[0];
+          Info.innerText = Information[0];
+        } else if (Counter == 2) {
+          Name.innerText = Names[1];
+          Img.src = Images[1];
+          Info.innerText = Information[1];
+        } else if (Counter == 3) {
+          Name.innerText = Names[2];
+          Img.src = Images[2];
+          Info.innerText = Information[2];
+        } else if (Counter == 4) {
+          Name.innerText = Names[3];
+          Img.src = Images[3];
+          Info.innerText = Information[3];
+        }
+      };
+    </script> -->
+  </body>
+</html>
+
+<script>
+  // sandy..
+  // img = https://js-beginners.github.io/testimonial-project/img/customer-1.jpg
+
+  // Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock
+</script>
+
+<script>
+  // Amy..
+
+  // https://js-beginners.github.io/testimonial-project/img/customer-2.jpg
+
+  // There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+</script>
+
+<script>
+  // tyrell
+
+  // https://js-beginners.github.io/testimonial-project/img/customer-3.jpg
+
+  // If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+</script>
+
+<script>
+  // Wanda
+
+  //https://js-beginners.github.io/testimonial-project/img/customer-4.jpg
+
+  // Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+</script>

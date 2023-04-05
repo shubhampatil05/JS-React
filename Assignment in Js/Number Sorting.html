@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sort</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      /*
+                //Using Sort Method..
+        
+                var Values = [1, 2, 3, 4, 5, 10, 15];
+        
+        
+        
+        
+                //Increasing order..
+        
+                Values.sort((x, y) => x - y)
+                document.write(Values);
+        
+        
+                document.write(`<hr>`)
+        
+        
+                //Decreasing order..
+        
+                Values.sort((x, y) => x + y)
+                document.write(Values);
+        
+        
+                document.write(`<hr>`)
+        
+        */
+      // let array = [1, 2, 3, 4, 5, 20, 15, 30];
+
+      // function Sort(arr) {
+      //     for (let i = 0; i <= arr.length; i++) {
+      //         for (let j = 0; j < arr.length; j++) {
+      //             if (temp = arr[j]) {
+      //                 let temp = arr[j];
+      //                 arr[i] = arr[j];
+      //                 arr[j] = temp;
+      //             }
+      //         }
+      //     }
+      //     return arr;
+      // };
+
+      const numbers = [4, 2, 15, 10, 3];
+      numbers.sort(function (a, b) {
+        return a - b;
+      });
+      console.log(numbers);
+
+      // OR
+
+      const numbers2 = [4, 2, 15, 10, 3];
+      numbers2.sort((a, b) => a - b);
+      console.log(numbers2);
+    </script>
+  </body>
+</html>

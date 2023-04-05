@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fade</title>
+    <title>Hide And Show</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 10px;
+        }
+
+        #one {
+
+            width: 100px;
+            height: 100px;
+            background-color:green;
+            /* /* display: none; */
+            /* enable for fadeIn method  */
+
+        }
+
+        #two {
+
+            width: 100px;
+            height: 100px;
+            background-color: chocolate;
+            /* display: none; */
+
+
+        }
+
+        #three {
+
+            width: 100px;
+            height: 100px;
+            background-color: darkcyan;
+            /* display: none; */
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+    <button>Click</button>
+
+
+    <script>
+
+        //1.fadeIn
+        //The jQuery fadeIn() method is used to fade in a hidden element.
+
+
+        // $(function () {
+
+        //     $('button').click(function () {
+
+        //         $('#one').fadeIn();
+        //         $('#two').fadeIn('slow');
+        //         $('#three').fadeIn(3000);
+
+        //     })
+
+
+        // })
+
+
+
+        //2.fadeOut()
+        //The jQuery fadeOut() method is used to fade out a visible element.
+
+        // $(function () {
+
+        //     $('button').click(function () {
+
+        //         $('#one').fadeOut();
+        //         $('#two').fadeOut('slow');
+        //         $('#three').fadeOut(3000);
+
+        //     })
+
+
+        // })
+
+
+        //3.fadeToggle()
+        //The jQuery fadeToggle() method toggles between the fadeIn() and fadeOut() methods.
+        // If the elements are faded out, fadeToggle() will fade them in.
+        // If the elements are faded in, fadeToggle() will fade them out.
+
+        // $(function () {
+
+        //     $('button').click(function () {
+
+        //         $('#one').fadeToggle();
+        //         $('#two').fadeToggle('slow');
+        //         $('#three').fadeToggle(3000);
+
+        //     })
+
+
+        // })
+
+
+        //4.fadeTo()
+        //The jQuery fadeTo() method allows fading to a given opacity (value between 0 and 1).
+
+
+
+        $(function () {
+
+            $('button').click(function () {
+
+                $('#one').fadeTo('slow',0.9);
+                $('#two').fadeTo('slow', 0.7);
+                $('#three').fadeTo(3000, 0.5);
+
+            })
+
+
+        })
+
+
+    </script>
+</body>
+
+</html>

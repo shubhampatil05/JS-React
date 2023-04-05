@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function</title>
+  </head>
+
+  <body>
+    <script>
+      //function Methods..
+
+      document.write(`<h2>call() function</h2>`);
+
+      //Example 1..
+
+      function emp(id, name) {
+        this.id = id;
+        this.name = name;
+      }
+      function permanentemp(id, name) {
+        emp.call(this, id, name);
+      }
+      function tempraryemp(id, name) {
+        emp.call(this, id, name);
+      }
+
+      var pemp = new permanentemp(1, "Jenny morgan");
+      var temp = new tempraryemp(2, "Jordan chris");
+
+      document.writeln(pemp.id + " " + pemp.name);
+      document.write("<br>");
+      document.writeln(temp.id + " " + temp.name);
+      document.write("<hr>");
+
+      //-------------------------------------------------------------------
+
+      //Example 2..
+
+      function player(name, role) {
+        this.name = name;
+        this.role = role;
+      }
+
+      function fixplayer(name, role) {
+        player.call(this, name, role);
+      }
+      function tempplayer(name, role) {
+        player.call(this, name, role);
+      }
+
+      var fplayer = new fixplayer("Rishabh Pant", "Wk Batsman");
+
+      var tplayer = new tempplayer("Ishan Kishan", "Wk Batsman");
+
+      document.write(fplayer.name + " " + fplayer.role);
+      document.write("<br>");
+      document.write(tplayer.name + " " + tplayer.role);
+      document.write("<hr>");
+
+      //-------------------------------------------------------------------
+
+      //Example 3..
+
+      function iplTeam(name, title) {
+        this.name = name;
+        this.title = title;
+      }
+
+      function fixiplTeam(name, title) {
+        iplTeam.call(this, name, title);
+      }
+      function newiplTeam(name, title) {
+        iplTeam.call(this, name, title);
+      }
+
+      var CSK = new fixiplTeam("Chennai Super King", "Four Title");
+      var GT = new newiplTeam("Gujrat Titans", "Only Title");
+
+      document.write(CSK.name + " " + CSK.title);
+      document.write("<br>");
+      document.write(GT.name + " " + GT.title);
+      document.write("<hr>");
+
+      //-------------------------------------------------------------------
+
+      //Example 4..
+
+      function Phone(name, price) {
+        this.name = name;
+        this.price = price;
+      }
+
+      function expensivePhone(name, price) {
+        Phone.call(this, name, price);
+      }
+
+      function SemiexpensivePhone(name, price) {
+        Phone.call(this, name, price);
+      }
+
+      var Apple = new expensivePhone("Iphone 13 pro", "1,14,900 Rupees");
+      var OnePlus = new SemiexpensivePhone("One Plus 10R", "38,999 Rupees");
+
+      document.write(Apple.name + " " + Apple.price);
+      document.write("<br>");
+      document.write(OnePlus.name + " " + OnePlus.price);
+
+      document.write("<hr>");
+
+      //-------------------------------------------------------------------
+
+      //Example 5..
+
+      function Laptop(Name, Version) {
+        this.Name = Name;
+        this.Version = Version;
+      }
+
+      function NewLaptop(Name, Version) {
+        Laptop.call(this, Name, Version);
+      }
+
+      function OldLaptop(Name, Version) {
+        Laptop.call(this, Name, Version);
+      }
+
+      New_1 = new NewLaptop("Dell Lattitude E7440", "Windows 11");
+      Old_1 = new OldLaptop("Dell Vostro E3550", "Windows 7");
+
+      document.write(New_1.Name + " " + New_1.Version);
+
+      document.write("<br>");
+
+      document.write(Old_1.Name + " " + Old_1.Version);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Call Back Function</title>
+  </head>
+
+  <body>
+    <script>
+      // Any function That passes as an argument is called a callback function..
+
+      // Example_1
+
+      let One = () => {
+        return "Hello";
+      };
+
+      let Two = (A, B) => {
+        console.log(A + " " + B);
+      };
+
+      Two(One(), "EveryOne");
+
+      // Example_2
+
+      let Display_1 = (Value1, Value2) => {
+        console.log(Value1 + Value2);
+      };
+
+      let Display_2 = () => {
+        return 100;
+      };
+
+      Display_1(101, Display_2());
+
+      // Example_3
+
+      function A(x, y) {
+        console.log(x + " " + y);
+      }
+
+      function B() {
+        return "This is Shubham Here";
+      }
+
+      A("Hello", B());
+    </script>
+  </body>
+</html>

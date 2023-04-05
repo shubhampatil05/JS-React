@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>throw</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    Enter number between 1-10<br /><br />
+    <input type="text" id="one" />
+    <button type="button" onclick="OnClick()">Text</button>
+    <h4 id="two"></h4>
+    <h4 id="three"></h4>
+
+    <hr />
+    <hr />
+
+    Enter Mobile Number <input type="text" id="Input" />
+    <button type="button" onclick="Show()">Click</button>
+
+    <h4 id="value_1"></h4>
+    <h4 id="value_2"></h4>
+
+    <script>
+      function OnClick() {
+        var x = document.getElementById("three");
+        var y = document.getElementById("two");
+        x.innerHTML = "";
+
+        var z = document.getElementById("one").value;
+
+        try {
+          if (z == "") throw " is Empty ";
+          if (isNaN(z)) throw " is not a number ";
+          if (z < 1) throw " Number should be greater than 1 ";
+          if (z > 10) throw " Number should be less than 10 ";
+        } catch (e) {
+          x.innerHTML = " Input " + e;
+        } finally {
+          y.innerHTML = " Input Value: " + z;
+        }
+      }
+
+      //----------------------------------------------------------
+
+      function Show() {
+        var Enter = document.getElementById("Input").value;
+        var Get = document.getElementById("value_1");
+        var Entred = document.getElementById("value_2");
+
+        Get.innerHTML = "";
+
+        try {
+          if (Get == "") throw "Is Empty";
+          if (Get != "number") throw "Is Not A number";
+        } catch (e) {
+          Get.innerHTML = e;
+        } finally {
+          Entred.innerHTML = "Entered value : " + Enter;
+        }
+      }
+    </script>
+  </body>
+</html>

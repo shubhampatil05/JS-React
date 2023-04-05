@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Output Base Questions</title>
+  </head>
+  <body>
+    <script>
+      /////////////////////////////////////////////////////
+      // Question 1
+      // let a = [];
+      // let b = [];
+      // console.log(a == b);
+      // console.log(a === b);
+      /////////////////////////////////////////////////////
+      // Question 2
+      // let a = [];
+      // let b = a;
+      // console.log(a == b);
+      // console.log(a === b);
+      /////////////////////////////////////////////////////
+      // Question 3
+      // let a = [20];
+      // let b = [20];
+      // console.log(a[0] == b[0]);
+      // console.log(a[0] === b[0]);
+      /////////////////////////////////////////////////////
+      // Question 4
+      // let z = [1, 2, 3, 4];
+      // let a = { name: "shubham" };
+      // console.log(...z);
+      // console.log(...a)
+      // console.log(Object.keys(a))
+      // console.log(Object.values(a))
+      /////////////////////////////////////////////////////
+      // Question 5
+      // console.log(typeof NaN);
+      /////////////////////////////////////////////////////
+      // Question 6
+      // let data = 10 - -10;
+      // console.log(data);
+      /////////////////////////////////////////////////////
+      // Question 7
+      // const set = new Set([1, 2, 3, 5, 2, 6, 1, 3, 2]);
+      // console.log(set);
+      /////////////////////////////////////////////////////
+      // Question 8
+      // let data = { name: "shubham" };
+      // console.log(delete data.name);
+      /////////////////////////////////////////////////////
+      // Question 9
+      // let data = { name: "shubham" };
+      // console.log(delete data);  // False
+      /////////////////////////////////////////////////////
+      // Question 10
+      // const data = ["shubham", "ankur", "virag"];
+      // const [x] = data;
+      // console.log(x);
+      /////////////////////////////////////////////////////
+      // Question 11
+      // const data = ["shubham", "ankur", "virag"];
+      // const [, x] = data; // How to get second element
+      // console.log(x);
+      /////////////////////////////////////////////////////
+      // Question 12
+      // how to get name property without . operator
+      // const data = { name: "shubham", age: 26, skill: "MERN" };
+      // console.log(data["name"]);
+      // // OR
+      // const { name } = data;
+      // console.log(name);
+      /////////////////////////////////////////////////////
+      // Question 13
+      // Merge 2 Object
+      // let data = { name: "shubham", age: 26, skill: "MERN" };
+      // let info = { city: "Pune", mail: "shubham@gmail.com" };
+      // console.log({ ...data, ...info });
+      /////////////////////////////////////////////////////
+      // Question 14
+      // Guess the output
+      // let data = { name: "shubham", age: 26, skill: "MERN" };
+      // let info = { city: "Pune" };
+      // data = { data, ...info };
+      // console.log(data);
+      /////////////////////////////////////////////////////
+      // Question 15
+      // Guess the output
+      // let data = { name: "shubham", age: 26, skill: "MERN" };
+      // let info = { city: "Pune", skill: "Node" };
+      // data = { ...data, ...info };
+      // console.log(data);
+      /////////////////////////////////////////////////////
+      // Question 16
+      // const name = "shubham";
+      // console.log(name());
+      /////////////////////////////////////////////////////
+      // Question 17
+      // const result = false || {} || null;
+      // console.log(result);
+      /////////////////////////////////////////////////////
+      // Question 18
+      // const result = false || null || "";
+      // console.log(result);
+      /////////////////////////////////////////////////////
+      // Question 19
+      // const result = [] || 0 || true;
+      // console.log(result);
+      /////////////////////////////////////////////////////
+      // Question 20
+      // console.log(Promise.resolve(5));
+      /////////////////////////////////////////////////////
+      // Question 21
+      // console.log("❤️" === "❤️");
+      /////////////////////////////////////////////////////
+      // Question 22
+      // JSON.parse();
+      // What this method will do ?
+      // A: Parses JSON to a javascript value
+      // B: Parses a javascript object to JSON
+      // C: Parses any javascript value to JSON
+      // D: Parses JSON to a javascript object only
+      /////////////////////////////////////////////////////
+      // Question 23
+      // let name = "shubham";
+      // function getName() {
+      //   console.log(name);
+      //   let name = "shubham";
+      // }
+      // getName();
+      /////////////////////////////////////////////////////
+      // Question 24
+      // let name = "shubham";
+      // function getName() {
+      //   console.log(name);
+      // }
+      // getName();
+      /////////////////////////////////////////////////////
+      // Question 25
+      // console.log(`${(x => x)('I love')} to program`);
+      /////////////////////////////////////////////////////
+      // Question 26
+      function sumValues(x, y, z) {
+        return x + y + z;
+      }
+      // A: sumValues([...1, 2, 3]);
+      // B: sumValues([...[1, 2, 3]]);
+      // C: sumValues(...[1, 2, 3]);
+      // D: sumValues([1, 2, 3]);
+      /////////////////////////////////////////////////////
+      // Question 27
+      // const name = "Code step by step";
+      // console.log(!typeof name === "object");
+      // console.log(!typeof name === "string");
+      // console.log(!typeof name === "false");
+      /////////////////////////////////////////////////////
+      // Question 28
+      // const name = "Subscribe";
+      // const age = 26;
+      // console.log(isNaN(name));
+      // console.log(isNaN(age));
+      /////////////////////////////////////////////////////
+      // Question 29
+      // let person = { name: "shubham" };
+      // // what can modify person object
+      // Object.seal(person);
+      // person = "hello";
+      // person.name = "shubham";
+      // console.log(person);
+      /////////////////////////////////////////////////////
+      // Question 30
+      // let data = [2, 9, 0, 10];
+      // // Remove first element
+      // const update = data.shift();
+      // console.log(data, "Removed", update);
+      /////////////////////////////////////////////////////
+      // Question 31
+      // let data = [2, 9, 0, 10];
+      // // Remove last element
+      // const update = data.pop();
+      // console.log(data, "Removed", update);
+      /////////////////////////////////////////////////////
+      // Question 32
+      // let a = 31;
+      // Check any value is odd or even
+      // if (a % 2 === 0) {
+      //   console.log(`Number - ${a} is Even`);
+      // } else {
+      //   console.log(`Number - ${a} is Odd`);
+      // }
+      /////////////////////////////////////////////////////
+      // Question 33
+      // let data = {
+      //   name: "shubham",
+      // };
+      // delete data.name;
+      // console.log(data);
+      /////////////////////////////////////////////////////
+      // Question 34
+      // let data = "true";
+      // // Convert data to boolean false value
+      // console.log(data);
+      /////////////////////////////////////////////////////
+      // Question 35
+      // Difference between map and forEach function
+      /////////////////////////////////////////////////////
+      // Question 36
+      // let data = ["shubham", "ankur", "virag"];
+      // delete data[1];
+      // console.log(data);
+      /////////////////////////////////////////////////////
+      // Question 37
+      // let data = ["shubham", "ankur", "virag"];
+      // delete data[1];
+      // console.log(data.length);
+      /////////////////////////////////////////////////////
+      // Question 38
+      // Merge two / more arrays = // a.concat(b)
+      // let a = [1, 2, 3];
+      // let b = [4, 5, 6, 7];
+      // let c = [...a, ...b];
+      // console.log(c);
+      /////////////////////////////////////////////////////
+      // Question 39
+      // a = [1, 2, 3, 4];
+      // let b = [4, 5, 6, 7];
+      // let c = [...a, ...b];
+      // console.log(c);
+      /////////////////////////////////////////////////////
+      // Question 40
+      // let a = 3 ** 3;
+      // console.log(a);
+      ////////////////////////////////////////////////////
+      // Question 41
+      // let a = 2;
+      // setTimeout(() => {
+      //   console.log(a);
+      // }, 1000);
+      // a = 150;
+      /////////////////////////////////////////////////////
+      // Question 42
+      // let A10 = 'shubham'
+      // let 10A = 'patil'
+      // console.log(A10 , 10A);
+      /////////////////////////////////////////////////////
+      // Question 43
+      // let a = "Hello - A";
+      // let b = `Hello - B`;
+      // console.log(a);
+      // console.log(b);
+      /////////////////////////////////////////////////////
+      // Question 44
+      // let a = 1;
+      // let b = 2;
+      // console.log(--b === a);
+      // console.log(b-- === a);
+      /////////////////////////////////////////////////////
+      // Question 45
+      // let a = 1;
+      // let b = 1;
+      // let c = 2;
+      // console.log((a === b) === --c);
+      /////////////////////////////////////////////////////
+      // Question 46
+      // console.log(3 * 3);
+      // console.log(3 ** 3);
+      // console.log(3***3);
+      // /////////////////////////////////////////////////////
+      // Question 47
+      // console.log(a);
+      // var a = 10;
+      /////////////////////////////////////////////////////
+      // Question 48
+      // console.log(b);
+      /////////////////////////////////////////////////////
+      // Question 49
+      // console.log([[[[{}]]]]);
+      /////////////////////////////////////////////////////
+      // Question 50
+      // How to find OS name
+      // console.log(navigator.platform);
+      /////////////////////////////////////////////////////
+      // Question 51
+      // let for = 100;
+      // console.log(for);
+      /////////////////////////////////////////////////////
+      // Question 52
+      // function fruit() {
+      //   console.log(name);
+      //   console.log(price);
+
+      //   var name = "shubham";
+      //   let price = 20;
+      // }
+      // fruit();
+      /////////////////////////////////////////////////////
+      // Question 53
+      // for (var i = 0; i < 3; i++) {
+      //   setTimeout(() => console.log(i), 1);
+      // }
+      // var = GLOBAL 1st = 0 , 2nd = 1 , 3rd = 2 , 4th = 3
+      /////////////////////////////////////////////////////
+      // Question 54
+      // for (let i = 0; i < 3; i++) {
+      //   setTimeout(() => console.log(i), 1);
+      // }
+      /////////////////////////////////////////////////////
+      // Question 55
+      // console.log(+true);
+      // console.log(typeof +true);
+      /////////////////////////////////////////////////////
+      // Question 56
+      // console.log(!"shubham");
+      // console.log(typeof "shubham");
+      // console.log(typeof !"shubham");
+      /////////////////////////////////////////////////////
+      // Question 57
+      // let data = "size";
+      // const bird = {
+      //   size: "small",
+      // };
+      // console.log(bird.size);
+      // console.log(bird[data]);
+      // console.log(bird.data);
+      // console.log(bird["size"]);
+      /////////////////////////////////////////////////////
+      // Question 58
+      // let c = { name: "shubham" };
+      // let d;
+      // d = c;
+      // c.name = " ankur";
+      // console.log(c.name);
+      /////////////////////////////////////////////////////
+      // Question 59
+      // var x;
+      // var x = 10;
+      // console.log(x);
+      /////////////////////////////////////////////////////
+      // Question 60
+      // var x;
+      // let x = 10;
+      // console.log(x);
+      /////////////////////////////////////////////////////
+      // Question 61
+      // let a = 3;
+      // let b = new Number(3);
+      // console.log(a == b);
+      // console.log(a === b);
+      /////////////////////////////////////////////////////
+      // Question 62
+      // let name;
+      // name = {}; // Typo!
+      // console.log(name);
+      /////////////////////////////////////////////////////
+      // Question 63
+      // function fruit() {
+      //   console.log("Woof!");
+      // }
+      // fruit.name = "Apple";
+      // fruit();
+      /////////////////////////////////////////////////////
+      // Question 64
+      // function sum(a, b) {
+      //   return a + b;
+      // }
+      // console.log(sum(1, "2"));
+      /////////////////////////////////////////////////////
+      // Question 65
+      // let number = 0;
+      // console.log(number++);
+      // console.log(++number);
+      // console.log(number);
+      /////////////////////////////////////////////////////
+      // Question 66
+      // function getAge(...args) {
+      //   console.log(args);
+      //   console.log(typeof args);
+      // }
+      // getAge(26);
+      /////////////////////////////////////////////////////
+      // Question 67
+      // function getAge() {
+      //   "use strict";
+      //   age = 21;
+      //   console.log(age);
+      // }
+      // getAge();
+      /////////////////////////////////////////////////////
+      // Question 68
+      // const sum = eval("10*10+5");
+      // console.log(sum);
+      /////////////////////////////////////////////////////
+      // Question 69
+      // How long is cool_secret accessible?
+      // sessionStorage.setItem("cool_secret", 123);
+      /////////////////////////////////////////////////////
+      // Question 70
+      // const obj = { 1: "a", 2: "b", 3: "c" };
+      // console.log(obj.hasOwnProperty(1));
+      // console.log(obj.hasOwnProperty("1"));
+      /////////////////////////////////////////////////////
+      // Question 71
+      // const obj = { 1: "a", 2: "b", 3: "c", 1: "d" };
+      // console.log(obj);
+      /////////////////////////////////////////////////////
+      // Question 72
+      // for (let i = 0; i < 5; i++) {
+      //   if (i === 3) continue;
+      //   console.log(i);
+      // }
+      /////////////////////////////////////////////////////
+      // Question 73
+      // const foo = () => console.log("FIRST");
+      // const bar = () => setTimeout(() => console.log("SECOND"));
+      // const baz = () => console.log("THIRD");
+
+      // baz();
+      // bar();
+      // foo();
+      /////////////////////////////////////////////////////
+      // Question 74
+      // Data types in JavaScripts ?
+      /////////////////////////////////////////////////////
+      // Question 75
+      // const person = { name: "shubham" };
+      // function sayHi(age) {
+      //   return `${this.name} is ${age} years old.`;
+      // }
+      // console.log(sayHi.call(person, 26));
+      // console.log(sayHi.bind(person, 26)());
+      /////////////////////////////////////////////////////
+      // Question 76
+      // function sayHi() {
+      //   return (() => 0)();
+      // }
+      // console.log(typeof sayHi());
+      /////////////////////////////////////////////////////
+      // Question 77
+      // function sayHi() {
+      //   return () => 0;
+      // }
+      // console.log(typeof sayHi());
+      /////////////////////////////////////////////////////
+      // Question 78
+      // console.log(typeof 0);
+      // console.log(typeof 1);
+      /////////////////////////////////////////////////////
+      // Question 79
+      // const number = [1, 2, 3];
+      // number[5] = 12;
+      // console.log(number);
+      /////////////////////////////////////////////////////
+      // Question 80
+      // const numbers = [1, 2, 3, 4];
+      // numbers[7] = numbers;
+      // console.log(numbers);
+      /////////////////////////////////////////////////////
+      // Question 81
+      // Everything in Javascript is either a ...
+      // A: Primitive OR Object
+      // B: Function OR Object
+      // C: Only Objects
+      // D: Number OR Object
+      /////////////////////////////////////////////////////
+      // Question 82
+      // console.log(!!null);
+      // console.log(!!1);
+      // console.log(!!"");
+      /////////////////////////////////////////////////////
+      // Question 83
+      // console.log(setInterval(() => console.log("Hi"), 1000));
+      // console.log(setInterval(() => console.log("Hey"), 1000));
+      // console.log(setInterval(() => console.log("Hello"), 1000));
+      /////////////////////////////////////////////////////
+      // Question 84
+      // console.log([..."shubham"]);
+      /////////////////////////////////////////////////////
+      // Question 85
+      // const firstPromise = new Promise((res, rej) => {
+      //   setTimeout(res, 5000, "ONE");
+      // });
+      // const secondPromise = new Promise((res, rej) => {
+      //   setTimeout(res, 1000, "TWO");
+      // });
+
+      // Promise.race([firstPromise, secondPromise]).then((res) =>
+      //   console.log(res)
+      // );
+      /////////////////////////////////////////////////////
+      // Question 86
+      // let person = {
+      //   name: "shubham",
+      //   age: 26,
+      // };
+      // const members = [person];
+      // person = null;
+      // console.log(members);
+      /////////////////////////////////////////////////////
+      // Question 87
+      // const person = {
+      //   name: "THOR",
+      //   age: 10000,
+      // };
+      // for (const item in person) {
+      //   console.log(item);
+      // }
+      /////////////////////////////////////////////////////
+      // Question 88
+      // let data = 3 + 4 + "5";
+      // console.log(data);
+      /////////////////////////////////////////////////////
+      // Question 89
+      // console.log(typeof (3 + 4 + +"5"));
+      /////////////////////////////////////////////////////
+      // Question 90
+      // console.log(3 + 4 + +"5");
+      /////////////////////////////////////////////////////
+      // Question 91
+      // console.log([] === []);
+      /////////////////////////////////////////////////////
+      // Question 92
+      // let data = [1, 2, "3", 4, "5"].map((num) => {
+      //   if (typeof num === "number") {
+      //     return num * 2;
+      //   } else {
+      //     return num;
+      //   }
+      // });
+      // console.log(data);
+      /////////////////////////////////////////////////////
+      // Question 93 // IMP
+      // function getInfo(mem) {
+      //   mem.name = "shubham";
+      // }
+      // const person = { name: "virag" };
+      // getInfo(person);
+      // console.log(person);
+      /////////////////////////////////////////////////////
+      // Question 94
+      // function Car() {
+      //   this.make = "TATA";
+      //   return { make: "KIA" };
+      // }
+      // const nexon = new Car();
+      // console.log(nexon.make);
+      /////////////////////////////////////////////////////
+      // Question 95
+      // (() => {
+      //   let x = (y = 10);
+      // })();
+      // console.log(typeof x); // undefined
+      /////////////////////////////////////////////////////
+      // Question 96
+      // ("use strict");
+      // (() => {
+      //   let x = (y = 10);
+      //   // let x;
+      // })();
+      // console.log(typeof y); // number
+      /////////////////////////////////////////////////////
+      // Question 97
+      // (() => {
+      //   let x = 10;
+      // })();
+
+      // (() => {
+      //   let x = 10;
+      // })();
+
+      // console.log(typeof x);
+      /////////////////////////////////////////////////////
+      // Question 98
+      // (() => {
+      //   let x = (y = 10);
+      // })();
+
+      // (() => {
+      //   let x = (y = 20);
+      // })();
+
+      // console.log(y); // 20 ( var y )
+      ///////////
+      //////////////////////////////////////////
+      // Question 99
+      // let x = 100;
+      // (() => {
+      //   var x = 20;
+      // })();
+      // console.log(x);
+      /////////////////////////////////////////////////////
+      // Question 100
+      // console.log(!true);
+      // console.log(!true - true);
+      // console.log(true - !true);s
+      /////////////////////////////////////////////////////
+      // Question 101
+      // console.log(true + +"10");
+      /////////////////////////////////////////////////////
+
+      // MAP METHOD -
+      // const num = [5, 8, 9, 1, 3];
+
+      // const opt = num.map((item, i) => {
+      //   console.log("Index -", i, "Number -", item);
+      //   return item * 2;
+      // });
+
+      // console.log(num);
+      // console.log(opt);
+
+      // // FILTER METHOD -
+      // const arr = [-9, -2, -5, 4, 8, 3, 7, -1];
+
+      // const fil = arr.filter((item, i, array) => {
+      //   // console.log(array.length)
+      //   return item < 0;
+      // });
+
+      // console.log(fil);
+      // console.log(arr);
+
+      // // REDUCE METHOD -
+      // const money = [-10, -8, -2, 9, 20, 5, 40, -12];
+      // const balance = money.reduce((acc, val, i, arr) => {
+      //   return acc + val;
+      // }, 0);
+
+      // console.log(balance);
+      // console.log(money);
+
+      // // FLAT METHOD -
+      // const item = [10, [5, 2, [1], 5], 8, 6, [7]];
+
+      // const itemFlat = item.flat(2);
+
+      // console.log(itemFlat);
+
+      // // SORT METHOD - Mutates original array
+      // const arr1 = [-5, 8, -2, 2, 7, -3, 1, 4, 6];
+
+      // const accend = arr1.sort((a, b) => a - b);
+      // console.log(accend);
+
+      // const decend = arr1.sort((a, b) => b - a);
+      // console.log(decend);
+
+      // // DATE -
+      // console.log(new Date());
+      // console.log(new Date().getDate());
+      // console.log(new Date().getMonth() + 1);
+      // console.log(new Date().getFullYear());
+
+      // // TIMER
+      // setInterval(function(){
+      //   console.log("HELLO")
+      // },2000)
+
+      // setTimeout(function () {
+      //   console.log("2 SEC ");
+      // }, 5000);
+
+      /////////////////////////////////////////////////////
+      // SHIV SIR -
+      ///////////////////////////////////////////////////////
+      // METHOD - 1
+
+      // let arr1 = [2, 3, 5, 5, 2];
+      // let arr2 = [2, 3, 5, 5, 2];
+
+      // console.log(arr1.length === arr2.length);
+
+      // const arr3 = arr1.sort().toString();
+      // console.log(arr3);
+
+      // const arr4 = arr2.sort().toString();
+      // console.log(arr4);
+
+      // console.log(arr3 === arr4);
+
+      //////////////////////////////////////////////////////
+      // METHOD - 2
+
+      // var obj = [
+      //   {
+      //     name: "Shiv",
+      //     age: 45,
+      //     profession: "Doctor"
+      //   },
+      //   {
+      //     name: "Amit",
+      //     age: 24,
+      //     profession: "Doctor"
+      //   },
+      //   {
+      //     name: "Ram",
+      //     age: 30,
+      //     profession: "Engineer"
+      //   },
+      //   {
+      //     name: "Gyan",
+      //     age: 38,
+      //     profession: "Engineer"
+      //   }
+      // ];
+
+      // const filterDoc = obj.filter((item) => {
+      //   return item.profession === "Doctor";
+      // });
+
+      // console.log(filterDoc);
+
+      // const docName = filterDoc.map((item) => item.name);
+
+      // console.log(docName);
+
+      // const filterAge = obj
+      //   .filter((item) => {
+      //     let result = item.profession === "Doctor";
+      //     return result;
+      //   })
+      //   .map((item) => item.age)
+      //   .sort((a, b) => a - b);
+
+      // const minAge = filterAge[0];
+      // const maxAge = filterAge[filterAge.length - 1];
+
+      // console.log("minAge", minAge);
+      // console.log("maxAge", maxAge);
+
+      /////////////////////////////////////////////////////
+      // METHOD - 3
+
+      // function createIncrement() {
+      //   let count = 0;
+      //   function increment() {
+      //     count++;
+      //   }
+
+      //   let message = `Count is ${count}`;
+
+      //   function log() {
+      //     console.log(message);
+      //   }
+
+      //   return [increment, log];
+      // }
+      // const [increment, log] = createIncrement();
+
+      // increment();
+      // increment();
+      // increment();
+      // log(); // What is logged?
+
+      ////////////////////////////////////////////////////
+      // METHOD - 4
+
+      // function createStack() {
+      //   return {
+      //     items: [],
+      //     push(item) {
+      //       this.items.push(item);
+      //     },
+      //     pop() {
+      //       return this.items.pop();
+      //     }
+      //   };
+      // }
+      // const stack = createStack();
+      // stack.push(10);
+      // stack.push(5);
+      // stack.pop(); // => 5
+      // console.log(stack.items); // => [10]
+      // console.log((stack.items = [10, 100, 1000])); // Encapsulation broken!
+
+      // JS CHALLENGER
+
+      // // 1]
+      // // Write a function that takes an array (a) as argument
+      // // Extract the first 3 elements of a
+      // // Return the resulting array
+
+      // function myFunction(a) {
+      //   console.log(a.splice(0, 3));
+      // }
+
+      // myFunction([1, 2, 3, 4, 5]);
+      // Expected[(1, 2, 3)];
+
+      // /////////////////////////////////////////////////////
+
+      // // 2]
+      // // Write a function that takes an array (a) and a value (n) as argument
+      // // Return the nth element of 'a'
+
+      // function myFunction(a, n) {
+      //   console.log(a[n - 1]);
+      // }
+
+      // myFunction([1, 2, 3, 4, 5], 3);
+      // // Expected = 3
+      // myFunction([10, 9, 8, 7, 6], 5);
+      // // Expected = 6
+      // myFunction([7, 2, 1, 6, 3], 1);
+      // // Expected = 7
+
+      // /////////////////////////////////////////////////////
+
+      // // 3]
+      // // Write a function that takes a value as argument
+      // // Return the type of the value
+
+      // function myFunction(a) {
+      //   console.log(typeof a);
+      // }
+
+      // myFunction(1);
+      // // Expected 'number'
+      // myFunction(false);
+      // // Expected 'boolean'
+      // myFunction({});
+      // // Expected 'object'
+      // myFunction(null);
+      // // Expected 'object'
+      // myFunction("string");
+      // // Expected 'string'
+      // myFunction(["array"]);
+      // // Expected 'object'
+
+      // /////////////////////////////////////////////////////
+
+      // // 4]
+      // // Write a function that takes a string as argument
+      // // Create an object that has a property with key 'key' and a value equal to the string
+      // // Return the object
+
+      // function myFunction(a) {
+      //   const obj = { key: a };
+      //   console.log(obj);
+      // }
+
+      // myFunction("a");
+      // // Expected {key:'a'}
+      // myFunction("z");
+      // // Expected {key:'z'}
+      // myFunction("b");
+      // // Expected {key:'b'}
+
+      // /////////////////////////////////////////////////////
+
+      // // 5]
+      // // Write a function that takes an object (a) and a string (b) as argument
+      // // Return true if the object has a property with key 'b'
+      // // Return false otherwise
+
+      // function myFunction(a, b) {
+      //   const key = Object.keys(a);
+      //   const str = b;
+      //   console.log(key.includes(str));
+      // }
+
+      // myFunction({ a: 1, b: 2, c: 3 }, "b");
+      // // Expected true
+      // myFunction({ x: "a", y: "b", z: "c" }, "a");
+      // // Expected false
+      // myFunction({ x: "a", y: "b", z: undefined }, "z");
+      // // Expected true
+
+      // /////////////////////////////////////////////////////
+
+      // // 6]
+      // // Write a function that takes a string (a) and a number (n) as argument
+      // // Return the nth character of 'a'
+
+      function myFunction(a, n) {
+        console.log(a[n - 1]);
+      }
+
+      // myFunction("abcd", 1);
+      // // Expected 'a'
+      // myFunction("zyxbwpl", 5);
+      // // Expected 'w'
+      // myFunction("gfedcba", 3);
+      // // Expected 'e'
+
+      // /////////////////////////////////////////////////////
+
+      // // 7]
+      // // Write a function that takes two numbers (a and b) as argument
+      // // Sum a and b
+      // // Return the result
+
+      // function myFunction(a, b) {
+      //   console.log(a + b);
+      // }
+
+      // myFunction(1, 2);
+      // // Expected 3
+      // myFunction(1, 10);
+      // // Expected 11
+      // myFunction(99, 1);
+      // // Expected 100
+
+      // ////////////////////////////////////////////////////
+
+      // // 8]
+      // // Write a function that takes two values, say a and b, as arguments
+      // // Return true if the two values are equal and of the same type
+
+      // function myFunction(a, b) {
+      //   console.log(a === b);
+      // }
+
+      // myFunction(2, 3);
+      // // Expected false
+      // myFunction(3, 3);
+      // // Expected true
+      // myFunction(1, "1");
+      // // Expected false
+      // myFunction("10", "10");
+      // // Expected true
+
+      // ///////////////////////////////////////////////////
+
+      // // 9]
+      // // Write a function that takes an array (a) as argument
+      // // Extract the last 3 elements of 'a'
+      // // Return the resulting array
+
+      // function myFunction(a) {
+      //   console.log(a.slice(-3));
+      // }
+
+      // myFunction([1, 2, 3, 4]);
+      // // Expected [2,3,4]
+      // myFunction([5, 4, 3, 2, 1, 0]);
+      // // Expected [2,1,0]
+      // myFunction([99, 1, 1]);
+      // // Expected [99,1,1]
+
+      // ////////////////////////////////////////////////////
+
+      // // 10]
+      // // Write a function that takes a string (a) as argument
+      // // Remove the last 3 characters of a
+      // // Return the result
+
+      // function myFunction(a) {
+      //   let x = a.split("");k
+      //   x.splice(-3);
+      //   console.log(x.join(""));
+      // }
+
+      // myFunction("abcdefg");
+      // // Expected 'abcd'
+      // myFunction("1234");
+      // // Expected '1'
+      // myFunction("fgedcba");
+      // // Expected 'fged'
+
+      ///////////////////////////////////////////////////////
+
+      // // 11]
+      // // Write a function that takes an object with two properties and a string as arguments
+      // // It should return the value of the property with key equal to the value of the string
+
+      // function myFunction(obj, key) {
+      //   for (let i in obj) {
+      //     if (i === key) {
+      //       console.log(obj[key]);
+      //     }
+      //   }
+      // }
+
+      // myFunction({ continent: "Asia", country: "Japan" }, "continent");
+      // // Expected 'Asia'
+      // myFunction({ country: "Sweden", continent: "Europe" }, "country");
+      // // Expected 'Sweden'
+
+      ///////////////////////////////////////////////////////
+
+      // // 12]
+      // Output must be addition of numbers in string
+
+      // const str = "shubham34256";
+
+      // const addition = str.split("").slice(5, str.length);
+      // console.log(addition);
+
+      // const data = addition.map((item, i) => {
+      //   return Number(item);
+      // });
+      // console.log(data);
+
+      // const result = data.reduce((acc, item, i) => {
+      //   const data = Number(acc + item);
+      //   return data;
+      // }, 0);
+
+      // console.log(result);
+    </script>
+  </body>
+</html>

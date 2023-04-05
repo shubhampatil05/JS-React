@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debouncing</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      div {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="text" onkeyup="Result" />
+    </div>
+
+    <script>
+      // Debouncing is a technique in javascript used to improve the performance of event handlers like,scroll,resize,input event etc
+
+      // Debouncing is delays the execution of function for given given time of period that avoid the un-neccesory API calls
+
+      // - A Debounce function is a higher-order function that returns another
+
+      let count = 0;
+      const getData = () => {
+        console.log("Fetch Data", count++);
+      };
+
+      const Debouncing = (Fun, Delay) => {
+        let timer;
+
+        return function () {
+          clearTimeout(timer);
+
+          timer = setTimeout(() => {
+            getData.apply();
+          }, Delay);
+        };
+      };
+
+      const Result = Debouncing(getData, 500);
+
+      //-------------------------------------------------
+
+      // const getData = () => {
+      //   console.log("Get Fetched");
+      // };
+
+      // const Debouncing = (fun) => {
+      //   let timer;
+
+      //   return function () {
+      //     clearTimeout(timer);
+      //     timer = setTimeout(() => {
+      //       getData.apply(this);
+      //     }, 500);
+      //   };
+      // };
+
+      // let Result = document
+      //   .querySelector("input")
+      //   .addEventListener("keyup", Debouncing(getData));
+    </script>
+
+    <script></script>
+  </body>
+</html>

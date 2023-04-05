@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Super Keyword</title>
+    <style>
+        * {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+
+
+
+
+        //Parent class..
+        class CompanyName {
+
+            constructor() {
+                this.CompanyName = 'Xyz';
+            }
+        }
+
+        //child Class..
+
+        class Employee extends CompanyName {
+            constructor(id, name) {
+                super();
+                this.id = id;
+                this.name = name;
+            }
+        }
+        var emp = new Employee(3282, 'Shubham');
+
+
+
+        document.write(emp.id + " " + emp.name + ' ' + emp.CompanyName);
+
+        document.write(`<hr>`);
+
+
+
+        //Parent class..
+
+
+        class MyCity {
+            constructor() {
+                this.MyCity = 'Nanded';
+            }
+        }
+
+        //child Class..
+
+
+        class CurrentCity extends MyCity {
+            constructor(Name, Location) {
+                super();
+                this.Name = Name;
+                this.Location = Location;
+            }
+        }
+
+
+
+        var x = new CurrentCity('Pune', 'Manaji Nagar Narhe 411010');
+
+
+        document.write(x.Name + ' ' + x.Location + ' , Old City Was ' + x.MyCity);
+
+    </script>
+</body>
+
+</html>

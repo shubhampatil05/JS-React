@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment_2</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      document.write(`<h2>Assignment 2</h2>`);
+
+      //Creating Object..
+
+      var person = {
+        FirstName: "Shubham",
+        LastName: "Patil",
+        Age: 24,
+      };
+
+      document.write(
+        person.FirstName + " " + person.LastName + " " + person.Age
+      );
+
+      document.write(`<hr>`);
+      //Creating Array using Constructor..
+
+      var numbers = new Array(10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
+      for (value of numbers) {
+        document.writeln(value);
+      }
+      document.write(`<hr>`);
+
+      function check(value) {
+        return value > 40;
+      }
+      document.write(numbers.filter(check));
+
+      document.write(`<hr>`);
+
+      document.write(numbers.indexOf(100));
+
+      document.write(`<hr>`);
+
+      //Creating String using Object Method..
+
+      let statement_1 = new String("This is LearnVern");
+
+      let x = statement_1.slice(8);
+
+      document.write(x);
+
+      document.write(`<hr>`);
+
+      let statement_2 = "Amazing place to learn java script";
+
+      document.write(x.concat(" " + statement_2));
+
+      document.write(`<hr>`);
+
+      document.writeln(new Date().getDate());
+      document.writeln(new Date().getMonth());
+      document.writeln(new Date().getFullYear());
+
+      document.write(`<hr>`);
+
+      var a = [2, 4, 5, 3, 2, 12, 34, 56, 87, 98];
+
+      var b = Math.max.apply(this, a);
+      document.write(b);
+      document.write(`<br>`);
+      var b = Math.min.apply(this, a);
+      document.write(b);
+      document.write(`<hr>`);
+
+      let l = 1.5;
+
+      document.write(Math.cos(l) + "<br>");
+      document.write(Math.sin(l) + "<br>");
+      document.write(Math.tan(l) + "<br>");
+      document.write(Math.cosh(l) + "<br>");
+      document.write(Math.sinh(l) + "<br>");
+      document.write(Math.tanh(l) + "<br>");
+      document.write(Math.acos(l) + "<br>");
+      document.write(Math.asin(l) + "<br>");
+      document.write(Math.atan(l) + "<br>");
+
+      document.write(`<hr>`);
+
+      document.write(Number.isNaN(102));
+      document.write(`<hr>`);
+      document.write(isNaN("Hello"));
+    </script>
+  </body>
+</html>

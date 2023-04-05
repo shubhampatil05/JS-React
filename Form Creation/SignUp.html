@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <style>
+        * {
+            text-align: center;
+            background-color: black;
+            color:white;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        input {
+
+
+            padding: 3px 5px 3px 5px;
+            border-radius: 5px;
+        }
+
+        input[type='text']:focus {
+
+            background: white;
+            border-radius: 10px;
+            color: black;
+        }
+
+        input[type='submit'] {
+
+            /* margin: 20% 0px 0px 100%; */
+            border-radius: 8px;
+            background-color:rgb(64, 104, 104);
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <h4>Create Your Account</h4>
+
+    <table cellspacing="2" cellpadding="8" align="center">
+
+        <tr>
+            <td>Name</td>
+            <td><input type="text" placeholder="Enter Your Name" id="Name"></td>
+        </tr>
+
+        <tr>
+            <td>Email</td>
+            <td><input type="text" placeholder="Enter Your Email" id="Email"></td>
+        </tr>
+
+        <tr>
+            <td>Password</td>
+            <td><input type="text" placeholder="Enter Your Password" id="Password"></td>
+        </tr>
+        <tr>
+            <td>Confirm Password</td>
+            <td><input type="text" placeholder="Confirm Your Password" id="ConfirmPassword"></td>
+        </tr>
+
+        <tr>
+            <td> <input type="submit" value="Create" onclick="CreateAccount()">
+
+                <input type="submit" value="Log In Page" onclick="BackInLogin()">
+            </td>
+        </tr>
+
+
+
+    </table>
+
+    <script>
+
+
+        function CreateAccount() {
+
+            let Name = document.getElementById('Name').value;
+            let Email = document.getElementById('Email').value;
+            let Password = document.getElementById('Password').value;
+            let ConfirmPassword = document.getElementById('ConfirmPassword').value;
+
+
+            let NameValidation = /[a-zA-Z]+$/;
+            let EmailValidation = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+
+            if (Name == '') {
+
+                alert('Enter Your Name')
+
+            } else if (Email == '') {
+
+                alert('Enter Your Email');
+
+            } else if (Password == '') {
+
+                alert('Create Your Password');
+
+            } else if (ConfirmPassword == '') {
+
+                alert('Confirm Your password')
+
+            } else if (!NameValidation.test(Name)) {
+
+
+                alert('Enter Valid Name');
+
+            } else if (!EmailValidation.test(Email)) {
+
+                alert('Enter Valid Email Address')
+
+            } else if (Password != ConfirmPassword) {
+
+                alert('Password Does Not Match')
+
+            } else {
+
+                alert('Your Account Has Been Created Successfully');
+
+                window.location = 'Login.html';
+            }
+
+        };
+
+        function BackInLogin() {
+
+            window.location = 'Login.html'
+
+        }
+
+    </script>
+
+</body>
+
+</html>

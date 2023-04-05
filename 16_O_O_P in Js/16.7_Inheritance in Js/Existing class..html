@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+    <style>
+        * {
+            text-align: center;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <script>
+
+        //Inbuild class example..
+
+        class Moment extends Date {        //Moment is a child of Date..
+
+            constructor() {
+                super();
+            }
+        }
+        var d = new Moment();
+
+        document.write(d.getDate() + "-" + d.getMonth() + "-" + d.getFullYear());
+
+
+
+
+    </script>
+</body>
+
+</html>

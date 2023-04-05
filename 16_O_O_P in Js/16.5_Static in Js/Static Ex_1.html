@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Static Method</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      // The static keyword is used to declare a static method.
+      // The static method can be of any name.
+      // A class can contain more than one static method.
+      // If we declare more than one static method with a similar name, the JavaScript always invokes the last one.
+      // The static method can be used to create utility functions.
+      // We can use this keyword to call a static method within another static method.
+      // We cannot use this keyword directly to call a static method within the non-static method. In such case, we can call the static method either using the class name or as the property of the constructor.
+
+      class One {
+        static display() {
+          return "Static Method Is called";
+        }
+      }
+
+      document.write(One.display());
+    </script>
+  </body>
+</html>

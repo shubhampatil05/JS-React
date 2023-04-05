@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iterators</title>
+  </head>
+
+  <body>
+    <script>
+      let array = ["Sports", "Fruits", 27, true];
+
+      let NextIndex = 0;
+      function Iterate(value) {
+        return {
+          Next: function () {
+            if (NextIndex < value.length) {
+              return {
+                value: value[NextIndex++],
+                done: false,
+              };
+            } else {
+              return {
+                done: true,
+              };
+            }
+          },
+        };
+      }
+      let op = Iterate(array);
+
+      console.log(op.Next());
+      console.log(op.Next());
+      console.log(op.Next());
+      console.log(op.Next());
+      console.log(op.Next());
+    </script>
+
+    <!-- 
+    <script>
+      let Fruits = ["Orange", "Apple", "Grapes", "PineApple", "Banana"];
+      let Index = 0;
+
+      function IterateFruits(value) {
+        return {
+          Next: function () {
+            if (Index < Fruits.length) {
+              return {
+                value: value[Index++],
+                done: false,
+              };
+            } else {
+              return {
+                done: true,
+              };
+            }
+          },
+        };
+      }
+
+      let IteratedArray = IterateFruits(Fruits);
+      console.log(IteratedArray.Next());
+      console.log(IteratedArray.Next());
+      console.log(IteratedArray.Next());
+      console.log(IteratedArray.Next());
+      console.log(IteratedArray.Next());
+    </script> -->
+
+    <!-- <script>
+      let DataTypes = [
+        "Array",
+        "Object",
+        "Number",
+        "Booleam",
+        "Undefined",
+        "Null",
+      ];
+      let IndexPosition = 0;
+
+      function IterateDataTypes(type) {
+        return {
+          Next: function () {
+            if (Index < DataTypes.length) {
+              return {
+                type: type[IndexPosition++],
+                done: false,
+              };
+            } else {
+              return {
+                done: true,
+              };
+            }
+          },
+        };
+      }
+
+      let IteratedDataTypes = IterateDataTypes(DataTypes);
+
+      console.log(IteratedDataTypes.Next());
+      console.log(IteratedDataTypes.Next());
+      console.log(IteratedDataTypes.Next());
+      console.log(IteratedDataTypes.Next());
+      console.log(IteratedDataTypes.Next());
+      console.log(IteratedDataTypes.Next());
+      console.log(IteratedDataTypes.Next());
+    </script> -->
+
+    <!-- <script>
+      let array = ["HTML", "CSS", "Bootstrap", "JavaScript", "React"];
+
+      let NextIndex = 0;
+
+      function LetIterate(ary) {
+        return {
+          Next: function () {
+            if (NextIndex < ary.length) {
+              return {
+                ary: ary[NextIndex++],
+                done: false,
+              };
+            } else {
+              return {
+                done: true,
+              };
+            }
+          },
+        };
+      }
+      let result = LetIterate(array);
+      console.log(result.Next());
+      console.log(result.Next());
+      console.log(result.Next());
+      console.log(result.Next());
+      console.log(result.Next());
+      console.log(result.Next());
+    </script> -->
+  </body>
+</html>

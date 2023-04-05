@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polymorphism</title>
+    <style>
+        * {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+
+
+        // The polymorphism is a core concept of an object - oriented paradigm that provides a way to perform a single action in different forms.It provides an ability to call the same method on different JavaScript objects.As JavaScript is not a type - safe language, we can pass any type of data members with the methods.
+
+
+
+        //Ex_1..
+        class A {
+            display() {
+                document.write('A is invoked');
+            }
+        };
+        class B extends A {     //method called through..
+
+        }
+        var b = new B();
+        b.display();
+
+        document.write(`<hr>`);
+
+
+
+
+        //Ex_2..
+
+
+        class X {
+            display() {
+                document.write('X is invoked');
+            }
+        };
+        class Y {     //method called through B..
+            display() {
+                document.write('Y is invoked');
+            }
+        };
+
+
+        var a = [new X(), new Y()];
+
+        a.forEach(function (x) {
+            x.display();
+            document.write('<br>');
+        })
+
+
+        document.write(`<hr>`);
+
+    </script>
+</body>
+
+</html>

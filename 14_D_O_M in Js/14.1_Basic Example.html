@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D_O_Model</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      function ShowName() {
+        var Name = document.form_1.name.value;
+        alert("Welcome : " + Name);
+      }
+
+      function ShowAge() {
+        var Age = document.form_1.age.value;
+        alert("Your Age - " + Age);
+      }
+      function ShowFavSport() {
+        var Sport = document.form_1.sport.value;
+        alert("Your Fav Sport - " + Sport);
+      }
+    </script>
+    <form name="form_1">
+      Enter Your Name : <input type="text" name="name" />
+      <hr />
+      <input type="button" value="Click Me" onclick="ShowName()" />
+      <hr />
+
+      Enter Your Age : <input type="text" name="age" />
+      <hr />
+      <input type="button" value="Click Me" onclick="ShowAge()" />
+
+      <hr />
+
+      Fav Sports : <input type="text" name="sport" />
+      <hr />
+      <input type="button" value="Click Me" onclick="ShowFavSport()" />
+    </form>
+  </body>
+</html>

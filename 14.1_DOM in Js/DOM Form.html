@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+
+  <body>
+    <h4>Validate The Name</h4>
+
+    <form action="" name="MYFORM" onsubmit="return Show()">
+      <input type="text" name="MyName" />
+      <input type="submit" value="submit" />
+
+      <hr />
+
+      Enter Value Between 1-10 <br /><br />
+      <input id="One" />
+      <input type="button" value="submit" onclick="display()" />
+    </form>
+
+    <h2 id="Print"></h2>
+
+    <script>
+      document.body.style.background = "black";
+      document.body.style.color = "white";
+      document.body.style.textAlign = "center";
+
+      // If a form field (fname) is empty, this function alerts a message, and returns false, to prevent the form from being submitted:
+
+      function Show() {
+        // let Check = document.forms['MYFORM']['MyName'].value
+
+        let Check = document.MYFORM.MyName.value;
+
+        if (Check == "" || Check == null) {
+          alert("Name Can Not Be Empty");
+          return false;
+        }
+      }
+
+      // Validate Numeric Values
+
+      function display() {
+        let EnteredValue = document.getElementById("One").value;
+
+        let Number;
+
+        if (isNaN(EnteredValue) || EnteredValue < 1 || EnteredValue > 10) {
+          Number = "Input Is Not Valid";
+        } else {
+          Number = "Input Okk";
+        }
+
+        document.getElementById("Print").innerHTML = Number;
+      }
+
+      document.write("<hr>");
+    </script>
+
+    <h4>Automatic form Validation</h4>
+    <p>
+      HTML form validation can be performed automatically by the browser If a
+      form field (fname) is empty, the required attribute prevents this form
+      from being submitted:
+    </p>
+
+    <form action="">
+      <input type="text" name="fName" required />
+      <input type="submit" value="submit" />
+    </form>
+  </body>
+</html>

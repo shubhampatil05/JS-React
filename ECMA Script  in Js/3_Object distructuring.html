@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object distructuring</title>
+  </head>
+
+  <body>
+    <!-- <script>
+      // Object Constructuring..
+
+      // It is a assignment syntax in js expression that makes it possible to unpack values from arrays and properties of object
+
+      const Person = {
+        Name: "Jenny",
+        Age: 27n,
+        Hometown: "Delhi",
+
+        Hobby: {
+          First: "Reading Book",
+          Second: "Watching Movies",
+        },
+      };
+
+      let { Name, Age, Hometown, Hobby } = Person;
+      console.log(Person);
+
+      console.log(`${Name} ${Age} ${Hometown} ${Hobby.First}`);
+
+      let { Name: x, Age: y, Hometown: z } = Person;
+
+      console.log(`${x} ${y} ${z}`);
+    </script> -->
+
+    <!-- <script>
+      const Person = {
+        Name: "Jonas",
+        Age: 27,
+        City: "Ukraine",
+
+        Work: {
+          Proffession: "Teaching",
+          Passion: "Painting",
+        },
+      };
+
+      let { Name, Age, City, Work } = Person;
+      console.log(Person);
+      console.log(Work.Passion);
+
+      let { Name: n, Age: a, City: c, Work: w } = Person;
+
+      console.log(`${n} ${a} ${c} ${w.Passion}`);
+    </script> -->
+
+    <script>
+      const Player = {
+        Name: "Alex Hales",
+        City: "Yorkshire (UK)",
+        Age: 32,
+
+        Work: {
+          Profession: "Cricketer",
+        },
+      };
+
+      let { Name, City, Age, Work } = Player;
+      console.log(Player);
+      console.log(Work.Profession);
+
+      let { Name: n, City: c, Age: a, Work: w } = Player;
+
+      console.log(`${n} ${c} ${a} ${w.Profession}`);
+    </script>
+  </body>
+</html>

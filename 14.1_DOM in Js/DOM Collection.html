@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collection</title>
+  </head>
+
+  <body>
+    <p id="one" style="display: none">This Is first paragraph</p>
+    <p id="Output"></p>
+    <p id="Length"></p>
+    <hr />
+
+    <p id="p1">Lorem ipsum dolor sit amet.</p>
+    <p id="p2">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, quisquam!
+    </p>
+    <p id="p3">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste provident
+      laborum quam autem deleniti praesentium?
+    </p>
+
+    <button onclick="ChangeCss()">Click</button>
+
+    <script>
+      //The getElementsByTagName() method returns an HTMLCollection object.
+
+      let Collection = document.getElementsByTagName("p");
+      document.getElementById("Output").innerHTML = Collection[0].innerHTML;
+
+      //Collection Length
+      //The length property defines the number of elements in an HTMLCollection:
+
+      document.getElementById("Length").innerHTML = Collection.length;
+
+      //Change the text color of all <p> elements..
+
+      function ChangeCss() {
+        let allElements = document.getElementsByTagName("p");
+
+        for (i = 0; i < allElements.length; i++) {
+          allElements[i].style.color = "green";
+        }
+      }
+    </script>
+  </body>
+</html>

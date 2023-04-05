@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object Method</title>
+</head>
+<style>
+  * {
+    text-align: center;
+  }
+</style>
+
+<body>
+  <script>
+    document.write(`<h2>Object Methods<h2>`);
+
+    //Object.assign()..
+    console.log(`1) Object.assign()`);
+
+
+
+
+    var object1 = {
+      a: 1,
+      b: 2,
+      c: 3
+    };
+    var object2 = Object.assign({ d: 4, f: 5 }, object1);
+    console.log(object2);
+
+
+
+
+
+    //Object.create()..
+    console.log(`2) Object.create()`);
+
+
+    function fruit() {
+      this.name = "Grapes";
+    }
+
+    function fun() {
+      fruit.call(this);
+    }
+
+
+    fun.prototype = Object.create(fruit.prototype);
+    const app = new fun();
+    console.log(app);
+
+
+
+
+    function name() {
+      this.name = "Shubham";
+    }
+
+    function nm() {
+      name.call(this);
+    };
+
+    nm.prototype = Object.create(name.prototype);
+
+    // var print = new nm();
+    console.log(new nm());
+
+
+
+
+
+
+    //Object.freeze()..
+    console.log(`3) Object.freeze()`);
+
+
+    var person = {
+      name: 'Shubham',
+      Age: 24
+    };
+    // console.log(Object.freeze(person)); we can use this also..
+    person1 = Object.freeze(person);
+    console.log(person1);
+    person.Age = 25;
+
+    console.log(person.Age);
+
+
+
+
+
+    //Object.is()..
+    console.log(`4) Object.is()`);
+
+
+    const object3 = {
+      Age: 24
+    };
+
+    const object4 = {
+      Age: 25
+    };
+    console.log(Object.is(object3.Age, object4.Age))
+
+
+
+
+
+
+
+    //Object.isExtensible()..
+    console.log(`4) Object.isExtensible()`);
+
+    var object5 = {
+    }
+    console.log(Object.isExtensible(object5));
+
+
+
+
+    //Object.isFrozen()..
+    console.log(`4) Object.isFrozen()`);
+    var object6 = {
+      age: 20
+    }
+    console.log(Object.isFrozen(object6));
+
+
+
+
+
+    //Object.seal()..
+    console.log(`4) Object.seal()`);
+
+    var object7 = {
+      Name: 'Shubham'
+
+    }
+    var object8 = Object.seal(object7);
+    object8.Name = 'Patil';
+    console.log(object8.Name);
+
+
+
+
+
+    //Object.isSealed()..
+    console.log(`4) Object.isSealed()`);
+
+    var object9 = {
+      Name: 'Jenny'
+    }
+    console.log(Object.isSealed(object9));
+
+
+
+
+
+
+    //Object.values()..
+    console.log(`4) Object.values()`);
+
+
+    var object10 = {
+      a: 10,
+      b: 20,
+      c: 30
+    }
+    console.log(Object.values(object10));
+  </script>
+</body>
+
+</html>

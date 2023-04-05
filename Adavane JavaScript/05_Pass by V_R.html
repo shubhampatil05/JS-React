@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pass By Value Pass By Reference</title>
+  </head>
+
+  <body>
+    <script>
+      // Pass by value and pass by refernce..
+
+      // In JavaScript, when a function is called, the arguments can be passed in two ways, either Pass by value or Pass by reference (address). Primitive data types such as string, number, null, undefined, boolean, are passed by value while non-primitive data types such as objects, arrays, and functions are passed by reference in Javascript.
+
+      // 1.Pass by value..
+      // It is for primitive data type..
+
+      // Pass by value in JavaScript means that a copy of the actual parameter’s value is made in memory i.e. a new memory allocation is done, and all the changes are made in that new value.
+
+      // The original value and the copied value are independent of each other as they both have a different space in memory i.e. on changing the value inside the function, the variable outside the function is not affected.
+
+      // Example_1
+
+      let a1 = 21;
+      let a2 = a1;
+
+      a2 = 51;
+      console.log(a1);
+      console.log(a2);
+
+      // Example_2
+      // Pass by value with function..
+
+      function Multiply(value) {
+        return (value = value * 20);
+      }
+      let Number = 15;
+      let Result = Multiply(Number);
+
+      console.log(Number); //15
+      console.log(Result); //300
+
+      // Both are stored in diff memory so they are independent
+
+      //--------------------------------------------------------------------------------
+
+      // 2.Pass by Reference..
+
+      // Unlike pass by value in JavaScript, pass by reference in JavaScript does not create a new space in the memory
+
+      // instead, we pass the reference/address of the actual parameter which means, the function can access the original value of the variable. Thus, if we change the value of the variable inside the function then the original value also gets changed.
+
+      // does not create a copy, instead, it works on the original variable so all the changes made inside the function affect the original variable as well.
+
+      // Pass By reference with Object..
+
+      let Person1 = {
+        Name: "Shubham",
+        Age: 27,
+        Salary: 51000,
+      };
+
+      let Person2 = Person1;
+
+      Person2.Salary = 65000;
+
+      console.log(Person1);
+      console.log(Person2);
+
+      // Pass by reference with Array..
+
+      let array_1 = [1, 2, 3, 4];
+
+      let array_2 = array_1;
+
+      array_1.push(5);
+
+      console.log(array_1);
+      console.log(array_2);
+
+      // Pass by refernce with function
+
+      let Course = {
+        Name: "JavaScript",
+        Duration: "70Hrs",
+      };
+
+      function Display(value) {
+        value.Duration = "75Hrs";
+
+        console.log(value.Duration);
+      }
+
+      console.log(Course.Duration);
+      Display(Course);
+      console.log(Course.Duration);
+
+      // // Diffrence Between Shallow copy and Deep Copy..
+
+      // // 1.Deep Copy..
+      // // A deep copy means that all the values of the variable are copied and disconnected from the orignal variable..
+
+      // // 2.Shallow Copy..
+      // // A shallow copy means than certain values are still connected to the orignal variable..
+
+      // //Pass by value and pass by reference..
+
+      // //Primitive data types are pass by value and non-primitive data types passed by reference
+
+      // // 1) Pass by Value..
+
+      // // Original value and copied value are stored in diffrent memory, i.e they are independent to each other..
+
+      // // Pass by value requires more space,coz new variable is created in memory..
+
+      // let a = 70;
+      // let b = a;
+
+      // console.log(a);
+      // console.log(b);
+
+      // a = 50;
+
+      // console.log(a);
+      // console.log(b);
+
+      // // only value of a will get changed..coz they are independent..
+
+      // // Another Example..
+
+      // function multiply(value) {
+
+      //     return value *= 20;
+
+      // }
+      // let Number = 10;
+
+      // console.log(multiply(Number));
+
+      // // Function takes an argument and changes its value..
+
+      // // 2) Pass by Reference..
+
+      // // Pass by reference is for non-primitive data types..
+
+      // // It does not create a new space in memory,it does not create a copy it works on original variable so all the changes affect the original variable as weel..
+
+      // // Pass by referance in object..
+
+      // let Person1 = {
+
+      //     Name: 'Jenny',
+      //     Age: 27
+
+      // }
+
+      // let Person2 = Person1;
+
+      // console.log(Person1);
+      // console.log(Person2);
+
+      // Person2.Age = 29;
+
+      // console.log(Person1);
+      // console.log(Person2);
+
+      // // copy of variable affect the Orignal variable, coz they are in same memory..
+
+      // // Pass by reference in Array..
+
+      // let Value1 = [1, 2, 3, 4];
+
+      // let Value2 = Value1;
+
+      // console.log(Value1);
+      // console.log(Value2);
+
+      // Value1.push(5);
+
+      // console.log(Value1);
+      // console.log(Value2);
+
+      // // Pass by reference with function (Object)..
+
+      // let myObject = {
+
+      //     Name: 'Javascript',
+      //     courseDuration: '70hrs'
+
+      // }
+
+      // function display(temp) {
+
+      //     temp.courseDuration = '75hrs';
+      //     console.log(temp.courseDuration)
+
+      // }
+
+      // console.log(myObject.courseDuration);  //70hrs
+      // display(myObject);                     //75hrs
+      // console.log(myObject.courseDuration);  // 75hrs
+
+      // // Pass by reference with function (Array)..
+
+      // let Language = ['HTML', 'CSS'];
+
+      // function add(lng) {
+
+      //     lng.push('JavaScript');
+      //     console.log(lng)
+
+      // }
+      // console.log(Language);   //['HTML','CSS']
+      // add(Language);           //['HTML','CSS','JavaScript']
+      // console.log(Language);   ////['HTML','CSS','JavaScript']
+
+      // // let a1 = {
+
+      // //     Language: 'JavaScript',
+
+      // // }
+
+      // // // let a2=a1;
+
+      // // let a2 = Object.assign({}, a1);
+
+      // // a2.Language = 'React';
+
+      // // console.log(a1);
+      // // console.log(a2);
+
+      // // // if we try to change value of object without affecting another object..
+      // // // we can use Object.assign
+
+      // // //--------------------------------------
+
+      // // // Object.assign not work for nested objects,there is  two way to tackle this..
+
+      // // // 1)  Spread Oprerator..
+
+      // // let b1 = {
+
+      // //     District: {
+
+      // //         Hometown: 'Nanded'
+
+      // //     }
+
+      // // }
+
+      // // let b2 = { District: { ...b1.District } }
+
+      // // b2.District.Hometown = 'Degloor';
+
+      // // console.log(b1);
+      // // console.log(b2);
+    </script>
+  </body>
+</html>

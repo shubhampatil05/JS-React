@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment</title>
+    <style>
+      * {
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 25px;
+        font-style: italic;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      document.write(`<h2>Assignment 1</h2>`);
+
+      /*An alert box is often used if you want to make sure information comes through to the user. When an alert box pops up, the user will have to click "OK" to proceed.*/
+
+      //The alert() method displays an alert box with a message and an OK button.
+
+      //alert('Hello');
+
+      //-----------------------
+
+      var x = 10;
+      document.write(x);
+      document.write(`<br>`);
+      var x = "Shubham Patil";
+      document.write(x);
+      document.write(`<br>`);
+      var x = true;
+      document.write(x);
+      document.write(`<br>`);
+
+      /*var fruits=['Apple','Banana','Orange','Grapes','PineApple'];
+        alert(fruits);*/
+      document.write(`<br>`);
+
+      var info = {
+        fname: "Shubham",
+        lname: "Patil",
+        Age: 24,
+      };
+
+      document.write(
+        "The person" +
+          " " +
+          info.fname +
+          " " +
+          info.lname +
+          " " +
+          "having age" +
+          " " +
+          info.Age +
+          " " +
+          "is a kind hearted one"
+      );
+
+      var x = 5;
+      var y = 10;
+      var x = 8;
+      var y = "8";
+      console.log(x == y);
+      console.log(x === y);
+      console.log(typeof x);
+      console.log(typeof y);
+      document.write(`<br>`);
+
+      if (x == y) {
+        document.write(`x is equal to y`);
+      }
+      document.write(`<br>`);
+
+      document.write(`<h2>Assignment 2</h2>`);
+
+      var value1 = 45;
+      var value2 = 75;
+
+      if (value1 >= 40 && value2 >= 90) {
+        Document.write("The value is true");
+      } else {
+        document.write(`The value is false`);
+      }
+      document.write(`<br>`);
+      document.write(`<br>`);
+
+      document.write(`<h2>Print weekdays using all loops</h2>`);
+
+      //using for loop..
+      document.write(`<p> 1) Print weekdays using for loop</p>`);
+
+      var text = "";
+      var week = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ];
+
+      for (i = 0; i < week.length; i++) {
+        text += week[i] + "<br>";
+      }
+      document.write(text);
+
+      //using while loop..
+      document.write(`<p> 2) Print weekdays using while loop</p>`);
+
+      var text = "";
+      var week = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ];
+      var i = 0;
+      while (i < week.length) {
+        text += week[i] + " ";
+        i++;
+      }
+      document.write(text);
+
+      //using do..while loop..
+      document.write(`<p> 3) Print weekdays using do..while loop</p>`);
+
+      var text = "";
+      var week = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ];
+      var i = 0;
+      do {
+        text += week[i] + " ";
+        i++;
+      } while (i < week.length);
+      document.write(text);
+
+      //using for of loop..
+      document.write(`<p> 3) Print weekdays using for of loop</p>`);
+
+      var week = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ];
+
+      for (value of week) {
+        document.writeln(value);
+      }
+
+      // document.write(`<h2> 3)using function</h2>`);
+
+      /*
+        function displayName() {
+            alert('Shubham Patil');
+        }
+        displayName();
+        */
+      document.write(`<br>`);
+      document.write(`<br>`);
+
+      document.write(
+        `<h2>Find 'Max' & 'Min' numbers using apply() Method</h2>`
+      );
+
+      var Nums = [15, 20, 56, 43, 85, 92, 56, 87];
+
+      var max = Math.max.apply(this, Nums);
+      var min = Math.min.apply(this, Nums);
+
+      document.write("The maximum value is" + " " + max);
+      document.write(`<br>`);
+
+      document.write("The minimum value is" + " " + min);
+
+      //bind method..
+      document.write(`<h2>bind() Method</h2>`);
+
+      var person = {
+        Name: "Shubham Patil",
+        GetName: function () {
+          return this.Name;
+        },
+      };
+
+      var ShowName = person.GetName.bind(person);
+      document.write(ShowName());
+    </script>
+  </body>
+</html>

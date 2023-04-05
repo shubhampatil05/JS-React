@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation</title>
+  </head>
+
+  <body>
+    <div id="Div"></div>
+
+    <h3 id="text">Copied This text using Diffrent Nodes</h3>
+    <div id="div"></div>
+    <p id="para1"></p>
+    <p id="para2"></p>
+    <p id="para3"></p>
+    <p id="para4"></p>
+    <p id="para5"></p>
+    <p id="para6"></p>
+    <p id="para7"></p>
+    <p id="para8"></p>
+    <p id="para9"></p>
+    <p id="para10"></p>
+    <p id="para11"></p>
+    <p id="para12"></p>
+    <p id="para13"></p>
+    <p id="para14"></p>
+    <p id="para15"></p>
+    <p id="para16"></p>
+    <p id="para17"></p>
+
+    <script>
+      // Using innerHTNL
+
+      document.getElementById("para1").innerHTML =
+        document.getElementById("text").innerHTML;
+
+      // Using firstChild.nodeValue
+
+      document.getElementById("para2").innerHTML =
+        document.getElementById("text").firstChild.nodeValue;
+
+      document.getElementById("para3").innerHTML =
+        document.getElementById("text").firstChild.nodeValue;
+
+      document.getElementById("para4").innerHTML =
+        document.getElementById("text").firstChild.nodeValue;
+
+      // Using ChildNodes[].nodeValue
+
+      document.getElementById("para5").innerHTML =
+        document.getElementById("text").childNodes[0].nodeValue;
+
+      // PreviousSibling..
+      // document.getElementById('para6').innerHTML = document.getElementById('one').nextSibling.previousSibling;
+
+      //nextSibling
+      // document.getElementById('para7').innerHTML = document.getElementById('one').previousSibling.previousSibling;
+
+      // DOM Root nodes..
+
+      // There are teo special  properties that allows you bto access to the full document
+
+      // 1.
+      document.getElementById("para8").innerHTML = document.body.innerHTML;
+      // it copies a body
+
+      // 2.
+      document.getElementById("para9").innerHTML =
+        document.documentElement.innerHTML;
+
+      //  it copies all element in the body
+
+      // The node name Property..
+
+      document.getElementById("para10").innerHTML =
+        document.getElementById("div").nodeName;
+
+      // The node type property..
+
+      document.getElementById("para11").innerHTML =
+        document.getElementById("div").nodeType;
+
+      // ELEMENT_NODE
+
+      document.getElementById("para12").innerHTML =
+        document.getElementById("div").ELEMENT_NODE;
+
+      // ATTRIBUTE_NODE
+
+      document.getElementById("para13").innerHTML =
+        document.getElementById("div").ATTRIBUTE_NODE;
+
+      //COMMENT_NODE
+      document.getElementById("para14").innerHTML =
+        document.getElementById("div").COMMENT_NODE;
+
+      //TEXT_NODE
+      document.getElementById("para15").innerHTML =
+        document.getElementById("div").TEXT_NODE;
+
+      //DOCUMENT_NODE
+      document.getElementById("para16").innerHTML =
+        document.getElementById("div").DOCUMENT_NODE;
+
+      //DOCUMENT_TYPE_NODE
+      document.getElementById("para17").innerHTML =
+        document.getElementById("div").DOCUMENT_TYPE_NODE;
+    </script>
+  </body>
+</html>

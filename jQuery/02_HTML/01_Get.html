@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <p id="one">Lorem ipsum dolor sit amet consectetur <b>adipisicing</b> elit. Labore, laudantium.</p>
+
+    <input type="text" id="Input"><br><br>
+    <a href="https://www.w3schools.com/jquery/jquery_dom_get.asp" id="Anchor">W3SChools</a><br><br>
+    <button id="text">Get Text</button>
+    <button id="HTML">Get HTML</button>
+
+    <button id="Value">Get Value</button>
+    <button id="Attribute">Get Attribute</button>
+
+
+
+    <script>
+
+        $(function () {
+
+
+            $('#text').click(function () {
+
+                alert('Text :' + $('#one').text());
+            });
+
+            $('#HTML').click(function () {
+
+                alert('Text :' + $('#one').html());
+            })
+            $('#Value').click(function () {
+
+                alert('Value :' + $('#Input').val());
+            })
+            $('#Attribute').click(function () {
+
+                alert('Attribute :' + $('#Anchor').attr('href'));
+            })
+
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

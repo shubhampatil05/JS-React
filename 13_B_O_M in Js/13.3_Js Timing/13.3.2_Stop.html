@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Intervels</title>
+    <style>
+        * {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <button onclick="stopTimeout()">Stop</button> -->
+    <hr>
+
+    <h4 id="date"></h4>
+    <button onclick="stopInterval()">Stop Clock</button>
+
+    <script>
+
+
+        // /The clearTimeout() method stops the execution of the function specified in setTimeout()
+
+        // syntax = window.clearTimeout(timeoutVariable);
+
+
+        // let x = setTimeout(() => {
+
+        //     alert('welcome');
+
+        // }, 1500)
+
+
+
+        // function stopTimeout() {
+
+
+        //     window.clearTimeout(x);
+
+
+        // }
+
+        let x = setInterval(() => {
+
+            document.getElementById('date').innerHTML = new Date()
+
+        }, 1000)
+
+
+
+        function stopInterval() {
+
+
+            window.clearTimeout(x);
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>

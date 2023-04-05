@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Break And Continue Statement</title>
+  </head>
+
+  <body>
+    <script>
+      // Break statement udes to jump out of loop
+      // Continue statement used to continue with next iteration
+
+      for (var a = 1; a <= 100; a++) {
+        if (a % 3 == 0) {
+          document.write("FIZZ" + "<br><br>");
+          continue;
+        }
+
+        if (a % 5 == 0) {
+          document.write("BUZZ" + "<br><br>");
+          continue;
+        }
+
+        document.writeln("Number :-" + a + "<br><br>");
+      }
+    </script>
+  </body>
+</html>

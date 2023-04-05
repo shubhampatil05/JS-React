@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interview Questions</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="https://www.w3schools.com/js/default.asp" id="Link">Click</a>
+
+    <!-- <script>
+      // Why self is needed instead of this..
+
+      // because self is pattern maintaining refrence to the original 'this' keyword and we can say that this is technique to handle events
+
+      let obj = {
+        outer: function () {
+          console.log(this == obj);
+
+          let self = this;
+
+          function inner() {
+            console.log(this == obj);
+            console.log(self == obj);
+          }
+          inner();
+        },
+      };
+
+      obj.outer();
+    </script> -->
+
+    <!-- <script>
+      // How to write class method vs instance method..
+      class Emp {
+        constructor(name, id) {
+          this.name = name;
+          this.id = id;
+        }
+      }
+
+      //  creating instane of..
+
+      let Result = new Emp("Jenny", 3282);
+      console.log(Result);
+    </script> -->
+
+    <!-- <script>
+      // How do you define class and its constructor..
+
+      // Class is type of function but instead of using keyword function we use the keyword class
+      // initiate a class and then properties are assigned inside a constructor
+
+      class Student {
+        constructor(Name, Class) {
+          this.Name = Name;
+          this.Class = Class;
+        }
+      }
+      let Details = new Student("Jenny", "PG First Year");
+      console.log(Details);
+    </script> -->
+
+    <!-- <script>
+      // What is Hoisted in Javascript..
+
+      // it is default behaviour of moving declarations on the top
+      // A variable can be used before it has been initialised
+
+      //   Ex_1..
+      x = 5;
+      console.log(x);
+      var x;
+
+      //   Ex_2
+      var y;
+      y = 10;
+      console.log(y);
+
+      // Fucntion Hoisting
+      sum(5, 7);
+
+      function sum(a, b) {
+        console.log(a + b);
+      }
+
+      // Variable Hoisting
+
+      console.log(A);
+
+      var A = 10;
+    </script> -->
+
+    <!-- <script>
+      // What is function overloading..
+
+      // Function overloading means creating multiple functions with the diffrent execution
+
+      function Display(Name) {
+        return Name;
+      }
+
+      function Display(Fname, Lname) {
+        return Fname + " " + Lname;
+      }
+      console.log(Display("Shubham"));
+
+      // Js does not support function Overloading
+    </script> -->
+
+    <!-- <script>
+      // what is scope varible in javascript
+
+      // The scope variable is the region of your program in which it defined
+
+      // The varible have Two scope..
+      // 1.Global Scope
+
+      // The global scope varible has a global scope means it can be defined anywhere in your code
+
+      let x = 15; // Global scope
+
+      function res() {
+        console.log(x);
+      }
+      res();
+
+      // 2.Local Scope
+      // The local scope variable visible only within a function where it is defined
+
+      function out() {
+        let y = 25;
+        console.log(y);
+      }
+      out();
+    </script> -->
+
+    <!-- <script>
+      // What is Associate Array in Javascript
+
+      // Associate Array is basically objects where indexes are replaced by user defined keys
+
+      // They do not have  length property like normal array and cannot br transversed usig normal for loop
+
+      let array = { Name: "Jenny", Age: 27 };
+
+      for (value in array) {
+        console.log("Key = " + value + " , " + "Value =  " + array[value]);
+      }
+    </script> -->
+    <!-- 
+    <script>
+      // How to achive inheritance in javascript..
+
+      // We can achive inheritance by using extend and super() keyword
+
+      // Example
+
+      class Student {
+        constructor() {
+          this.company = "Honda";
+        }
+      }
+
+      class College extends Student {
+        constructor(Name, Class) {
+          super();
+          this.Name = Name;
+          this.Class = Class;
+        }
+      }
+      let info = new College("Jenny", "PG First Year");
+      console.log(info);
+    </script> -->
+
+    <!-- <script>
+      // How to create Object in Javascript..
+
+      // By using object literals
+
+      let obj_1 = {
+        Name: "Jenny",
+        Age: 27,
+      };
+
+      // By using instance of (new kayword)
+
+      let obj_2 = new Object();
+      obj_2.Name = "Jonas";
+      obj_2.City = "Ukraine";
+
+      // By using constructor
+
+      function obj_3(Name, Age, City) {
+        this.Name = "Virag";
+        this.Age = "27";
+        this.City = "Dhule";
+      }
+      let info = new obj_3();
+
+      console.log(obj_1);
+      console.log(obj_2);
+      console.log(info);
+    </script> -->
+
+    <!-- <script>
+      // Why we are using async await
+
+      // To make promises simple and easy to write and undersatand
+      // Async is used to return a promise instead of returning value
+      // Await makes function to wait for promise
+
+      let get = async function () {
+        console.log("Hello");
+      };
+      get();
+      console.log("Welcome");
+    </script> -->
+
+    <!-- <script>
+      // What is callback function
+
+      // A function which is executed after the another function has finished execution
+
+      // Defination : A function is Passed as an argument to another fnction is called callback function
+      function One() {
+        return "Welcome to this World";
+      }
+      function Two(a, b) {
+        console.log(a + " " + b);
+      }
+      Two(One(), "Jenny");
+    </script> -->
+
+    <!-- <script>
+      // What is higher oreder function..
+
+      // Higher order functions are the function that takes an other function as an argument and return a function as result is known a shigher order funntion
+
+      function Questions(Name) {
+        if (Name == "Virag") {
+          return function (qn) {
+            console.log(Name + " " + "What is" + " " + qn);
+          };
+        }
+        if (Name == "Jonas") {
+          return function (qn) {
+            console.log(Name + " " + "Explain" + " " + qn);
+          };
+        }
+        if (Name == "Jenny") {
+          return function (qn) {
+            console.log(Name + " " + "Define" + " " + qn);
+          };
+        }
+      }
+
+      Questions("Virag")("Object");
+      Questions("Jonas")("Higer Order function");
+      Questions("Jenny")("Prototype");
+    </script> -->
+
+    <!-- <script>
+      // What is Object.freez()..
+
+      // It freezes an object
+      // Object.freeze() prevents new properties being added to it and prevents modification of existing property
+
+      let obj = {
+        Name: "jenny",
+        Age: 27,
+      };
+
+      Object.freeze(obj);
+
+      obj.City = "London";
+
+      console.log(obj);
+    </script> -->
+
+    <!-- <script>
+      // Diffrence between call(),apply() and bind()
+
+      // call() invokes the function and allows you to pass arguments one by one
+
+      //   function Info(followers) {
+      //     console.log(
+      //       `Congratulations ${this.Creator} for Completing ${followers} Followers on ${this.ChannelName} YouTube Channel`
+      //     );
+      //   }
+      //   let YouTuber = {
+      //     ChannelName: "BB Ki Vines",
+      //     Creator: "Bhuvan Bam",
+      //   };
+
+      //   Info.call(YouTuber, "30M");
+
+      //---------------------------------------------------------
+
+      // apply() invokes the function and allows you to pass arguments as an array
+
+      //   function Info(followers) {
+      //     console.log(
+      //       `Congratulations ${this.Creator} for Completing ${followers} Followers on ${this.ChannelName} YouTube Channel`
+      //     );
+      //   }
+      //   let YouTuber = {
+      //     ChannelName: "BB Ki Vines",
+      //     Creator: "Bhuvan Bam",
+      //   };
+
+      //   Info.apply(YouTuber, ["30M"]);
+
+      //---------------------------------------------------------
+
+      // bind() returns a new function and allows you to pass any number of arguments
+
+      function Info(followers) {
+        console.log(
+          `Congratulations ${this.Creator} for Completing ${followers} Followers on ${this.ChannelName} YouTube Channel`
+        );
+      }
+      let YouTuber = {
+        ChannelName: "BB Ki Vines",
+        Creator: "Bhuvan Bam",
+      };
+
+      let Bind = Info.bind(YouTuber, "30M");
+      Bind();
+    </script> -->
+
+    <!-- <script>
+      // What is event in Javascript
+
+      // The Change in state of an object is known as event
+      // There are various Events which represent activity some is performed by the browser and some is performed by the user
+    </script> -->
+
+    <!-- <script>
+      // What is the diffrence between prevent default and stop prapogation
+
+      // The preventDefault prevents the default property of an element,if we use form element then it prevents from submitting..if we use the href element it prevents from navigation
+
+      //   let Element = document.querySelector("a");
+      //   Element.addEventListener("click", myfunction);
+
+      //   function myfunction() {
+      //     event.preventDefault();
+      //   }
+
+      //---------------------------------------
+
+      // The stop prapogation method stop the prapogation of an event from occuring in the bubbling and capturing phase
+      //   let Element = document.querySelector("a");
+
+      //   Element.onclick = function (event) {
+      //     event.stopPrapogation();
+      //   };
+      //   Element.parentNode = onclick = function (event) {
+      //     console.log("This will never print");
+      //   };
+    </script> -->
+
+    <script></script>
+  </body>
+</html>

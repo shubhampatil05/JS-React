@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <style>
+      * {
+        margin: 0;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        background-color: black;
+        margin: 25px auto;
+        /* background-image:url(/Images/Background.jpg.jpg); */
+        background-image: url(/Images/Background.jpg);
+      }
+
+      #OuterDiv {
+        width: 500px;
+        height: 600px;
+        /* background-color: darkslategrey; */
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+      }
+
+      #InnerDiv {
+        width: 375px;
+        height: 450px;
+        /* background-color: rgb(49, 61, 65); */
+        box-shadow: 5px 2px 3px white;
+        border: 2px solid white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+      }
+
+      h3 {
+        height: 200px;
+      }
+
+      button {
+        margin: 15px;
+        padding: 7px;
+        font-weight: bold;
+        background-color: rgb(156, 170, 183);
+        border-radius: 8px;
+      }
+
+      h3 {
+        display: flex;
+        align-items: center;
+        font-size: 90px;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      h2 {
+        color: white;
+        font-size: 50px;
+        font-family: "Courier New", Courier, monospace;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="OuterDiv">
+      <div id="InnerDiv">
+        <h2 id="One">Counter</h2>
+        <h3 id="Result">0</h3>
+        <button onclick="LowCount()" id="LowCount">Low Count</button>
+        <button onclick="AddCount()" id="AddCount">Add Count</button>
+      </div>
+    </div>
+
+    <script>
+      // let decrease = (function () {
+
+      //     let Num = 0;
+      //     return function () {
+
+      //         Num -= 1;
+      //         return Num;
+
+      //     }
+
+      // })
+      //     ();
+
+      // function LowCount() {
+
+      //     document.getElementById('Result').innerHTML = decrease();
+
+      // }
+
+      // let increase = (function () {
+
+      //     let Num = 0;
+      //     return function () {
+
+      //         Num += 1;
+      //         return Num;
+
+      //     }
+
+      // })
+      //     ();
+
+      // function AddCount() {
+
+      //     document.getElementById('Result').innerHTML = increase();
+
+      // }
+
+      let Num = 0;
+
+      function LowCount() {
+        Num = Num - 1;
+
+        document.getElementById("Result").innerHTML = Num;
+
+        if (Num > 0) {
+          document.getElementById("Result").style.color = "green";
+        } else if (Num < 0) {
+          document.getElementById("Result").style.color = "red";
+        } else {
+          document.getElementById("Result").style.color = "black";
+        }
+      }
+
+      function AddCount() {
+        Num = Num + 1;
+
+        document.getElementById("Result").innerHTML = Num;
+
+        if (Num > 0) {
+          document.getElementById("Result").style.color = "green";
+        } else if (Num < 0) {
+          document.getElementById("Result").style.color = "red";
+        } else {
+          document.getElementById("Result").style.color = "black";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirm</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <input type="button" value="Confirm" onclick="Show()" />
+
+    <script>
+      // A confirm box is often used if you want the user to verify or accept something.
+
+      // When a confirm box pops up, the user will have to click either "OK" or "Cancel" to proceed.
+
+      // If the user clicks "OK", the box returns true. If the user clicks "Cancel", the box returns false.
+
+      function Show() {
+        let x = confirm("Click OK To Confirm");
+
+        if (x) {
+          alert("Thank You For Confirmation");
+        } else {
+          alert("OOPS! Try Again..");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add EventListner</title>
+
+    <style>
+        * {
+            margin: 0;
+
+        }
+
+        #first {
+            width: 100%;
+            height: 100px;
+            background-color: brown;
+        }
+
+        #second {
+            width: 400px;
+            height: 400px;
+            background-color: cadetblue;
+            position: relative;
+            text-align: center;
+            padding: 15px;
+        }
+
+        #third {
+            width: 200px;
+            height: 200px;
+            background-color: darkgoldenrod;
+            position: absolute;
+            text-align: center;
+            padding: 15px;
+
+            left: 90px;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="first"></div>
+
+
+    <div id="second">Parent Div
+
+        <div id="third">
+            Child Div
+        </div>
+    </div>
+
+
+    <script>
+
+        document.getElementById('first').addEventListener('mouseleave', xyz);
+        document.getElementById('first').addEventListener('click', function () {
+            document.getElementById('first').style.border = "1px solid orange "
+
+        });
+
+
+        function xyz() {
+
+            document.getElementById('first').style.background = 'Green'
+
+        }
+
+
+        document.querySelector('#second').addEventListener('click', function () {
+            alert('You clicked on parent Div')
+        });
+        document.querySelector('#third').addEventListener('click', function () {
+            alert('You clicked on Child Div')
+        });
+
+
+
+        document.querySelector('#second').removeEventListener('click', function () {
+            alert('You clicked on parent Div')
+        });
+
+
+
+        document.querySelector('#second').addEventListener('click', abc);
+
+        function abc() {
+            document.getElementById('first').removeEventListener('mouseleave', xyz)
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

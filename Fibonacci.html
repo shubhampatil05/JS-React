@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibonacci Series</title>
+  </head>
+
+  <body>
+    <script>
+      // Genrate fibonacci series up to n number
+
+      // let Input = prompt("Enter The Number"); // get input from user
+      let Input = 15;
+
+      let n1 = 0;
+      let n2 = 1;
+      let next;
+
+      for (let i = 1; i <= Input; i++) {
+        console.log(n1);
+        next = n1 + n2;
+        n1 = n2;
+        n2 = next;
+      }
+    </script>
+
+    <!-- <script>
+      // program to generate fibonacci series up to a certain number
+
+      let Input = prompt("Enter Positive Number");
+      let n1 = 0,
+        n2 = 1,
+        next;
+
+      console.log(n1);
+      console.log(n2);
+      next = n1 + n2;
+
+      while (next <= Input) {
+        console.log(next);
+
+        n1 = n2;
+        n2 = next;
+        next = n1 + n2;
+      }
+    </script> -->
+    <!-- 
+    <script>
+      // let Value = prompt("Enter Any Value");
+      let Value = 10;
+
+      let n1 = 0,
+        n2 = 1,
+        n3;
+      console.log(n1);
+      console.log(n2);
+      n3 = n1 + n2;
+
+      while (n3 <= Value) {
+        console.log(n3);
+        n1 = n2;
+        n2 = n3;
+        n3 = n1 + n2;
+      }
+    </script> -->
+  </body>
+</html>

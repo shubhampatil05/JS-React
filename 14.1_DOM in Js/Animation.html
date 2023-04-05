@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+
+    <style>
+        /* #Parent {
+            width: 500px;
+            height: 500px;
+            position: relative;
+            background: cadetblue;
+        }
+
+        #Child {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: cyan;
+        }
+
+        button {
+
+            margin-left: 45%;
+
+        } */
+
+        #Parent {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background-color: chocolate;
+
+        }
+
+        #Child {
+
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: cyan;
+
+        }
+
+        button {
+
+            padding: 5px;
+            background: black;
+            color: white;
+            margin-left: 45%;
+            margin-top: 2%;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+    </style>
+
+<body>
+
+
+    <!-- <div id="Parent">
+        <div id="Child"></div>
+    </div>
+
+
+    <div id="Parent"> -->
+    <!-- <button onclick="Animation()">Click Me</button> -->
+
+    <div id="Parent">
+
+        <div id="Child"></div>
+    </div>
+    <button onclick="Animation()">Click</button>
+
+
+
+
+    <script>
+
+        // function Animation() {
+
+
+        //     let initial = null;
+
+        //     Element = document.getElementById('Child');
+
+
+        //     let position = 0;
+
+        //     // clearInterval(initial);
+
+        //     initial = setInterval(() => {
+
+
+        //         if (position == 450) {
+
+        //             clearInterval(initial)
+
+        //         } else {
+
+        //             position++;
+
+        //             Element.style.top = position + 'px';
+        //             Element.style.left = position + 'px';
+        //         }
+
+
+        //     }, 10)
+
+
+        // }
+
+
+        // function Animation() {
+
+        //     Element = document.getElementById('Child');
+
+
+        //     let initial = null;
+        //     let position = 0;
+
+        //     initial = setInterval(() => {
+
+
+        //         if (position == 450) {
+
+        //             clearInterval(initial);
+
+
+        //         } else {
+
+
+        //             position++;
+
+        //             Element.style.top = position + 'px';
+        //             Element.style.left = position + 'px';
+        //         }
+
+
+
+
+
+        //     }, 10)
+
+
+        // }
+
+
+        function Animation() {
+
+            let Element = document.getElementById('Child');
+
+            let initial = null;
+            let position = 0;
+            setInterval(() => {
+
+
+                if (position == 225) {
+
+                    clearInterval(initial);
+
+                } else {
+
+                    position++;
+                    Element.style.top = position + 'px';
+                    Element.style.left = position + 'px';
+                    Element.style.borderRadius = "7px"
+
+
+                }
+
+            }, 10)
+
+        }
+    
+    </script><h4></h4>
+
+</body>
+
+</html>

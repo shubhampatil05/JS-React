@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Throttling</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn" onclick="handleClick()">Click</button>
+    <button id="new">Add</button>
+
+    <script>
+      // throtling is a technique in javascript used to set the limit for function it means how many times function can be called within the time of period..
+
+      // It is commanly used to optimize the performance of web application and prevents the fucntion for becoming too heavy
+      let Count = 0;
+      const Thrott = (Fun, Delay) => {
+        return function () {
+          document.getElementById("btn").disabled = true;
+
+          setTimeout(() => {
+            Fun(); // called the function
+          }, Delay);
+        };
+      };
+
+      const handleClick = Thrott(() => {
+        console.log("User Clicked", Count++);
+        document.getElementById("btn").disabled = false;
+      }, 3000);
+    </script>
+
+    <script>
+      // by adding event dynamically
+
+      // const thrott = (fun, delay) => {
+      //   return function () {
+      //     document.getElementById("new").disabled = true;
+
+      //     setTimeout(() => {
+      //       fun();
+      //     }, delay);
+      //   };
+      // };
+
+      // document.getElementById("new").addEventListener(
+      //   "click",
+      //   thrott(() => {
+      //     console.log("Called");
+      //     document.getElementById("new").disabled = false;
+      //   }, 1000)
+      // );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question Paper Solving</title>
+  </head>
+  <body>
+    <script>
+      // 1. How to implement private and privilleged function in JavaScript.write with example
+
+      // The function which is called by privileged function in known as private function..
+
+      // The function which is declared using this keyword is called privileged function..
+      // The privileged function can access private variable and private method..
+
+      function DisplayFullName(fName, lName) {
+        // These are public field
+
+        this.fName = fName;
+        this.lName = lName;
+
+        var FullName;
+        // Private Function..
+        var getFullName = function () {
+          // This is private variable only accessible only inside function..
+
+          FullName = fName + lName;
+          return FullName;
+        };
+
+        //Privilledge Function..
+
+        this.Privilledge = function () {
+          return getFullName();
+        };
+
+        DisplayFullName.prototype.getPublicFullName = function () {
+          return this.Privilledge;
+        };
+      }
+
+      let Info = new DisplayFullName("Jenny", "Winget");
+
+      console.log(Info.fName);
+      console.log(Info.lName);
+      console.log(Info.FullName);
+      console.log(Info.getFullName);
+      console.log(Info.Privilledge());
+    </script>
+
+    <script>
+      // 2.Explain why Asynchronous code is important in javascript? Explain Promise and Async with example
+
+      // It is important becouse it enables your program to start a long running code and still able to responsive to other events while that task runs rather than having to wait untill that task is finished..
+
+      // Promise And Async..
+
+      // Promise makes code easier to write and understand..
+      // Promise contains producing code and consuming code..
+      // A promise can be..
+      // 1). Pending
+      // 2). Fullfilled
+      // 3). Rejected
+
+      new Promise((Resolve, Reject) => {
+        let x = 10;
+
+        if (x > 5) {
+          Resolve("True");
+        } else {
+          Reject("Error");
+        }
+      })
+        .then((value) => {
+          console.log(value);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+      //----------------------------------------------------
+
+      // When async is added,function behave's like a Promise
+
+      async function displayName() {
+        return "Jenny Morgan";
+      }
+
+      displayName().then((Name) => {
+        console.log(Name);
+      });
+    </script>
+
+    <script>
+      // 3. Where u have used callback function in your program..provide an example
+
+      // I used a callback function to find area,circumfarance and diameter by calling back the function
+
+      let Ar = [1, 2, 3, 4];
+
+      const area = function (radius) {
+        return Math.PI * radius * radius;
+      };
+
+      const circumfarance = function (radius) {
+        return 2 * Math.PI * radius;
+      };
+      const diameter = function (radius) {
+        return 2 * radius;
+      };
+
+      const calculate = function (x, func) {
+        const res = [];
+
+        for (i = 0; i < x.length; i++) {
+          res.push(func(x[i]));
+        }
+        return res;
+      };
+      console.log(calculate(Ar, area));
+      console.log(calculate(Ar, circumfarance));
+      console.log(calculate(Ar, diameter));
+    </script>
+
+    <script>
+      // 4.What is Deep Copy and Shallow Copy..
+
+      // Deep Copy means all the values are copied to new variable and disconnected from orignal variable
+
+      // Shallow Copy means certain Values are connected to the orginal variables
+    </script>
+
+    <script>
+      // 5.How to achive inherutance in javascript?
+      // We can achive inheritace by using extend and super keyword..
+
+      class Student {
+        constructor(Name) {
+          this.Name = Name;
+        }
+      }
+
+      class Details extends Student {
+        constructor(Name, Id, Roll_Number) {
+          super(Name);
+          this.Id = Id;
+          this.Roll_Number = Roll_Number;
+        }
+      }
+
+      let Information = new Details("Jenny", 3282, 7);
+
+      console.log(Information);
+    </script>
+
+    <script>
+      // 6. What is closure in javascript? provide an example..
+
+      // Closure is a combination of function and lexical envirement,that inner function can have access to the outer function as well as the global variable
+
+      let a = 10;
+
+      const Outer = (b) => {
+        function Inner() {
+          let Sum = a + b;
+
+          console.log(Sum);
+        }
+        Inner();
+      };
+      Outer(11);
+    </script>
+
+    <script>
+      // 7.How do you check if object is Array or not?With Example..
+
+      // We can check object is array or not by using Array.isArray() method
+
+      let Obj = {};
+
+      console.log(Array.isArray(Obj));
+    </script>
+    <script>
+      // 8.How does the javascript engine works at runtime.Explain call stack end Event loop
+
+      //- Firstly parser check the js code if there is any syntax error,if js code is clean then it is convert into (ABS) abstract syntax tree and then convert into machine code.
+      //- Your code is ready to run and executes.
+
+      //- Everything is happen into execution context
+
+      //--------------------------------------------------
+
+      //* Call Stack-
+
+      //- It is also known as execution stact.
+      //-It Works as a (LIFO) 'last in first out structure' which is used to store all the execution context created during execution
+      //- Execution context where our code is executes
+
+      //- By default w've a global execution context
+      //- Js engine creates a global execution context before it starts to execute any code
+
+      // Function and variables that are not inside a function created a new execution context..every time function is executed
+
+      // Global execution context Associates with the Global object or Window Object..
+
+      //* Event Loop
+
+      //- Event loop is a queue of callback function when the Asynchrnous function is executes a callback function pushed into a queue..
+      //- The js engine dosen't process the event loop untill async function executes the code
+    </script>
+
+    <script>
+      // 9. What is design pattern in javascript? Explain Modular and Singleton design pattern
+
+      // - Design patterns are reusable solution for commanly occuring problems in Software design
+
+      //* Modular Pattern..
+
+      //-The Module Pattern is one of the important patterns in JavaScript. It is a commonly used Design Pattern which is used to wrap a set of variables and functions
+
+      const fun = function () {
+        let a;
+
+        let setA = function (value) {
+          a = value;
+        };
+        let getA = function () {
+          return a; // returning value
+        };
+
+        return {
+          setA: setA,
+          getA: getA,
+        };
+      };
+
+      let object = fun();
+
+      console.dir(object.setA(20)); // undefined
+      console.log(object.getA(20)); // 20
+
+      //-------------------------------------------------------------
+
+      //* Singleton Pattern
+
+      // Singleton design pattern tells us that we can create only one instance of class and that instance can accessible globally..
+      function singleTon() {
+        let instance;
+
+        // function createInstance() {
+        //   const obj = new Object("instance created");
+        //   return obj;
+        // }
+
+        return {
+          getInstance: function () {
+            if (!instance) {
+              instance === new singleTon();
+            }
+          },
+        };
+      }
+
+      const instanceOne = singleTon().getInstance();
+      const instanceTwo = singleTon().getInstance();
+
+      console.log(instanceOne === instanceTwo);
+
+      //----------------------------------------------------
+      // class singleTon {
+      //   static instance;
+
+      //   static getInstance() {
+      //     if (!singleTon.instance) {
+      //       singleTon.instance = new singleTon();
+      //     }
+      //     return singleTon.instance;
+      //   }
+      // }
+      // const instanceOne = singleTon.getInstance();
+      // const instanceTwo = singleTon.getInstance();
+
+      // console.log(instanceOne === instanceTwo);
+    </script>
+
+    <script>
+      // 10. What is object in javascript? How many ways you can create object in Javascript? How to add dynamic property in javascript
+
+      //- Object is a stand-alone entity with value and properties
+      //- Suppose cup is an Object with properties a cup has color,design,weight the same way javascript object can have properties which defines their charecterstics
+
+      //- We can create object by following ways
+
+      //- By using object literals
+
+      let Person_1 = {
+        Name: "Jenny",
+        Age: 27,
+      };
+
+      console.log(Person_1);
+
+      //- By using instance of(new keyword)
+
+      let Person_2 = new Object();
+
+      Person_2.Name = "Jenny";
+      Person_2.Age = 27;
+      console.log(Person_2);
+
+      //- By using constructor
+
+      function Person(Name, Age) {
+        this.Name = Name;
+        this.Age = Age;
+      }
+
+      let Person_3 = new Person("Jenny", 27);
+      console.log(Person_3);
+
+      //- By using Object.create()
+
+      // Object.create method create the new object using existing object as a prototype of the newly created object
+
+      const person = { Name: "Shubham", Age: 25 };
+
+      const _obj = Object.create(person);
+
+      // This is not deletable becouse it created using Object.create() method
+
+      delete _obj.Name;
+
+      console.log(obj);
+      console.log(objName);
+
+      //-------------------------------
+      // const _Obj = function (Fruit) {
+      //   this.Fruit = "Apple";
+      // };
+
+      // const CreateNewObj = function () {
+      //   _Obj.call(this);
+      // };
+
+      // CreateNewObj.prototype = Object.create(_Obj.prototype);
+
+      // console.log(new CreateNewObj());
+
+      //----------------
+      // Add properties dynamically..
+      let Add = Object.assign({ Height: "5.11" }, Person_3);
+      Person_3["City"] = "London";
+      Person_3.Country = "England";
+
+      console.log(Person_3);
+      console.log(Add);
+    </script>
+
+    <script>
+      //** PROGRAMMING..
+    </script>
+
+    <script>
+      // 1.How to remove Duplicates elements from javascript Array..
+
+      let Aray = [1, 2, 3, 4, 4, 5, 6, 3, 2, 1, 2, 3, 4, 43, 2, 12, 1];
+
+      // By using new Set()
+
+      let remove = Array.from(new Set(Aray));
+      console.log(remove);
+
+      //-----------------------------------------------
+      // remove Duplicates..
+
+      var arr = [1, 2, 3, 4, 5, 5, 4, 6, 7, 8];
+      var unique = [];
+
+      function removeDuplicates() {
+        for (i = 0; i < arr.length; i++) {
+          if (unique.indexOf(arr[i]) < 0) {
+            unique.push(arr[i]);
+          }
+        }
+        return unique;
+      }
+
+      console.log(removeDuplicates(unique));
+      // -------------------------------------
+
+      // let Duplicates = Aray.filter(
+      //   (item, index) => index == Aray.indexOf(item)
+      // );
+      // console.log(Duplicates);
+
+      //--------------------------------------
+      // get Duplicates..
+
+      let Arry = [1, 2, 3, 4, 5, 6, 5, 4, 3, 2];
+      let index = 0;
+      let newArr = [];
+
+      function findDuplicates(value) {
+        for (i = 0; i < value.length; i++) {
+          for (j = i + 1; j < value.length; j++) {
+            if (value[i] == value[j]) {
+              newArr[index] = value[i];
+              index++;
+            }
+          }
+        }
+        return newArr;
+      }
+      console.log(findDuplicates(Arry));
+
+      //-----------------------------------------------
+
+      // get Duplicates.
+
+      let Duplicates = Aray.filter(
+        (item, index) => index != Aray.indexOf(item)
+      );
+      console.log(Duplicates);
+
+      // Using has()
+
+      let Uniqe = new Set(Aray);
+
+      let Find = Aray.filter((value) => {
+        if (Uniqe.has(value)) {
+          Uniqe.delete(value);
+        } else {
+          return value;
+        }
+      });
+      console.log(Find);
+    </script>
+
+    <script>
+      // 2.Write add method using promise.Print final sum..Also write piece of code to solve nested cahining issue..
+
+      // const add = (a, b) => {
+      //   return new Promise((Resolve, Reject) => {
+      //     Resolve(a + b);
+      //   });
+      // };
+
+      // add(1, 2)
+      //   .then((sum1) => {
+      //     console.log(sum1);
+      //     add(sum1, 5)
+      //       .then((sum2) => {
+      //         console.log(sum2);
+      //         add(sum2, 5)
+      //           .then((sum3) => {
+      //             console.log(sum3);
+      //           })
+      //           .catch((e) => {
+      //             console.log(e);
+      //           });
+      //       })
+      //       .catch((e) => {
+      //         console.log(e);
+      //       });
+      //   })
+      //   .catch((e) => {
+      //     console.log(e);
+      //   });
+
+      //---------------------------------------------------------------
+
+      const add = (a, b) => {
+        return new Promise((Resolve, Reject) => {
+          Resolve(a + b);
+        });
+      };
+
+      add(2, 3)
+        .then((first) => {
+          console.log(first);
+          return first + 5;
+        })
+        .then((second) => {
+          console.log(second);
+          return second + 7;
+        })
+        .then((third) => {
+          console.log(third);
+        });
+    </script>
+    <script>
+      //3. Write a javascript function to convert an Object into a list of '[key,value]' pairs
+
+      // First Way..
+
+      function key_value_pairs(obj) {
+        let res = [];
+
+        for (key in obj) {
+          res.push([key, obj[key]]);
+        }
+        return res;
+      }
+      console.log(
+        key_value_pairs({ red: "#FF000", green: "00FF00", white: "FFFFF" })
+      );
+
+      //--------------------------------------------------------------
+
+      // Second Way..
+
+      //   function key_value_pairs(obj) {
+      //     let Output = Object.entries(obj);
+
+      //     return Output;
+      //   }
+
+      //   console.log(
+      //     key_value_pairs({ red: "#FF000", green: "00FF00", white: "FFFFF" })
+      //   );
+      //
+    </script>
+
+    <script>
+      // 4. Write a piece of code to run the programm..
+
+      const func = function () {
+        let a;
+
+        let setA = function (value) {
+          a = value;
+          return a;
+        };
+        let getA = function () {
+          return a; // returning value
+        };
+
+        return {
+          setA: setA,
+          getA: getA,
+        };
+      };
+
+      let obj = func();
+
+      console.dir(obj.setA(20));
+      console.log(obj.getA(20));
+
+      console.dir(obj.setA(30));
+      console.log(obj.getA(30));
+    </script>
+
+    <script>
+      // 5. Write a piece of code to solve the undefined issue by using promise
+
+      // var Message = undefined;
+
+      // new Promise((Resolve, Reject) => {
+      //   setTimeout(() => {
+      //     Resolve((Message = "Callback Function Called"));
+      //   }, 3000);
+      // }).then((value) => {
+      //   alert(Message);
+      // });
+    </script>
+
+    <script>
+      // 6.Write a programm to Count letter.
+
+      let result = {};
+
+      function charCount(str) {
+        for (i = 0; i < str.length; i++) {
+          let Count = 0;
+          for (j = 0; j < str.length; j++) {
+            if (str[i] == str[j]) {
+              Count++;
+            }
+          }
+
+          result[str[i]] = Count;
+        }
+        return result;
+      }
+      console.log(charCount("Programmimng"));
+    </script>
+
+    <script>
+      // Find accurance of letter and highet accurance of single letter
+
+      let str = "this is a random text";
+
+      const res = {};
+
+      for (i = 0; i < str.length; i++) {
+        count = 0;
+
+        for (j = 0; j < str.length; j++) {
+          if (str[i] == str[j]) {
+            count++;
+          }
+        }
+
+        if (!str[i].includes(" ")) {
+          res[str[i]] = count;
+        }
+      }
+      let sorted = [];
+      for (values in res) {
+        sorted.push([values, res[values]]);
+      }
+
+      sorted.sort((a, b) => {
+        return b[1] - a[1];
+      });
+
+      console.log(sorted[0]);
+    </script>
+  </body>
+</html>

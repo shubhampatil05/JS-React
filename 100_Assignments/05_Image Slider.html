@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slider</title>
+    <script
+      src="https://kit.fontawesome.com/524c849674.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      #Main {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-image: linear-gradient(
+          rgb(193, 168, 122),
+          lightgreen,
+          rgb(130, 165, 165),
+          gray,
+          lightblue,
+          rgb(181, 114, 114)
+        );
+      }
+
+      #div {
+        height: 500px;
+        border: 5px solid black;
+        position: relative;
+        border-radius: 20px;
+        width: 70%;
+      }
+
+      #Left {
+        background-color: rgb(115, 194, 221);
+        position: absolute;
+        top: 45%;
+        left: -20px;
+        height: 50px;
+        border-radius: 7px;
+        font-size: 25px;
+        padding-left: 7.5px;
+        padding-right: 7.5px;
+      }
+
+      #Right {
+        background-color: rgb(115, 194, 221);
+        position: absolute;
+        top: 45%;
+        right: -20px;
+        height: 50px;
+        border-radius: 7px;
+        font-size: 25px;
+        padding-left: 7.5px;
+        padding-right: 7.5px;
+      }
+
+      #Right:hover {
+        transition: 2s;
+        background-color: gainsboro;
+      }
+      #Left:hover {
+        transition: 2s;
+        background-color: gainsboro;
+      }
+
+      Img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="Main">
+      <div id="div">
+        <img src="/Images/pic1.jpg" id="Img" />
+
+        <button id="Left"><i class="fa-solid fa-caret-left"></i></button>
+        <button id="Right"><i class="fa-solid fa-caret-right"></i></button>
+      </div>
+    </div>
+
+    <script>
+      let Arr = [
+        "/Images/pic2.jpg",
+        "/Images/pic3.jpg",
+        "/Images/pic4.jpg",
+        "/Images/pic5.jpg",
+        "/Images/pic6.jpg",
+      ];
+
+      let Leftbtn = document.querySelector("#Left");
+      let Rightbtn = document.querySelector("#Right");
+      let Image = document.getElementById("Img");
+      let Counter = 0;
+
+      Leftbtn.addEventListener("click", function () {
+        Counter = Counter - 1;
+
+        if (Counter < 1) {
+          Counter = 4;
+        }
+        console.log(Counter);
+
+        Image.src = Arr[Counter];
+      });
+
+      Rightbtn.addEventListener("click", function () {
+        Counter = Counter + 1;
+
+        if (Counter > 4) {
+          Counter = -1;
+          Counter = Counter + 1;
+        }
+        console.log(Counter);
+
+        Image.src = Arr[Counter];
+      });
+    </script>
+
+    <!-- <script>
+      let Images = [
+        {
+          image: (src = "/Images/pic2.jpg"),
+        },
+        {
+          image: (src = "/Images/pic3.jpg"),
+        },
+        {
+          image: (src = "/Images/pic4.jpg"),
+        },
+        {
+          image: (src = "/Images/pic5.jpg"),
+        },
+        {
+          image: (src = "/Images/pic6.jpg"),
+        },
+        {
+          image: (src = "/Images/pic7.jpg"),
+        },
+        {
+          image: (src = "/Images/pic8.jpg"),
+        },
+        {
+          image: (src = "/Images/pic9.jpg"),
+        },
+        {
+          image: (src = "/Images/pic10.jpg"),
+        },
+        {
+          image: (src = "/Images/pic11.jpg"),
+        },
+        {
+          image: (src = "/Images/pic12.jpg"),
+        },
+        {
+          image: (src = "/Images/pic13.jpg"),
+        },
+        {
+          image: (src = "/Images/pic14.jpg"),
+        },
+        {
+          image: (src = "/Images/pic15.jpg"),
+        },
+      ];
+
+      let leftBtn = document.querySelector("#Left");
+      let rightBtn = document.querySelector("#Right");
+      let getImage = document.querySelector("Img");
+
+      leftBtn.addEventListener("click", function () {
+        let ImageSlider = Math.floor(Math.random() * Images.length);
+
+        getImage.src = Images[ImageSlider].image;
+      });
+
+      rightBtn.addEventListener("click", function () {
+        let ImageSlider = Math.ceil(Math.random() * Images.length);
+
+        getImage.src = Images[ImageSlider].image;
+      });
+    </script> -->
+    <!-- 
+    <script>
+      let Images = [
+        "/Images/pic2.jpg",
+        "/Images/pic3.jpg",
+        "/Images/pic4.jpg",
+        "/Images/pic5.jpg",
+        "/Images/pic6.jpg",
+      ];
+
+      let Leftbtn = document.querySelector("#Left");
+      let Rightbtn = document.querySelector("#Right");
+      let Image = document.getElementById("Img");
+      let Counter = 0;
+
+      Leftbtn.addEventListener("click", function () {
+        Counter = Counter - 1;
+        if (Counter < 1) {
+          Counter = 5;
+        }
+        if (Counter == 5) {
+          Image.src = Images[4];
+        } else if (Counter == 4) {
+          Image.src = Images[3];
+        } else if (Counter == 3) {
+          Image.src = Images[2];
+        } else if (Counter == 2) {
+          Image.src = Images[1];
+        } else if (Counter == 1) {
+          Image.src = Images[0];
+        }
+
+        console.log(Counter);
+      });
+
+      Rightbtn.addEventListener("click", function () {
+        Counter = Counter + 1;
+        if (Counter > 5) {
+          Counter = 0;
+
+          Counter = Counter + 1;
+        }
+        if (Counter == 1) {
+          Image.src = Images[0];
+        } else if (Counter == 2) {
+          Image.src = Images[1];
+        } else if (Counter == 3) {
+          Image.src = Images[2];
+        } else if (Counter == 4) {
+          Image.src = Images[3];
+        } else if (Counter == 5) {
+          Image.src = Images[4];
+        }
+
+        console.log(Counter);
+      });
+    </script> -->
+  </body>
+</html>

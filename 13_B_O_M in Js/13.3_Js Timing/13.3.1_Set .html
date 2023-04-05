@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setTimeout()</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h4 id="date"></h4>
+    <script>
+      // /The window object allows execution of code at specified time intervals.
+
+      // These time intervals are called timing events.
+
+      // Syntax = setTimeout(function,milliseconds)
+
+      // setTimeout(function, milliseconds)
+      // Executes a function, after waiting a specified number of milliseconds.
+
+      // setInterval(function, milliseconds)
+      // Same as setTimeout(), but repeats the execution of the function continuously.
+
+      //1.setTimeout(function, milliseconds)
+      // Executes a function, after waiting a specified number of milliseconds.
+
+      // setTimeout(
+      //     function Show() {
+
+      //         alert('Welcome..');
+      //     }, 1000);
+
+      // setInterval(function, milliseconds)
+      // Same as setTimeout(), but repeats the execution of the function continuously.
+
+      // setInterval (() => {
+      //     alert('hello');
+
+      // }, 1000)
+
+      setInterval(showDate, 1000);
+
+      function showDate() {
+        d = new Date();
+
+        document.getElementById("date").innerHTML = d;
+      }
+
+      clearInterval(showDate);
+    </script>
+  </body>
+</html>

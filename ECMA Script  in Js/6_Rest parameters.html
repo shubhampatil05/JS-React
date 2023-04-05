@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rest Parameters</title>
+  </head>
+
+  <body>
+    <script>
+      // Rest Operators..
+      //Ex_1..
+      function display(...values) {
+        console.log(values);
+        console.log(...values);
+      }
+      display(1, 2, 3, 4, 5);
+
+      //Ex_2..
+
+      function lng(x, y, ...z) {
+        console.log(`${x} ${y}`);
+        console.log(z);
+        console.log(...z);
+        console.log(z[0]);
+        console.log(z.indexOf("Java"));
+      }
+      lng("HTML", "CSS", "Javascript", "Java", "React");
+    </script>
+
+    <!-- <script>
+      function Rest(a, b, ...c) {
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(a - b);
+        console.log(c[0]);
+      }
+      Rest(12, 8, 09, 082, 9883);
+    </script> -->
+
+    <!-- <script>
+      function sum(...arg) {
+        console.log(arg[0] + arg[1] + arg[2]);
+      }
+
+      sum(1, 2, 3);
+    </script> -->
+  </body>
+</html>

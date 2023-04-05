@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>preventDefault And stopPrapogation</title>
+  </head>
+
+  <body>
+    <a
+      id="link"
+      href="https://itnext.io/preventdefault-vs-stoppropagation-3631de9fe1c6"
+      >Open</a
+    >
+
+    <script>
+      // preventDefault()
+      // The event.preventDefault() method prevents the default behavior of an element. If we use form element it prevents form submitting. If we use a href element it prevents navigating. If we use contextMenu element it prevents displaying.
+
+      // The event.preventDefault() will not allow the user to leave the page and open the URL.
+
+      // let Ele = document.getElementById("link");
+
+      // Ele.onclick = function (e) {
+      //   e.preventDefault();
+      // };
+
+      // Ele.parentNode.onclick = function (e) {
+      //   console.log("This Will Print");
+      // };
+      //-----------------------------------
+      // stopPropagation
+      // The event.stopPropagation() method stops the propagation of an event from occurring in the bubbling or capturing phase.
+
+      // let Ele = document.getElementById("link");
+
+      // Ele.onclick = function (e) {
+      //   e.stopPropagation();
+      // };
+
+      // Ele.parentNode.onclick = function (e) {
+      //   // since propagation was stopped by the child element's onClick, this message will never be seen!
+
+      //   console.log("This Will Never Print");
+      // };
+    </script>
+  </body>
+</html>

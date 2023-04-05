@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Inside Promise</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+
+        // Error Inside Promise..
+
+        // Ex_1..
+
+        let userAuthirised = false;
+
+
+        function ErrorInPromise() {
+
+
+
+            if (!userAuthirised) {
+
+                throw 'User Is Not Authorised';
+            }
+            return new Promise((res, rej) => {
+
+
+                res({
+
+                    Authentication: 'User Is Authorised'
+
+                })
+
+            })
+        }
+        try {
+
+            ErrorInPromise()
+                .then(value => { console.log(value.Authentication) })
+                .catch(error => { console.log(error) })
+
+
+        } catch (error) {
+
+            console.log(`Caught By Try/Catch ${error}`);
+
+        }
+
+
+        // Ex_2..
+
+
+        const userDefined = true;
+
+        function FindError() {
+
+
+            if (!userDefined) {
+
+
+                throw 'User Is Not Defined';
+            }
+
+            return new Promise((res, rej) => {
+
+                res({
+
+                    Authentication: 'User Is Defined'
+                })
+
+            })
+
+        }
+
+        try {
+
+            FindError()
+                .then(user => { console.log(user.Authentication) })
+                .catch(error => { console.log(error) })
+
+        } catch (error) {
+            console.log(`Caught By try/catch ${error}`);
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

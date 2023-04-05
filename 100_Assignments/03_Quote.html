@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quote Generator</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #PerentDiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(rgb(84, 134, 84), black);
+      }
+
+      #container {
+        text-align: center;
+        background-color: rgb(57, 47, 47);
+        padding: 30px;
+        border: 10px solid rgb(67, 73, 76);
+        border-radius: 20px;
+        color: white;
+        width: 70%;
+        height: 50vh;
+        box-sizing: border-box;
+        box-shadow: 3px 3px 3px 3px white;
+      }
+
+      #btn {
+        background-color: darkolivegreen;
+        font-weight: bold;
+        padding: 5px 13px 5px 13px;
+        font-size: 1rem;
+        cursor: pointer;
+        box-sizing: border-box;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+      }
+
+      h3 {
+        margin-bottom: 30px;
+      }
+
+      #Quote::first-letter {
+        font-size: 20px;
+        font-weight: bold;
+        color: indianred;
+      }
+
+      #Author {
+        color: lightgreen;
+        text-align: right;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="PerentDiv">
+      <div id="container">
+        <button id="btn">Generate Quote</button>
+
+        <h3 id="DefaultPara">
+          Life is what happens when you're busy making other plans
+        </h3>
+        <h4 id="Author">Author : Jhon Lenon</h4>
+      </div>
+    </div>
+
+    <script>
+      let Arr = [
+        {
+          quote: `The greatest glory in living lies not in never falling, but in rising every time we fall.`,
+          author: `Nelson Mandela`,
+        },
+        {
+          quote: `The way to get started is to quit talking and begin doing`,
+          author: `Walt Disney`,
+        },
+        {
+          quote: `Your time is limited, so don't waste it living someone else's life.Don't be trapped by dogma which is living with the results of other people's thinking`,
+          author: `Steve Jobs`,
+        },
+        {
+          quote: `If life were predictable it would cease to be life, and be without flavor`,
+          author: `Eleanor Roosevelt`,
+        },
+        {
+          quote: `If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough`,
+          author: `Oprah Winfrey`,
+        },
+        {
+          quote: `If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success`,
+          author: `James Cameron`,
+        },
+        {
+          quote: `Life is what happens when you're busy making other plans`,
+          author: `Jhon Lenon`,
+        },
+      ];
+
+      let btn = document.getElementById("btn");
+      let para = document.getElementById("DefaultPara");
+      let author = document.getElementById("Author");
+      var Counter = 0;
+
+      btn.addEventListener("click", () => {
+        if (Counter < Arr.length) {
+          Counter = Counter + 1;
+        }
+        if (Counter >= Arr.length) {
+          Counter = 0;
+        }
+
+        para.innerText = Arr[Counter].quote;
+        author.innerText = Arr[Counter].author;
+      });
+    </script>
+
+    <!-- <script>
+      let btn = document.getElementById("btn");
+      let para = document.getElementById("DefaultPara");
+      let author = document.getElementById("Author");
+      var Text = 0;
+
+      btn.addEventListener("click", function () {
+        Text = Text + 1;
+
+        if (Text == 1) {
+          para.innerHTML = `The greatest glory in living lies not in never falling, but in rising every time we fall.`;
+
+          author.innerHTML = `Author : Nelson Mandela`;
+        } else if (Text == 2) {
+          para.innerHTML = `The way to get started is to quit talking and begin doing`;
+
+          author.innerHTML = ` Author : Walt Disney`;
+        } else if (Text == 3) {
+          para.innerHTML = `Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma which is living with the results of other people's thinking`;
+
+          author.innerHTML = `Author : Steve Jobs`;
+        } else if (Text == 4) {
+          para.innerHTML = `If life were predictable it would cease to be life, and be without flavor`;
+
+          author.innerHTML = `Author : Eleanor Roosevelt`;
+        } else if (Text == 5) {
+          para.innerHTML = `If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough`;
+
+          author.innerHTML = `Author : Oprah Winfrey`;
+        } else if (Text > 5) {
+          Text = 0;
+
+          para.innerHTML = `Life is what happens when you're busy making other plans`;
+
+          author.innerHTML = `Author : Jhon Lenon`;
+        }
+      });
+    </script> -->
+
+    <!-- <script>
+      let Quotes = [
+        {
+          quote: `The greatest glory in living lies not in never falling, but in rising every time we fall.`,
+          author: `Nelson Mandela`,
+        },
+        {
+          quote: `The way to get started is to quit talking and begin doing`,
+          author: `Walt Disney`,
+        },
+        {
+          quote: `Your time is limited, so don't waste it living someone else's life.Don't be trapped by dogma which is living with the results of other people's thinking`,
+          author: `Steve Jobs`,
+        },
+        {
+          quote: `If life were predictable it would cease to be life, and be without flavor`,
+          author: `Eleanor Roosevelt`,
+        },
+        {
+          quote: `If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough`,
+          author: `Oprah Winfrey`,
+        },
+        {
+          quote: `If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success`,
+          author: `James Cameron`,
+        },
+        {
+          quote: `Life is what happens when you're busy making other plans`,
+          author: `Jhon Lenon`,
+        },
+      ];
+
+      let btn = document.querySelector("#btn");
+      let getQuote = document.querySelector("#DefaultPara");
+      let getAuthor = document.querySelector("#Author");
+
+      btn.addEventListener("click", function () {
+        let Generate = Math.floor(Math.random() * Quotes.length);
+
+        getQuote.innerHTML = Quotes[Generate].quote;
+        getAuthor.innerHTML = " Author : " + Quotes[Generate].author;
+      });
+    </script> -->
+  </body>
+</html>

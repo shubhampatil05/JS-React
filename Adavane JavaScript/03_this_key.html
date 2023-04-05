@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this_keyword</title>
+  </head>
+
+  <body>
+    <script>
+      // this keyword refers to the global object it belongs to.
+
+      // console.log(this);
+
+      // In regular function this refers to the global object..
+
+      // function This(x) {
+
+      //     x = 20;
+      //     console.log(x);
+
+      //     console.log(this)
+
+      // }
+
+      // This();
+
+      // in a method this refers to the object owner..
+
+      var obj = {
+        Name: "Jenny",
+        Age: 23,
+        City: "London",
+
+        display: function () {
+          console.log("Hello");
+          console.log(this);
+        },
+      };
+      obj.display();
+
+      // In a function in a strict mode this is undefined..
+
+      // 'use strict'
+
+      // function x() {
+
+      //     console.log(this);
+      // }
+
+      // x();
+
+      //when we use regular function inside objct it refers to global object..coz regular function refers to global object..
+
+      var Company = {
+        EmpName: "Dhiraj",
+        EmpSalary: "50000",
+
+        myFunction: function () {
+          console.log("This is a object function");
+          console.log(this); //this refers to an owener of object..
+
+          function Regular() {
+            console.log("This is a regular function");
+            console.log(this); //this refers to an global object..
+          }
+          return Regular();
+        },
+      };
+
+      Company.myFunction();
+    </script>
+  </body>
+</html>

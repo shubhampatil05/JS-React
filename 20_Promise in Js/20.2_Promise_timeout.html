@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Using Timeout</title>
+</head>
+
+<body>
+    <script>
+
+
+
+
+        // Promise using Timeout..
+
+        //Example_1
+
+        new Promise((Resolve, Reject) => {
+
+
+            setTimeout(() => {
+
+                let x = 'Using timeout function inside promise'
+
+
+                Resolve(x);
+
+
+
+            }, 2000);
+
+        })
+            .then(check => { console.log(check) });
+
+
+
+
+        // Example_2
+
+
+        var myPromise = new Promise(function (myResovle, myReject) {
+
+            setTimeout(function () {
+
+                var p = 5;
+
+                if (p == 5) {
+                    myResovle('This is the example of timeout by using promise')
+
+
+                    //Here we can use only myResolve,myreject not works here..
+                }
+                // else{
+                //     myReject('myReject not works');
+                // }
+            }, 7000)
+
+
+
+        });
+
+        myPromise.then(
+
+            function (myValue) {
+                document.getElementById('demo_3').innerHTML = myValue;
+            }
+        )
+
+
+    </script>
+</body>
+
+</html>

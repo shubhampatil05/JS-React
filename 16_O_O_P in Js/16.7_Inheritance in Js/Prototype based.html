@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+    <style>
+        * {
+            text-align: center;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <script>
+
+        //Prototype Based..
+
+
+        //constructor function..
+        function Bike(company) {
+            this.company = company;
+        };
+
+        Bike.prototype.getCompany = function () {
+            return this.company;
+        };
+
+        //Another constructor function..
+        function Vehical(name, price) {
+            this.name = name;
+            this.price = price;
+        };
+
+
+        var bike = new Bike('Honda');
+        Vehical.prototype = bike;    //now bike treats as parent of vehical..
+
+
+
+        var Vehical = new Vehical('Unicorn', 140000);
+
+        document.write(Vehical.getCompany() + ' ' + Vehical.name + ' ' + Vehical.price);
+    </script>
+</body>
+
+</html>

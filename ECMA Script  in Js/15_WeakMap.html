@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeakMAp</title>
+  </head>
+
+  <body>
+    <script>
+      // It is simmiler to map,the diffrence is weakmap must be object..
+      // Elements cannot be iterable..
+      // Cannot clear elements..
+      // Cannot check the size of Weakmap..
+
+      let wm = new WeakMap();
+
+      let Person = { Name: "Jenny" };
+      let Employee = { Salary: 27000 };
+
+      wm.set(Person, "Name");
+      wm.set(Employee, "Salary");
+
+      console.log(wm);
+      console.log(wm.get(Employee));
+    </script>
+  </body>
+</html>

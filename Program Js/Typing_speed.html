@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital@1&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Prompt', sans-serif;
+            box-sizing: border-box;
+
+        }
+
+        #main {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background-color: rgb(168, 219, 168);
+        }
+
+        #center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        textarea {
+
+            background-color: rgb(50, 48, 48);
+            color: white;
+            padding-left: 10px;
+            border-radius: 10px 10px 0px 0px;
+            border: 10px solid #394c5f;
+
+        }
+
+        .mainbtn {
+            padding: 5px 7px;
+            border-radius: 15px;
+            font-size: 1rem;
+            background-color: darkolivegreen;
+
+
+        }
+
+        #msg {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="main">
+
+        <div id="center">
+            <h2 id="heading">Check Your Typing Speed..</h2>
+            <br>
+            <h2 id="msg"></h2>
+            <br>
+            <textarea id="mywords" cols="80" rows="8" placeholder="Let's Start"></textarea>
+            <br>
+            <button id="btn" class="mainbtn">Start</button>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

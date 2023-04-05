@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise Chaining</title>
+  </head>
+
+  <body>
+    <script>
+      // Example_1..
+
+      // Promise Chaining..
+
+      new Promise((Resolve, Reject) => {
+        setTimeout(() => {
+          Resolve(5);
+        }, 500);
+      })
+        .then((add) => {
+          console.log(add);
+          return add + add;
+        })
+        .then((add) => {
+          console.log(add);
+          return add + add;
+        })
+        .then((add) => {
+          console.log(add);
+          return add + add;
+        })
+        .then((add) => {
+          console.log(add);
+          return add + add;
+        })
+        .then((add) => {
+          console.log(add);
+          return add + add;
+        })
+        .then((add) => {
+          console.log(add);
+          return add + add;
+        })
+        .then((add) => {
+          console.log(add);
+          return add + add;
+        })
+        .then((add) => {
+          console.log(add);
+          return add + add;
+        })
+        .then((add) => {
+          console.log(add);
+        });
+
+      // Example_2..
+
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("3");
+        }, 700);
+      })
+        .then((multiply) => {
+          console.log(multiply);
+          return multiply * 5;
+        })
+        .then((multiply) => {
+          console.log(multiply);
+          return multiply * 10;
+        })
+        .then((multiply) => {
+          console.log(multiply);
+          return multiply * 10;
+        })
+        .then((multiply) => {
+          console.log(multiply);
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ECMA Script</title>
+  </head>
+
+  <body>
+    <script>
+      // Var..
+
+      // The varibale declare with var is a function scope variable..
+
+      function Variable1() {
+        //function Scope..
+
+        {
+          // Block Scope..
+
+          var a = 10;
+
+          //   console.log(a);
+        }
+
+        console.log(a);
+      }
+
+      Variable1();
+
+      //let..
+
+      // The varibale declare with let is a block scope variable..
+
+      function Variable2() {
+        //  function Scope..
+
+        {
+          // Block Scope..
+
+          let b = 20;
+
+          console.log(b);
+        } //Block Scope..
+
+        // console.log(b);
+      } // Function Scope
+
+      Variable2();
+
+      //const..
+
+      // The varibale declare with const is a block scope variable..
+
+      function Variable3() {
+        //  function Scope..
+
+        {
+          // Block Scope..
+
+          let c = 30;
+
+          console.log(c);
+        } //Block Scope..
+
+        // console.log(c)
+      } // Function Scope
+
+      Variable3();
+    </script>
+  </body>
+</html>

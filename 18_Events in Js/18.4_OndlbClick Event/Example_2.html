@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Click Event</title>
+    <style>
+        * {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 id="heading">Double click to know more</h2>
+
+    <p id="one"></p>
+
+    <script>
+    document.getElementById('heading').ondblclick=function(){
+        document.getElementById('one').innerHTML='You just clicked twice on heading';
+    }
+     
+    </script>
+
+</body>
+
+</html>

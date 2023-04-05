@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment</title>
+  </head>
+
+  <body>
+    <script>
+      // Q1.Reverse Of Number..
+
+      // let Number = 32243;
+
+      // //Using method();
+
+      // let RevOfNumber = Number.toString().split('').reverse().join('')
+
+      // console.log(RevOfNumber)
+
+      // -----------------------------------------------------------
+
+      // Using loop..
+
+      let Number = 32243;
+      let StoreNum = "";
+      let Str = "";
+      let toStr = Str + Number;
+
+      for (i = toStr.length - 1; i >= 0; i--) {
+        StoreNum += toStr[i];
+      }
+
+      console.log(parseInt(StoreNum));
+    </script>
+
+    <script>
+      // Q2.Reverse of string..
+
+      // Using method()
+
+      // let str = 'This is a random text';
+
+      // let RevOfStr = str.split('').reverse().join('');
+
+      // console.log(RevOfStr);
+
+      // -----------------------------------------------------------
+
+      // Using loop
+
+      let str = "This is a random text";
+
+      let Store_2 = "";
+
+      for (i = str.length - 1; i >= 0; i--) {
+        Store_2 += str[i];
+      }
+
+      console.log(Store_2);
+    </script>
+
+    <script>
+      // Q3.Palindrome
+
+      // Using method()
+
+      // let string = 'rotator';
+
+      // let isPalindrome = string.split('').reverse().join('');
+
+      // if (string === isPalindrome) {
+
+      //     console.log('It is an palindrome');
+
+      // } else {
+      //     console.log('It is not an palindrome');
+      // }
+
+      // -----------------------------------------------------------
+
+      // Using loop..
+
+      let string = "rotator";
+
+      let Store_Str = "";
+
+      for (i = string.length - 1; i >= 0; i--) {
+        Store_Str += string[i];
+      }
+
+      if (string === Store_Str) {
+        console.log("Is is an palindrome");
+      } else {
+        console.log("It is not an palindrome");
+      }
+    </script>
+
+    <!-- <script>
+
+        // Q4.Fibbonacci Series..
+
+        // Fibbonacci series uo to n number..
+
+        // let Input = prompt('Enter any value') // get input from user
+
+        // let n1 = 0, n2 = 1, Next;
+
+        // for (i = 1; i <= Input; i++) {
+
+        //     console.log(n1);
+        //     Next = n1 + n2;
+        //     n1 = n2;
+        //     n2 = Next;
+
+        // }
+
+        // -----------------------------------------------------------
+
+        // Fibbonacci series up to certain number..
+
+
+        let Input = prompt('Enter positive number');
+
+        let n1 = 0, n2 = 1, Next;
+
+        console.log(n1);
+        console.log(n2);
+        Next = n1 + n2;
+
+        while (Next <= Input) {
+            console.log(Next);
+
+            n1 = n2;
+            n2 = Next;
+            Next = n1 + n2;
+
+
+        }
+
+    </script> -->
+
+    <script>
+      // Q5.Write a function constructors..
+
+      function Employee() {
+        this.Name = "Jenny";
+        this.Salary = 51000;
+      }
+
+      let Emp = new Employee();
+      console.log(Emp);
+    </script>
+
+    <script>
+      // Q6.Check if array contain duplicates or not
+
+      let Arry = [1, 2, 3, 4, 3, 21, 4, 2, 1];
+
+      let Unique = Array.from(new Set(Arry));
+      console.log(Unique);
+
+      if (Arry.length === Unique.length) {
+        console.log("Array do not contain duplicates");
+      } else {
+        console.log("Array contain duplicates");
+      }
+
+      // -----------------------------------------------------------
+
+      // Q7.Find duplicates
+
+      let ary = [11, 21, 33, 45, 43, 11, 21, 33, 1, 2, 3, 3, 2, 1];
+
+      let Uniq = new Set(ary);
+      console.log(Uniq);
+
+      let duplicates = ary.filter((value) => {
+        if (Uniq.has(value)) {
+          Uniq.delete(value);
+        } else {
+          return value;
+        }
+      });
+
+      console.log(duplicates);
+
+      // Using indexOf..
+
+      let Duplicates = ary.filter((item, index) => index !== ary.indexOf(item));
+
+      console.log(Duplicates);
+
+      // Using some
+
+      let Numbers = [1, 2, 3, 4, 5, 5, 4, 3, 2, 1];
+
+      let _Duplicates = Numbers.some(
+        (item, index) => index !== Numbers.indexOf(item)
+      );
+
+      if (Duplicates == true) {
+        console.log("Array contain duplicates");
+      } else {
+        console.log("Array dosen't have nay duplicates");
+      }
+
+      // for loop..
+
+      let Num = [1, 2, 3, 4, 5, 5, 6, 4, 3, 2, 1];
+      // let Num = [1, 2, 3]
+
+      let isDuplicate = false;
+
+      for (i = 0; i < Num.length; i++) {
+        for (j = 0; j < Num.length; j++) {
+          if (i !== j) {
+            if (Num[i] === Num[j]) {
+              isDuplicate = true;
+              break; // terminate inner loop
+            }
+          }
+          if (isDuplicate) {
+            break; // terminate outer loop
+          }
+        }
+      }
+      if (!isDuplicate) {
+        console.log("Array doesn't contain duplicates");
+      } else {
+        console.log("Array contain duplicates");
+      }
+
+      // -----------------------------------------------------------
+    </script>
+
+    <script>
+      // Q8.How to create object
+
+      // 1.By using object literals
+
+      let Person_1 = { Name: "Jenny", Salary: 51000 };
+      console.table(Person_1);
+
+      // 2.By using instace of (new keyword)
+
+      let Person_2 = new Object();
+
+      Person_2.Name = "Jenny";
+      Person_2.Salary = 51000;
+
+      console.table(Person_2);
+
+      // 3.By using constructor
+
+      function Person(Name, Salary) {
+        this.Name = Name;
+        this.Salary = Salary;
+      }
+
+      let Person_3 = new Person("Jenny", 51000);
+      console.table(Person_3);
+    </script>
+
+    <script>
+      // Q9.Closure
+
+      // Closure is a combination of function and lexical envirement,
+      // the inner function has a acces of outer function as well as the global veriable
+
+      let Name = "Jonas";
+
+      function outer(Age) {
+        let City = "Turkey";
+
+        function inner() {
+          console.log(`${Name} is ${Age} year old and he belongs to ${City}`);
+        }
+        inner();
+      }
+
+      outer(27);
+    </script>
+
+    <script>
+      // Q10.Design pattern
+
+      // Modular pattern/ singleton pattern
+
+      function EmpDetails() {
+        let = Name = "Jenny";
+        let = Profession = "Developer";
+        let Salary = 51000;
+
+        return {
+          Name: Name,
+          Profession: Profession,
+          Salary: Salary,
+        };
+      }
+
+      let newEmp = new EmpDetails();
+
+      let userName = newEmp.Name;
+      let userProffession = newEmp.Profession;
+      let userSalary = newEmp.Salary;
+
+      console.log(`${userName}  ${userProffession} ${userSalary}`);
+    </script>
+
+    <script>
+      // Q11.Self-Invoking
+      //Self-Invoking Functions. Function expressions can be made "self-invoking". A self-invoking expression is invoked (started) automatically, without being called.
+
+      (function () {
+        console.log("Self invoked function");
+      })();
+    </script>
+  </body>
+</html>

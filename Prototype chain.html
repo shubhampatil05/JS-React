@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototype Chian</title>
+  </head>
+
+  <body>
+    <h4>
+      Each object has a private property which holds a link to another object
+      called its prototype. That prototype object has a prototype of its own,
+      and so on until an object is reached with null as its prototype. By
+      definition, null has no prototype, and acts as the final link in this
+      prototype chain
+       <!-- <script>
+      let obj = {
+        Name: "Jenny",
+
+        Greet: function () {
+          console.log(`Welcome from ${this.Name}`);
+        },
+      };
+
+      obj.Greet();
+    </script> -->
+
+    <script>
+      const myDate = new Date();
+      let object = myDate;
+
+      do {
+        object = Object.getPrototypeOf(object);
+        console.log(object);
+      } while (object);
+    </script>
+
+
+
+    <!-- <script>
+
+        let MyDay = new Date().getDay();
+
+        do {
+
+            MyDay = Object.getPrototypeOf(MyDay);
+
+            console.log(MyDay);
+
+        } while (MyDay);
+
+    </script> -->
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+
+        }
+
+        div {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 1px 1px 0px red;
+            background-image: linear-gradient(lightgreen, yellow);
+        }
+
+        p {
+            height: 80px;
+            width: 550px;
+            background-image: linear-gradient(orange, black);
+            color: white;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 12px;
+            font-size: 45px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h2>CountDown Begin..</h2>
+
+        <p id="Count"></p>
+
+    </div>
+
+    <script>
+
+
+        var myFunction = setInterval(function () {
+
+
+            var UpcomingDate = new Date('dec 5,2022 12:00:00').getTime();
+
+            var CurrentDate = new Date().getTime();
+
+            var RemainingTime = UpcomingDate - CurrentDate;
+
+            var Days = Math.floor(RemainingTime / (1000 * 60 * 60 * 24));
+
+            var Hours = Math.floor((RemainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+            var Minutes = Math.floor((RemainingTime % (1000 * 60 * 60)) / (1000 * 60));
+
+            var Seconds = Math.floor((RemainingTime % (1000 * 60)) / (1000));
+
+            document.getElementById('Count').innerHTML = Days + 'd,' + Hours + 'hrs:' + Minutes + 'm:' + Seconds + 's';
+
+
+        }, 1000);
+
+
+    </script>
+</body>
+
+</html>
